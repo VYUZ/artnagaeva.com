@@ -1,0 +1,265 @@
+<<<<<<< HEAD
+@use "sass:math";
+
+@import "block/start";
+@import "block/vars";
+@import "fonts";
+
+/* общие стили */
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 30px;
+  color: white;
+}
+h1,
+h2,
+h3 {
+  line-height: normal;
+  text-align: center;
+  font-family: Josefin Sans;
+  font-weight: 100;
+  font-style: normal;
+}
+h1 {
+  font-size: 70px;
+}
+h2 {
+  font-size: 50px;
+}
+h3 {
+  font-size: 70px;
+  font-weight: normal;
+}
+
+a {
+  color: white
+}
+.container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 $gap * 0.5;
+  margin: 0 auto;
+  @include m1300 {
+    max-width: 1200px;
+  }
+}
+//animation_css
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+}
+// @import "../node_modules/t-scroll/sass/t-scroll.min.scss";
+
+@import "block/header";
+
+/* MAIN START */
+
+@import "block/main";
+
+/* MAIN END */
+
+@import "block/footer";
+
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+
+/* Laptops */
+@media only screen and (max-width: 1200px) {
+}
+/* Tablets, Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+}
+/* Phones */
+@media only screen and (max-width: 575px) {
+}
+/* Extra Small Devices, old Phones */
+@media only screen and (max-width: 480px) {
+}
+=======
+@use "sass:math";
+
+@import "block/start";
+@import "block/vars";
+@import "fonts";
+
+/* общие стили */
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 30px;
+  color: white;
+}
+h1,
+h2,
+h3 {
+  line-height: normal;
+  text-align: center;
+  font-family: Josefin Sans;
+  font-weight: 100;
+  font-style: normal;
+}
+h1 {
+  font-size: 70px;
+}
+h2 {
+  font-size: 50px;
+}
+h3 {
+  font-size: 70px;
+  font-weight: normal;
+}
+
+a {
+  color: white
+}
+.container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 $gap * 0.5;
+  margin: 0 auto;
+  @include m1300 {
+    max-width: 1200px;
+  }
+}
+//animation_css
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+}
+// @import "../node_modules/t-scroll/sass/t-scroll.min.scss";
+
+@import "block/header";
+
+/* MAIN START */
+
+@import "block/main";
+
+/* MAIN END */
+
+@import "block/footer";
+
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+
+/* Laptops */
+@media only screen and (max-width: 1200px) {
+}
+/* Tablets, Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+}
+/* Phones */
+@media only screen and (max-width: 575px) {
+}
+/* Extra Small Devices, old Phones */
+@media only screen and (max-width: 480px) {
+}
+>>>>>>> 06788fb43bd62ee4eeba94b50d02f9d657ba624d
