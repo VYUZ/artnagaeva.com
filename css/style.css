@@ -1,0 +1,291 @@
+@charset "UTF-8";
+/* Указываем box sizing */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  padding: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  transition: all 0.5s linear 0s;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*End normalising*/
+/*Variables*/ /* josefin-sans-100 - latin */
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 100;
+  src: local(""), url("../fonts/josefin-sans-v24-latin-100.woff2") format("woff2"), url("../fonts/josefin-sans-v24-latin-100.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* josefin-sans-regular - latin */
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/josefin-sans-v24-latin-regular.woff2") format("woff2"), url("../fonts/josefin-sans-v24-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* poppins-300 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url("../fonts/poppins-v20-latin-300.woff2") format("woff2"), url("../fonts/poppins-v20-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/poppins-v20-latin-regular.woff2") format("woff2"), url("../fonts/poppins-v20-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* общие стили */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 30px;
+  color: white;
+}
+
+h1,
+h2,
+h3 {
+  line-height: normal;
+  text-align: center;
+  font-family: Josefin Sans;
+  font-weight: 100;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 70px;
+  font-weight: normal;
+}
+
+a {
+  color: white;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+@media (max-width: 1300px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@keyframes lights {
+  0% {
+    color: hsl(230deg, 40%, 80%);
+    text-shadow: 0 0 1em hsla(320deg, 100%, 50%, 0.2), 0 0 0.125em hsla(320deg, 100%, 60%, 0.3), -1em -0.125em 0.5em hsla(40deg, 100%, 60%, 0), 1em 0.125em 0.5em hsla(200deg, 100%, 60%, 0);
+  }
+  30% {
+    color: hsl(230deg, 80%, 90%);
+    text-shadow: 0 0 1em hsla(320deg, 100%, 50%, 0.5), 0 0 0.125em hsla(320deg, 100%, 60%, 0.5), -0.5em -0.125em 0.25em hsla(40deg, 100%, 60%, 0.2), 0.5em 0.125em 0.25em hsla(200deg, 100%, 60%, 0.4);
+  }
+  40% {
+    color: hsl(230deg, 100%, 95%);
+    text-shadow: 0 0 1em hsla(320deg, 100%, 50%, 0.5), 0 0 0.125em hsla(320deg, 100%, 90%, 0.5), -0.25em -0.125em 0.125em hsla(40deg, 100%, 60%, 0.2), 0.25em 0.125em 0.125em hsla(200deg, 100%, 60%, 0.4);
+  }
+  70% {
+    color: hsl(230deg, 80%, 90%);
+    text-shadow: 0 0 1em hsla(320deg, 100%, 50%, 0.5), 0 0 0.125em hsla(320deg, 100%, 60%, 0.5), 0.5em -0.125em 0.25em hsla(40deg, 100%, 60%, 0.2), -0.5em 0.125em 0.25em hsla(200deg, 100%, 60%, 0.4);
+  }
+  100% {
+    color: hsl(230deg, 40%, 80%);
+    text-shadow: 0 0 1em hsla(320deg, 100%, 50%, 0.2), 0 0 0.125em hsla(320deg, 100%, 60%, 0.3), 1em -0.125em 0.5em hsla(40deg, 100%, 60%, 0), -1em 0.125em 0.5em hsla(200deg, 100%, 60%, 0);
+  }
+}
+/* HEADER START */
+.header {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+  z-index: 9;
+}
+.header.header-js-active {
+  background-color: black;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-pic {
+  height: 100px;
+  color: hsl(230deg, 100%, 95%);
+  animation: lights 5s 750ms linear infinite;
+}
+
+.header-js-active img.header__logo-pic {
+  height: 60px;
+}
+
+.header__nav {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.header__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__nav-item {
+  margin-right: 20px;
+}
+
+.header__nav-link {
+  text-transform: uppercase;
+  color: hsl(230deg, 100%, 95%);
+  animation: lights 5s 750ms linear infinite;
+}
+
+/* HEADER END */
+/* MAIN START */
+/* INTRO START */
+main > img {
+  object-fit: cover;
+  filter: brightness(40%);
+}
+
+/* INTRO END */
+/* MAIN END */
+/* FOOTER START */
+/* FOOTER END */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* @media */
+/* Laptops */
+/* Tablets, Medium Devices, Desktops */
+/* Small Devices, Tablets */
+/* Phones */
+/* Extra Small Devices, old Phones */
