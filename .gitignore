@@ -11,7 +11,7 @@ _img_src/
 
 #gulp npm mods
 node_modules/
-package*.json
+package-lock.json
 
 #templates
 *.psd

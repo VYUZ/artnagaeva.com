@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ArtNagaeva
 
 Simple Art landing
