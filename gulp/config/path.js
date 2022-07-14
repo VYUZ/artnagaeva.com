@@ -15,10 +15,12 @@ export const path = {
     files: `${buildFolder}/files/`,
   },
   src: {
-    js: `${srcFolder}/js/main.js`,
+    // js: `${srcFolder}/js/main.js`,
+    js: `${srcFolder}/js/*.js`,
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,webmanifest,ico}`,
     svg: `${srcFolder}/img/**/*.svg`,
     scss: `${srcFolder}/scss/style.scss`,
+    css: `${srcFolder}/css/*.css`,
     html: `${srcFolder}/*.html`,
     files: `${srcFolder}/files/**/*.*`,
   },

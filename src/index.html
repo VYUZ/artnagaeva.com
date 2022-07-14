@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +10,7 @@
     <meta name="keywords" content=" " />
     <title>@@title</title>
     <link rel="stylesheet" href="css/style.min.css" as="style" />
+    <link rel="stylesheet" href="css/simple-adaptive-slider.min.css" as="style" />
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
@@ -28,11 +29,37 @@
 
     <!--MAIN SECTION START-->
     <main>
-      <section class="intro">
-        <img src="@img/sea-on-white-5.jpg" alt="" />
-      </section>
-      <section class="intro">
-        <img src="@img/sea-on-white-5.jpg" alt="" />
+      <section class="intro itcss">
+        <div class="intro__wrapper itcss__wrapper">
+          <div class="intro__items itcss__items">
+            <div class="intro__item itcss__item">
+              <span class="intro__item-inner">
+                <span class="intro__item-pic">
+                  <img class="intro__item-img" src="@img/sea-on-white-5.jpg" alt="" />
+                </span>
+                <span class="intro__item-text">
+                  <span class="intro__item-title">Art</span>
+                  <span class="intro__item-subtitle">interior</span>
+                  <span class="intro__item-desc">author's works for interior design</span>
+                </span>
+              </span>
+            </div>
+            <div class="intro__item itcss__item">
+              <span class="intro__item-inner">
+                <span class="intro__item-pic">
+                  <img class="intro__item-img" src="@img/red-mountain-mockup-1-res.jpg" alt="" />
+                </span>
+                <span class="intro__item-text">
+                  <span class="intro__item-title">Art</span>
+                  <span class="intro__item-subtitle">interior</span>
+                  <span class="intro__item-desc">author's works for interior design</span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <a class="itcss__control itcss__control_prev" href="#" role="button"></a>
+        <a class="itcss__control itcss__control_next" href="#" role="button"></a>
       </section>
     </main>
 
@@ -46,6 +73,7 @@
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script> -->
     <!-- <script src="../js/swiper-bundle.min.js"></script> -->
     <!-- <script src="js/fontawesome.min.js"></script> -->
-    <script src="js/main.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/main.min.js"></script> -->
   </body>
 </html>

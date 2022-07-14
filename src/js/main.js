@@ -1,7 +1,9 @@
+import { sum } from "./modules/sum.js";
+console.log(sum(2, 10));
+
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 
 function isWebp() {
-  //   console.log("Привет2!");
   //Проверка поддержки webp
   function testWebP(callback) {
     // console.log("supported");
@@ -33,26 +35,26 @@ isWebp();
   };
 })();
 //Burger handler
-(function () {
-  const burgerItem = document.querySelector(".burger");
-  const menu = document.querySelector(".header__nav");
-  const menuCloseItem = document.querySelector(".header__nav-close");
-  const menuLinks = document.querySelectorAll(".header__nav-link");
-  burgerItem.addEventListener("click", () => {
-    menu.classList.add("header__nav_active");
-  });
-  menuCloseItem.addEventListener("click", () => {
-    menu.classList.remove("header__nav_active");
-  });
+// (function () {
+//   const burgerItem = document.querySelector(".burger");
+//   const menu = document.querySelector(".header__nav");
+//   const menuCloseItem = document.querySelector(".header__nav-close");
+//   const menuLinks = document.querySelectorAll(".header__nav-link");
+//   burgerItem.addEventListener("click", () => {
+//     menu.classList.add("header__nav_active");
+//   });
+//   menuCloseItem.addEventListener("click", () => {
+//     menu.classList.remove("header__nav_active");
+//   });
 
-  if (window.innerWidth < 768) {
-    for (let i = 0; i < menuLinks.length; i += 1) {
-      menuLinks[i].addEventListener("click", () => {
-        menu.classList.remove("header__nav_active");
-      });
-    }
-  }
-})();
+//   if (window.innerWidth < 768) {
+//     for (let i = 0; i < menuLinks.length; i += 1) {
+//       menuLinks[i].addEventListener("click", () => {
+//         menu.classList.remove("header__nav_active");
+//       });
+//     }
+//   }
+// })();
 // Scroll to anchors
 (function () {
   const smoothScroll = function (targetEl, duration) {
