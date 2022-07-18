@@ -251,14 +251,26 @@ section {
 .header__logo-img {
   height: 100px;
   color: hsl(230deg, 100%, 95%);
-  animation: lights 5s 750ms linear infinite;
   transition: 0.5s;
+  -webkit-animation: filter-animation 0.5s infinite;
+  animation: filter-animation 5s infinite;
 }
 .header__logo-img:hover {
   transform: scale(1.09);
   fill: #ff9800;
 }
 
+@keyframes filter-animation {
+  0% {
+    filter: sepia(0) saturate(2);
+  }
+  50% {
+    filter: sepia(4) saturate(8);
+  }
+  100% {
+    filter: sepia(0) saturate(2);
+  }
+}
 .header-js-active img.header__logo-pic {
   height: 60px;
 }

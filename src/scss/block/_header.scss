@@ -28,15 +28,47 @@
 .header__logo-link {
 }
 
+// .header__logo-svg {
+
+//   transition: all 1s;
+//   transition-timing-function: cubic-bezier(.87,1,.6,.19);
+//   transform-origin: 50% 50%;
+//   :hover {
+//     transform: scale(1.05, 1.05);
+//     // filter: blur(0.5px);
+//      stroke: red; fill: red;
+//     transition: all .2s ease-in-out;
+//   }
+// }
+
 .header__logo-img {
   height: 100px;
   color: hsl(230, 100%, 95%);
-  animation: lights 5s 750ms linear infinite;
+  // animation: lights 5s 750ms linear infinite;
   transition: 0.5s;
+
+  -webkit-animation: filter-animation 0.5s infinite;
+  animation: filter-animation 5s infinite;
+
   &:hover {
     transform: scale(1.09);
     // filter: blur(0.5px);
-    fill: $myorange;    
+    fill: $myorange;
+    // filter: sepia(1) hue-rotate(320deg) saturate(20);
+  }
+}
+
+@keyframes filter-animation {
+  0% {
+    filter: sepia(0) saturate(2);
+  }
+
+  50% {
+    filter: sepia(4) saturate(8);
+  }
+
+  100% {
+    filter: sepia(0) saturate(2);
   }
 }
 
