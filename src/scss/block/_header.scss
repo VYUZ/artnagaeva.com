@@ -26,10 +26,9 @@
 }
 
 .header__logo-link {
-  
 }
 
-.header__logo-pic {
+.header__logo-img {
   height: 100px;
   color: hsl(230, 100%, 95%);
   animation: lights 5s 750ms linear infinite;
@@ -37,6 +36,7 @@
   &:hover {
     transform: scale(1.09);
     // filter: blur(0.5px);
+    fill: $myorange;    
   }
 }
 

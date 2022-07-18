@@ -6,18 +6,18 @@
 
 /* стили для корневого элемента слайдера */
 .itcss {
-  position: relative;
+  /* position: relative;
   overflow: hidden;
   max-width: 600px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
 }
 
 /* стили для wrapper */
 .itcss__wrapper {
-  position: relative;
+  /* position: relative;
   overflow: hidden;
-  background-color: #eee;
+  background-color: #eee; */
 }
 
 /* стили для элемента, в котором непосредственно расположены элементы (слайды) */

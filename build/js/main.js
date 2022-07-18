@@ -1,1 +1,96 @@
-(()=>{"use strict";console.log(12),function(t){let e=new Image;e.onload=e.onerror=function(){!function(t){let e=!0===t?"webp":"no-webp";document.documentElement.classList.add(e)}(2==e.height)},e.src="data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA"}(),function(){const t=document.querySelector(".header");window.onscroll=()=>{window.pageYOffset>120?t.classList.add("header-js-active"):t.classList.remove("header-js-active")}}(),document.querySelectorAll(".js-scroll").forEach((t=>{t.addEventListener("click",(function(){!function(t,e){const s=document.querySelector(".header").clientHeight;let i=document.querySelector(t).getBoundingClientRect().top-s,n=window.pageYOffset,a=null;const r=function(t){null===a&&(a=t);const e=t-a,s=(_=e,o=n,h=i,(_/=500)<1?h/2*_*_+o:-h/2*(--_*(_-2)-1)+o);var _,o,h;window.scrollTo(0,s),e<1e3&&requestAnimationFrame(r)};requestAnimationFrame(r)}(this.getAttribute("href"))}))})),(()=>{class t{static PREFIX="itcss";static CLASS_NAME_ITEM=`${t.PREFIX}__item`;static CLASS_NAME_ITEM_ACTIVE=`${t.PREFIX}__item_active`;static CLASS_NAME_ITEMS=`${t.PREFIX}__items`;static CLASS_NAME_INDICATOR=`${t.PREFIX}__indicator`;static CLASS_NAME_INDICATOR_ACTIVE=`${t.PREFIX}__indicator_active`;static CLASS_NAME_INDICATORS=`${t.PREFIX}__indicators`;static CLASS_NAME_CONTROL=`${t.PREFIX}__control`;static CLASS_NAME_CONTROL_PREV=`${t.PREFIX}__control_prev`;static CLASS_NAME_CONTROL_NEXT=`${t.PREFIX}__control_next`;static CLASS_NAME_CONTROL_SHOW=`${t.PREFIX}__control_show`;static SELECTOR_ITEMS=`.${t.CLASS_NAME_ITEMS}`;static SELECTOR_ITEM=`.${t.CLASS_NAME_ITEM}`;static SELECTOR_ITEM_ACTIVE=`.${t.CLASS_NAME_ITEM_ACTIVE}`;static SELECTOR_INDICATOR_ACTIVE=`.${t.CLASS_NAME_INDICATOR_ACTIVE}`;static SELECTOR_INDICATORS=`.${t.CLASS_NAME_INDICATORS}`;static SELECTOR_WRAPPER=`.${t.PREFIX}__wrapper`;static SELECTOR_CONTROL=`.${t.CLASS_NAME_CONTROL}`;static SELECTOR_CONTROL_NEXT=`.${t.CLASS_NAME_CONTROL_NEXT}`;static SELECTOR_CONTROL_PREV=`.${t.CLASS_NAME_CONTROL_PREV}`;static SWIPE_THRESHOLD=20;static TRANSITION_NONE="transition-none";static checkSupportPassiveEvents(){let t=!1;try{const e=Object.defineProperty({},"passive",{get(){t=!0}});window.addEventListener("testPassiveListener",null,e),window.removeEventListener("testPassiveListener",null,e)}catch(e){t=!1}return t}constructor(e,s){if(this._el="string"==typeof e?document.querySelector(e):e,this._elWrapper=this._el.querySelector(t.SELECTOR_WRAPPER),this._elItems=this._el.querySelector(t.SELECTOR_ITEMS),this._elsItem=this._el.querySelectorAll(t.SELECTOR_ITEM),this._currentIndex=0,this._minOrder=0,this._maxOrder=0,this._$itemWithMinOrder=null,this._$itemWithMaxOrder=null,this._minTranslate=0,this._maxTranslate=0,this._direction="next",this._balancingItemsFlag=!1,this._transform=0,this._width=this._elWrapper.getBoundingClientRect().width,this._supportResizeObserver=void 0!==window.ResizeObserver,this._hasSwipeState=!1,this._swipeStartPosX=0,this._intervalId=null,this._config=Object.assign({autoplay:!1,loop:!0,indicators:!0,interval:5e3,swipe:!0},s),this._elItems.dataset.translate=0,this._elsItem.forEach(((t,e)=>{t.dataset.order=e,t.dataset.index=e,t.dataset.translate=0})),this._config.loop){const t=this._elsItem.length-1,e=-this._elsItem.length;this._elsItem[t].dataset.order=-1,this._elsItem[t].dataset.translate=-this._elsItem.length;const s=e*this._width;this._elsItem[t].style.transform=`translateX(${s}px)`}this._addIndicators(),this._refreshExtremeValues(),this._setActiveClass(),this._addEventListener(),this._autoplay()}_setActiveClass(){const e=this._el.querySelector(t.SELECTOR_ITEM_ACTIVE);e&&e.classList.remove(t.CLASS_NAME_ITEM_ACTIVE);const s=this._el.querySelector(`[data-index="${this._currentIndex}"]`);s&&s.classList.add(t.CLASS_NAME_ITEM_ACTIVE);const i=this._el.querySelector(t.SELECTOR_INDICATOR_ACTIVE);i&&i.classList.remove(t.CLASS_NAME_INDICATOR_ACTIVE);const n=this._el.querySelector(`[data-slide-to="${this._currentIndex}"]`);n&&n.classList.add(t.CLASS_NAME_INDICATOR_ACTIVE);const a=this._el.querySelector(t.SELECTOR_CONTROL_PREV),r=this._el.querySelector(t.SELECTOR_CONTROL_NEXT);a&&a.classList.add(t.CLASS_NAME_CONTROL_SHOW),r&&r.classList.add(t.CLASS_NAME_CONTROL_SHOW),this._config.loop||0!==this._currentIndex?this._config.loop||this._currentIndex!==this._elsItem.length-1||r.classList.remove(t.CLASS_NAME_CONTROL_SHOW):a.classList.remove(t.CLASS_NAME_CONTROL_SHOW),this._el.dispatchEvent(new CustomEvent("active.itc.slider",{bubbles:!0}))}_move(e){let s;if(this._elItems.classList.remove(t.TRANSITION_NONE),!1===e&&this._elItems.classList.add(t.TRANSITION_NONE),"none"===this._direction)return s=this._transform*this._width,void(this._elItems.style.transform=`translateX(${s}px)`);if(!this._config.loop){if(this._currentIndex+1>=this._elsItem.length&&"next"===this._direction)return void this._autoplay("stop");if(this._currentIndex<=0&&"prev"===this._direction)return}const i="next"===this._direction?-1:1,n=this._transform+i;"next"===this._direction?++this._currentIndex>this._elsItem.length-1&&(this._currentIndex-=this._elsItem.length):--this._currentIndex<0&&(this._currentIndex+=this._elsItem.length),this._transform=n,this._elItems.dataset.translate=n,s=n*this._width,this._elItems.style.transform=`translateX(${s}px)`,this._elItems.dispatchEvent(new CustomEvent("transition-start",{bubbles:!0})),this._setActiveClass()}_moveTo(t,e){const s=this._currentIndex;this._direction=t>s?"next":"prev";for(let i=0;i<Math.abs(t-s);i++)this._move(e)}_autoplay(t){if(this._config.autoplay)return"stop"===t?(clearInterval(this._intervalId),void(this._intervalId=null)):void(null===this._intervalId&&(this._intervalId=setInterval((()=>{this._direction="next",this._move()}),this._config.interval)))}_addIndicators(){if(this._el.querySelector(t.SELECTOR_INDICATORS)||!this._config.indicators)return;let e="";for(let s=0,i=this._elsItem.length;s<i;s++)e+=`<li class="${t.CLASS_NAME_INDICATOR}" data-slide-to="${s}"></li>`;this._el.insertAdjacentHTML("beforeend",`<ol class="${t.CLASS_NAME_INDICATORS}">${e}</ol>`)}_refreshExtremeValues(){this._minOrder=parseInt(this._elsItem[0].dataset.order,10),this._maxOrder=this._minOrder,this._$itemWithMinOrder=this._elsItem[0],this._$itemWithMaxOrder=this._$itemWithMinOrder,this._minTranslate=parseInt(this._elsItem[0].dataset.translate,10),this._maxTranslate=this._minTranslate;for(let t=0,e=this._elsItem.length;t<e;t++){const e=this._elsItem[t],s=parseInt(e.dataset.order,10);s<this._minOrder?(this._minOrder=s,this._$itemWithMinOrder=e,this._minTranslate=parseInt(e.dataset.translate,10)):s>this._maxOrder&&(this._maxOrder=s,this._$itemWithMaxOrder=e,this._maxTranslate=parseInt(e.dataset.translate,10))}}_balancingItems(){if(!this._balancingItemsFlag)return;const t=this._elWrapper.getBoundingClientRect(),e=t.width/2,s=this._elsItem.length;let i,n,a;if("next"===this._direction){const r=t.left,_=this._$itemWithMinOrder;i=this._minTranslate,n=_.getBoundingClientRect(),n.right<r-e&&(_.dataset.order=this._minOrder+s,i+=s,_.dataset.translate=i,a=i*this._width,_.style.transform=`translateX(${a}px)`,this._refreshExtremeValues())}else if("prev"===this._direction){const r=t.right,_=this._$itemWithMaxOrder;i=this._maxTranslate,n=_.getBoundingClientRect(),n.left>r+e&&(_.dataset.order=this._maxOrder-s,i-=s,_.dataset.translate=i,a=i*this._width,_.style.transform=`translateX(${a}px)`,this._refreshExtremeValues())}requestAnimationFrame(this._balancingItems.bind(this))}_addEventListener(){const e=this._elItems;function s(e){if(this._autoplay("stop"),e.target.closest(`.${t.CLASS_NAME_CONTROL}`))return;const s=0===e.type.search("touch")?e.touches[0]:e;this._swipeStartPosX=s.clientX,this._swipeStartPosY=s.clientY,this._hasSwipeState=!0,this._hasSwiping=!1}function i(e){if(!this._hasSwipeState)return;const s=0===e.type.search("touch")?e.touches[0]:e;let i=this._swipeStartPosX-s.clientX;const n=this._swipeStartPosY-s.clientY;if(!this._hasSwiping){if(Math.abs(n)>Math.abs(i)||0===Math.abs(i))return void(this._hasSwipeState=!1);this._hasSwiping=!0}if(e.preventDefault(),!this._config.loop){const t=this._currentIndex+1>=this._elsItem.length&&i>=0,e=this._currentIndex<=0&&i<=0;(t||e)&&(i/=4)}this._width=this._elWrapper.getBoundingClientRect().width,this._elItems.classList.add(t.TRANSITION_NONE);const a=this._transform*this._width-i;this._elItems.style.transform=`translateX(${a}px)`}function n(e){if(!this._hasSwipeState)return;const s=0===e.type.search("touch")?e.changedTouches[0]:e;let i=this._swipeStartPosX-s.clientX;if(0===i)return void(this._hasSwipeState=!1);if(!this._config.loop){const t=this._currentIndex+1>=this._elsItem.length&&i>=0,e=this._currentIndex<=0&&i<=0;(t||e)&&(i=0)}const n=i/this._elWrapper.getBoundingClientRect().width*100;this._elItems.classList.remove(t.TRANSITION_NONE),n>t.SWIPE_THRESHOLD?(this._direction="next",this._move()):n<-t.SWIPE_THRESHOLD?(this._direction="prev",this._move()):(this._direction="none",this._move()),this._hasSwipeState=!1,this._config.loop&&this._autoplay()}if(this._el.addEventListener("click",function(e){const s=e.target;if(this._autoplay("stop"),s.classList.contains(t.CLASS_NAME_CONTROL))e.preventDefault(),this._direction=s.dataset.slide,this._move();else if(s.dataset.slideTo){e.preventDefault();const t=parseInt(s.dataset.slideTo,10);this._moveTo(t)}this._config.loop&&this._autoplay()}.bind(this)),this._config.loop&&(e.addEventListener("transition-start",function(){this._balancingItemsFlag||(this._balancingItemsFlag=!0,window.requestAnimationFrame(this._balancingItems.bind(this)))}.bind(this)),e.addEventListener("transitionend",function(){this._balancingItemsFlag=!1,this._el.dispatchEvent(new CustomEvent("transition-end",{bubbles:!0}))}.bind(this))),this._config.autoplay&&(this._el.addEventListener("mouseenter",function(){this._autoplay("stop")}.bind(this)),this._el.addEventListener("mouseleave",function(){this._config.loop&&this._autoplay()}.bind(this))),this._config.swipe){const e=!!t.checkSupportPassiveEvents()&&{passive:!1};this._el.addEventListener("touchstart",s.bind(this),e),this._el.addEventListener("touchmove",i.bind(this),e),this._el.addEventListener("mousedown",s.bind(this)),this._el.addEventListener("mousemove",i.bind(this)),document.addEventListener("touchend",n.bind(this)),document.addEventListener("mouseup",n.bind(this)),document.addEventListener("mouseout",n.bind(this))}this._el.addEventListener("dragstart",function(t){t.preventDefault()}.bind(this)),document.addEventListener("visibilitychange",function(){"hidden"===document.visibilityState?this._autoplay("stop"):"visible"===document.visibilityState&&this._config.loop&&this._autoplay()}.bind(this)),this._supportResizeObserver&&new ResizeObserver(function(e){const s=e[0].contentBoxSize,i=e[0].contentRect,n=i?i.width:(s[0]||s).inlineSize;let a;if(this._width.toFixed(1)===n.toFixed(1))return;this._autoplay("stop"),this._elItems.classList.add(t.TRANSITION_NONE),this._width=parseInt(n.toFixed(1),10),a=n*parseInt(this._elItems.dataset.translate,10),this._elItems.style.transform=`translateX(${a}px)`;const r=this._elsItem;for(let t=0;t<r.length;t++)a=parseInt(r[t].dataset.translate,10)*n,r[t].style.transform=`translateX(${a}px)`;this._config.loop&&this._autoplay()}.bind(this)).observe(this._elWrapper)}next(){this._direction="next",this._move()}prev(){this._direction="prev",this._move()}autoplay(){this._autoplay("stop")}moveTo(t,e){this._moveTo(t,e)}}})()})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/main.js":
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_sum_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/sum.js */ \"./src/js/modules/sum.js\");\n\nconsole.log((0,_modules_sum_js__WEBPACK_IMPORTED_MODULE_0__.sum)(2, 10));\n\n/* Проверка поддержки webp, добавление класса webp или no-webp для HTML */\n\nfunction isWebp() {\n  //Проверка поддержки webp\n  function testWebP(callback) {\n    // console.log(\"supported\");\n    let webP = new Image();\n    webP.onload = webP.onerror = function () {\n      callback(webP.height == 2);\n    };\n    webP.src =\n      \"data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA\";\n  }\n\n  //Добавление класса _webp или _no-webp для HTML\n  testWebP(function (support) {\n    let className = support === true ? \"webp\" : \"no-webp\";\n    document.documentElement.classList.add(className);\n  });\n}\nisWebp();\n\n//Header active\n(function () {\n  const header = document.querySelector(\".header\");\n  window.onscroll = () => {\n    if (window.pageYOffset > 120) {\n      header.classList.add(\"header-js-active\");\n    } else {\n      header.classList.remove(\"header-js-active\");\n    }\n  };\n})();\n//Burger handler\n// (function () {\n//   const burgerItem = document.querySelector(\".burger\");\n//   const menu = document.querySelector(\".header__nav\");\n//   const menuCloseItem = document.querySelector(\".header__nav-close\");\n//   const menuLinks = document.querySelectorAll(\".header__nav-link\");\n//   burgerItem.addEventListener(\"click\", () => {\n//     menu.classList.add(\"header__nav_active\");\n//   });\n//   menuCloseItem.addEventListener(\"click\", () => {\n//     menu.classList.remove(\"header__nav_active\");\n//   });\n\n//   if (window.innerWidth < 768) {\n//     for (let i = 0; i < menuLinks.length; i += 1) {\n//       menuLinks[i].addEventListener(\"click\", () => {\n//         menu.classList.remove(\"header__nav_active\");\n//       });\n//     }\n//   }\n// })();\n// Scroll to anchors\n(function () {\n  const smoothScroll = function (targetEl, duration) {\n    const headerElHeight = document.querySelector(\".header\").clientHeight;\n    let target = document.querySelector(targetEl);\n    let targetPosition = target.getBoundingClientRect().top - headerElHeight;\n    let startPosition = window.pageYOffset;\n    let startTime = null;\n\n    const ease = function (t, b, c, d) {\n      t /= d / 2;\n      if (t < 1) return (c / 2) * t * t + b;\n      t--;\n      return (-c / 2) * (t * (t - 2) - 1) + b;\n    };\n\n    const animation = function (currentTime) {\n      if (startTime === null) startTime = currentTime;\n      const timeElapsed = currentTime - startTime;\n      const run = ease(timeElapsed, startPosition, targetPosition, duration);\n      window.scrollTo(0, run);\n      if (timeElapsed < duration) requestAnimationFrame(animation);\n    };\n    requestAnimationFrame(animation);\n  };\n\n  const scrollTo = function () {\n    const links = document.querySelectorAll(\".js-scroll\");\n    links.forEach((each) => {\n      each.addEventListener(\"click\", function () {\n        const currentTarget = this.getAttribute(\"href\");\n        smoothScroll(currentTarget, 1000);\n      });\n    });\n  };\n  scrollTo();\n})();\n//top-slider\ndocument.addEventListener('DOMContentLoaded', () => {\n  // инициализация слайдера\n  new ItcSimpleSlider('.itcss', {\n    loop: true,\n    autoplay: false,\n    interval: 5000,\n    swipe: true,\n  });\n});\n\n\n//# sourceURL=webpack://artnagaeva.com/./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/sum.js":
+/*!*******************************!*\
+  !*** ./src/js/modules/sum.js ***!
+  \*******************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"sum\": () => (/* binding */ sum)\n/* harmony export */ });\nconst sum = (a, b) => a + b;\r\n\r\n\n\n//# sourceURL=webpack://artnagaeva.com/./src/js/modules/sum.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/main.js");
+/******/ 	
+/******/ })()
+;

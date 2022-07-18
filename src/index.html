@@ -27,33 +27,24 @@
     @@include("html/header.html")
     <!--HEADER END-->
 
-    <!--MAIN SECTION START-->
+    <!--MAIN START-->
     <main>
-      <section class="intro itcss">
-        <div class="intro__wrapper itcss__wrapper">
-          <div class="intro__items itcss__items">
-            <div class="intro__item itcss__item">
-              <span class="intro__item-inner">
-                <span class="intro__item-pic">
-                  <img class="intro__item-img" src="@img/sea-on-white-5.jpg" alt="" />
-                </span>
-                <span class="intro__item-text">
-                  <span class="intro__item-title">Art</span>
-                  <span class="intro__item-subtitle">interior</span>
-                  <span class="intro__item-desc">author's works for interior design</span>
-                </span>
+      <!--HERO SECTION START-->
+      <section class="itcss" id="hero">
+        <div class="hero__wrapper itcss__wrapper">
+          <div class="hero__items itcss__items">
+            <div class="hero__item itcss__item">
+              <img class="hero__item-img" src="@img/sea-on-white-5.jpg" height="100vh" loading="lazy" alt="" />
+              <span class="hero__item-text container">
+                <h1 class="hero__item-title">Art <br /><span>interior</span></h1>
+                <h3 class="hero__item-subtitle">author's works for interior design</h3>
               </span>
             </div>
-            <div class="intro__item itcss__item">
-              <span class="intro__item-inner">
-                <span class="intro__item-pic">
-                  <img class="intro__item-img" src="@img/red-mountain-mockup-1-res.jpg" alt="" />
-                </span>
-                <span class="intro__item-text">
-                  <span class="intro__item-title">Art</span>
-                  <span class="intro__item-subtitle">interior</span>
-                  <span class="intro__item-desc">author's works for interior design</span>
-                </span>
+            <div class="hero__item itcss__item">
+              <img class="hero__item-img" src="@img/red-mountain-mockup-1-res.jpg" alt="" />
+              <span class="hero__item-text container">
+                <h1 class="hero__item-title">Art <br /><span>interior</span></h1>
+                <h3 class="hero__item-subtitle">author's works for interior design</h3>
               </span>
             </div>
           </div>
@@ -61,6 +52,75 @@
         <a class="itcss__control itcss__control_prev" href="#" role="button"></a>
         <a class="itcss__control itcss__control_next" href="#" role="button"></a>
       </section>
+      <!--HERO SECTION END-->
+      <!--ABOUT SECTION START-->
+
+      <!--ABOUT SECTION END-->
+      <!--PORTFOLIO SECTION START-->
+      <section id="portfolio">
+        <h2 class="portfolio__title">Portfolio</h2>
+        <ul class="portfolio__items">
+          <li class="portfolio__item">
+            <figure class="portfolio__figure">
+              <img
+                class="portfolio__img"
+                src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e"
+                alt="Several hands holding beer glasses"
+              />
+              <figcaption class="portfolio__text">
+                <a href="#!" class="portfolio__link">
+                  <h3>Billions upon billions</h3>
+                  <p class="portfolio__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, a.</p>
+                </a>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1513309914637-65c20a5962e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"
+                alt="Several friends doing a toast"
+              />
+              <figcaption><h3>Drake Equation</h3></figcaption>
+            </figure>
+            <p>
+              Another world citizens of distant epochs from which we spring descended from astronomers Orion's sword
+              shores of the cosmic ocean.
+            </p>
+            <a href="#">Visit Website</a>
+          </li>
+          <li>
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80"
+                alt="Three different glasses of beer"
+              />
+              <figcaption><h3>Vast cosmic arena</h3></figcaption>
+            </figure>
+            <p>
+              Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the
+              seed of intelligence.
+            </p>
+            <a href="#">Visit Website</a>
+          </li>
+          <li class="portfolio__item">
+            <figure class="portfolio__figure">
+              <img
+                class="portfolio__img"
+                src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e"
+                alt="Several hands holding beer glasses"
+              />
+              <figcaption class="portfolio__text">
+                <a href="#!" class="portfolio__link">
+                  <h3>Billions upon billions</h3>
+                  <p class="portfolio__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, a.</p>
+                </a>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+      <!--PORTFOLIO SECTION END-->
     </main>
 
     <!--MAIN SECTION END-->
@@ -73,6 +133,7 @@
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script> -->
     <!-- <script src="../js/swiper-bundle.min.js"></script> -->
     <!-- <script src="js/fontawesome.min.js"></script> -->
+    <script src="files/simple-adaptive-slider.js"></script>
     <script src="js/main.js"></script>
     <!-- <script src="js/main.min.js"></script> -->
   </body>
