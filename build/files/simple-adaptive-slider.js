@@ -6,7 +6,7 @@
 
 class ItcSimpleSlider {
   // базовые классы и селекторы
-  static PREFIX = 'itcss';
+  static PREFIX = "itcss";
   static CLASS_NAME_ITEM = `${ItcSimpleSlider.PREFIX}__item`;
   static CLASS_NAME_ITEM_ACTIVE = `${ItcSimpleSlider.PREFIX}__item_active`;
   static CLASS_NAME_ITEMS = `${ItcSimpleSlider.PREFIX}__items`;
@@ -29,18 +29,18 @@ class ItcSimpleSlider {
   // порог для переключения слайда (20%)
   static SWIPE_THRESHOLD = 20;
   // класс для отключения transition
-  static TRANSITION_NONE = 'transition-none';
+  static TRANSITION_NONE = "transition-none";
   // Определите, поддерживает ли текущий клиент пассивные события
   static checkSupportPassiveEvents() {
     let passiveSupported = false;
     try {
-      const options = Object.defineProperty({}, 'passive', {
+      const options = Object.defineProperty({}, "passive", {
         get() {
           passiveSupported = true;
         },
       });
-      window.addEventListener('testPassiveListener', null, options);
-      window.removeEventListener('testPassiveListener', null, options);
+      window.addEventListener("testPassiveListener", null, options);
+      window.removeEventListener("testPassiveListener", null, options);
     } catch (error) {
       passiveSupported = false;
     }
@@ -48,7 +48,7 @@ class ItcSimpleSlider {
   }
 
   constructor(target, config) {
-    this._el = typeof target === 'string' ? document.querySelector(target) : target;
+    this._el = typeof target === "string" ? document.querySelector(target) : target;
     this._elWrapper = this._el.querySelector(ItcSimpleSlider.SELECTOR_WRAPPER);
     this._elItems = this._el.querySelector(ItcSimpleSlider.SELECTOR_ITEMS);
     this._elsItem = this._el.querySelectorAll(ItcSimpleSlider.SELECTOR_ITEM);
@@ -62,7 +62,7 @@ class ItcSimpleSlider {
     this._minTranslate = 0;
     this._maxTranslate = 0;
     // направление смены слайдов (по умолчанию)
-    this._direction = 'next';
+    this._direction = "next";
     // флаг, который показывает, что идёт процесс уравновешивания слайдов
     this._balancingItemsFlag = false;
     // текущее значение трансформации
@@ -70,7 +70,7 @@ class ItcSimpleSlider {
 
     this._width = this._elWrapper.getBoundingClientRect().width;
 
-    this._supportResizeObserver = typeof window.ResizeObserver !== 'undefined';
+    this._supportResizeObserver = typeof window.ResizeObserver !== "undefined";
 
     // swipe параметры
     this._hasSwipeState = false;
@@ -135,9 +135,11 @@ class ItcSimpleSlider {
       elNextBtn.classList.remove(ItcSimpleSlider.CLASS_NAME_CONTROL_SHOW);
     }
 
-    this._el.dispatchEvent(new CustomEvent('active.itc.slider', {
-      bubbles: true,
-    }));
+    this._el.dispatchEvent(
+      new CustomEvent("active.itc.slider", {
+        bubbles: true,
+      })
+    );
   }
 
   // смена слайдов
@@ -147,24 +149,24 @@ class ItcSimpleSlider {
     if (useTransition === false) {
       this._elItems.classList.add(ItcSimpleSlider.TRANSITION_NONE);
     }
-    if (this._direction === 'none') {
+    if (this._direction === "none") {
       translateX = this._transform * this._width;
       this._elItems.style.transform = `translateX(${translateX}px)`;
       return;
     }
     if (!this._config.loop) {
       const condition = this._currentIndex + 1 >= this._elsItem.length;
-      if (condition && this._direction === 'next') {
-        this._autoplay('stop');
+      if (condition && this._direction === "next") {
+        this._autoplay("stop");
         return;
       }
-      if (this._currentIndex <= 0 && this._direction === 'prev') {
+      if (this._currentIndex <= 0 && this._direction === "prev") {
         return;
       }
     }
-    const step = this._direction === 'next' ? -1 : 1;
+    const step = this._direction === "next" ? -1 : 1;
     const transform = this._transform + step;
-    if (this._direction === 'next') {
+    if (this._direction === "next") {
       if (++this._currentIndex > this._elsItem.length - 1) {
         this._currentIndex -= this._elsItem.length;
       }
@@ -175,16 +177,18 @@ class ItcSimpleSlider {
     this._elItems.dataset.translate = transform;
     translateX = transform * this._width;
     this._elItems.style.transform = `translateX(${translateX}px)`;
-    this._elItems.dispatchEvent(new CustomEvent('transition-start', {
-      bubbles: true,
-    }));
+    this._elItems.dispatchEvent(
+      new CustomEvent("transition-start", {
+        bubbles: true,
+      })
+    );
     this._setActiveClass();
   }
 
   // функция для перемещения к слайду по индексу
   _moveTo(index, useTransition) {
     const currentIndex = this._currentIndex;
-    this._direction = index > currentIndex ? 'next' : 'prev';
+    this._direction = index > currentIndex ? "next" : "prev";
     for (let i = 0; i < Math.abs(index - currentIndex); i++) {
       this._move(useTransition);
     }
@@ -195,14 +199,14 @@ class ItcSimpleSlider {
     if (!this._config.autoplay) {
       return;
     }
-    if (action === 'stop') {
+    if (action === "stop") {
       clearInterval(this._intervalId);
       this._intervalId = null;
       return;
     }
     if (this._intervalId === null) {
       this._intervalId = setInterval(() => {
-        this._direction = 'next';
+        this._direction = "next";
         this._move();
       }, this._config.interval);
     }
@@ -213,11 +217,11 @@ class ItcSimpleSlider {
     if (this._el.querySelector(ItcSimpleSlider.SELECTOR_INDICATORS) || !this._config.indicators) {
       return;
     }
-    let html = '';
+    let html = "";
     for (let i = 0, length = this._elsItem.length; i < length; i++) {
       html += `<li class="${ItcSimpleSlider.CLASS_NAME_INDICATOR}" data-slide-to="${i}"></li>`;
     }
-    this._el.insertAdjacentHTML('beforeend', `<ol class="${ItcSimpleSlider.CLASS_NAME_INDICATORS}">${html}</ol>`);
+    this._el.insertAdjacentHTML("beforeend", `<ol class="${ItcSimpleSlider.CLASS_NAME_INDICATORS}">${html}</ol>`);
   }
 
   // refresh extreme values
@@ -255,7 +259,7 @@ class ItcSimpleSlider {
     let translate;
     let clientRect;
     let translateX;
-    if (this._direction === 'next') {
+    if (this._direction === "next") {
       const wrapperLeft = wrapperRect.left;
       const $min = this._$itemWithMinOrder;
       translate = this._minTranslate;
@@ -268,7 +272,7 @@ class ItcSimpleSlider {
         $min.style.transform = `translateX(${translateX}px)`;
         this._refreshExtremeValues();
       }
-    } else if (this._direction === 'prev') {
+    } else if (this._direction === "prev") {
       const wrapperRight = wrapperRect.right;
       const $max = this._$itemWithMaxOrder;
       translate = this._maxTranslate;
@@ -290,7 +294,7 @@ class ItcSimpleSlider {
     const $items = this._elItems;
     function onClick(e) {
       const $target = e.target;
-      this._autoplay('stop');
+      this._autoplay("stop");
       if ($target.classList.contains(ItcSimpleSlider.CLASS_NAME_CONTROL)) {
         e.preventDefault();
         this._direction = $target.dataset.slide;
@@ -315,27 +319,29 @@ class ItcSimpleSlider {
 
     function onTransitionEnd() {
       this._balancingItemsFlag = false;
-      this._el.dispatchEvent(new CustomEvent('transition-end', {
-        bubbles: true,
-      }));
+      this._el.dispatchEvent(
+        new CustomEvent("transition-end", {
+          bubbles: true,
+        })
+      );
     }
 
-    function onMouseEnter() {
-      this._autoplay('stop');
-    }
+    // function onMouseEnter() {
+    //   this._autoplay('stop');
+    // }
 
-    function onMouseLeave() {
-      if (this._config.loop) {
-        this._autoplay();
-      }
-    }
+    // function onMouseLeave() {
+    //   if (this._config.loop) {
+    //     this._autoplay();
+    //   }
+    // }
 
     function onSwipeStart(e) {
-      this._autoplay('stop');
+      this._autoplay("stop");
       if (e.target.closest(`.${ItcSimpleSlider.CLASS_NAME_CONTROL}`)) {
         return;
       }
-      const event = e.type.search('touch') === 0 ? e.touches[0] : e;
+      const event = e.type.search("touch") === 0 ? e.touches[0] : e;
       this._swipeStartPosX = event.clientX;
       this._swipeStartPosY = event.clientY;
       this._hasSwipeState = true;
@@ -346,7 +352,7 @@ class ItcSimpleSlider {
       if (!this._hasSwipeState) {
         return;
       }
-      const event = e.type.search('touch') === 0 ? e.touches[0] : e;
+      const event = e.type.search("touch") === 0 ? e.touches[0] : e;
       let diffPosX = this._swipeStartPosX - event.clientX;
       const diffPosY = this._swipeStartPosY - event.clientY;
       if (!this._hasSwiping) {
@@ -374,7 +380,7 @@ class ItcSimpleSlider {
       if (!this._hasSwipeState) {
         return;
       }
-      const event = e.type.search('touch') === 0 ? e.changedTouches[0] : e;
+      const event = e.type.search("touch") === 0 ? e.changedTouches[0] : e;
       let diffPosX = this._swipeStartPosX - event.clientX;
       if (diffPosX === 0) {
         this._hasSwipeState = false;
@@ -390,13 +396,13 @@ class ItcSimpleSlider {
       const value = (diffPosX / this._elWrapper.getBoundingClientRect().width) * 100;
       this._elItems.classList.remove(ItcSimpleSlider.TRANSITION_NONE);
       if (value > ItcSimpleSlider.SWIPE_THRESHOLD) {
-        this._direction = 'next';
+        this._direction = "next";
         this._move();
       } else if (value < -ItcSimpleSlider.SWIPE_THRESHOLD) {
-        this._direction = 'prev';
+        this._direction = "prev";
         this._move();
       } else {
-        this._direction = 'none';
+        this._direction = "none";
         this._move();
       }
       this._hasSwipeState = false;
@@ -410,40 +416,40 @@ class ItcSimpleSlider {
     }
 
     function onVisibilityChange() {
-      if (document.visibilityState === 'hidden') {
-        this._autoplay('stop');
-      } else if (document.visibilityState === 'visible') {
+      if (document.visibilityState === "hidden") {
+        this._autoplay("stop");
+      } else if (document.visibilityState === "visible") {
         if (this._config.loop) {
           this._autoplay();
         }
       }
     }
     // click
-    this._el.addEventListener('click', onClick.bind(this));
+    this._el.addEventListener("click", onClick.bind(this));
     // transitionstart and transitionend
     if (this._config.loop) {
-      $items.addEventListener('transition-start', onTransitionStart.bind(this));
-      $items.addEventListener('transitionend', onTransitionEnd.bind(this));
+      $items.addEventListener("transition-start", onTransitionStart.bind(this));
+      $items.addEventListener("transitionend", onTransitionEnd.bind(this));
     }
     // mouseenter and mouseleave
-    if (this._config.autoplay) {
-      this._el.addEventListener('mouseenter', onMouseEnter.bind(this));
-      this._el.addEventListener('mouseleave', onMouseLeave.bind(this));
-    }
+    // if (this._config.autoplay) {
+    //   this._el.addEventListener("mouseenter", onMouseEnter.bind(this));
+    //   this._el.addEventListener("mouseleave", onMouseLeave.bind(this));
+    // }
     // swipe
     if (this._config.swipe) {
       const options = ItcSimpleSlider.checkSupportPassiveEvents() ? { passive: false } : false;
-      this._el.addEventListener('touchstart', onSwipeStart.bind(this), options);
-      this._el.addEventListener('touchmove', onSwipeMove.bind(this), options);
-      this._el.addEventListener('mousedown', onSwipeStart.bind(this));
-      this._el.addEventListener('mousemove', onSwipeMove.bind(this));
-      document.addEventListener('touchend', onSwipeEnd.bind(this));
-      document.addEventListener('mouseup', onSwipeEnd.bind(this));
-      document.addEventListener('mouseout', onSwipeEnd.bind(this));
+      this._el.addEventListener("touchstart", onSwipeStart.bind(this), options);
+      this._el.addEventListener("touchmove", onSwipeMove.bind(this), options);
+      this._el.addEventListener("mousedown", onSwipeStart.bind(this));
+      this._el.addEventListener("mousemove", onSwipeMove.bind(this));
+      document.addEventListener("touchend", onSwipeEnd.bind(this));
+      document.addEventListener("mouseup", onSwipeEnd.bind(this));
+      document.addEventListener("mouseout", onSwipeEnd.bind(this));
     }
-    this._el.addEventListener('dragstart', onDragStart.bind(this));
+    this._el.addEventListener("dragstart", onDragStart.bind(this));
     // при изменении активности вкладки
-    document.addEventListener('visibilitychange', onVisibilityChange.bind(this));
+    document.addEventListener("visibilitychange", onVisibilityChange.bind(this));
 
     function onResizeObserver(entries) {
       const contentBoxSize = entries[0].contentBoxSize;
@@ -453,7 +459,7 @@ class ItcSimpleSlider {
       if (this._width.toFixed(1) === newWidth.toFixed(1)) {
         return;
       }
-      this._autoplay('stop');
+      this._autoplay("stop");
       this._elItems.classList.add(ItcSimpleSlider.TRANSITION_NONE);
       this._width = parseInt(newWidth.toFixed(1), 10);
       newTranslateX = newWidth * parseInt(this._elItems.dataset.translate, 10);
@@ -475,17 +481,17 @@ class ItcSimpleSlider {
   }
   // перейти к следующему слайду
   next() {
-    this._direction = 'next';
+    this._direction = "next";
     this._move();
   }
   // перейти к предыдущему слайду
   prev() {
-    this._direction = 'prev';
+    this._direction = "prev";
     this._move();
   }
   // управление автоматической сменой слайдов
   autoplay() {
-    this._autoplay('stop');
+    this._autoplay("stop");
   }
   moveTo(index, useTransition) {
     this._moveTo(index, useTransition);

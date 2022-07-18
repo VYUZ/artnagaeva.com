@@ -24,96 +24,159 @@
 }
 
 /* kenburns */
-
-@keyframes kenburns-1 {
+@keyframes kenburns {
   0% {
-    opacity: 1;    
+    opacity: 1;
     transform: scale(1) translate3d(0px, 0px, 0px);
-  }
-  1.5625% {
+  }  
+  100% {
     opacity: 1;
-  }
-  23.4375% {
-    opacity: 1;
-  }
-  26.5625% {
-    opacity: 0;   
     transform: scale(1.05) translate3d(20px, 0px, 0px);
-  }
-  100% {
+  } 
+}
+
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    transform: scale(1.2);
-  }
-  98.4375% {
-    opacity: 0;
-    transform: scale(1.21176);
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
+    transform: none;
   }
 }
 
-@keyframes kenburns-2 {
-  23.4375% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  26.5625% {
-    opacity: 1;
-  }
-  48.4375% {
-    opacity: 1;
-  }
-  51.5625% {
+@keyframes fadeOut {
+  0% {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(1.5);
   }
   100% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes kenburns-3 {
-  48.4375% {
     opacity: 1;
-    transform: scale(1) translate3d(0px, 0px, 0px);
-  }
-  51.5625% {
-    opacity: 1;
-    transform: scale(1) translate3d(0px, 0px, 0px);
-  }
-  73.4375% {
-    opacity: 1;
-    transform: scale(1.5) translate3d(50px, 50px, 0px);
-  }
-  76.5625% {
-    opacity: 0;
-    transform: scale(1.5) translate3d(50px, 50px, 0px);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1) translate3d(0, 0, 0);
-  }
-}
-
-@keyframes kenburns-4 {
-  73.4375% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  76.5625% {
-    opacity: 1;
-  }
-  98.4375% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
     transform: scale(1);
   }
 }
 
+// @keyframes kenburns-1 {
+//   0% {
+//     transform: scale(1) translate3d(0px, 0px, 0px);
+//   }  
+//   100% {
+//     transform: scale(1.05) translate3d(20px, 0px, 0px);
+//   } 
+// }
+// @keyframes kenburns-2 {
+//   0% {
+//     transform: scale(1.1) translate3d(20px, 0px, 0px);
+//   }  
+//   100% {
+//     transform: scale(1) translate3d(0px, 0px, 0px);
+//   } 
+// }
+// @keyframes kenburns-3 {
+//   0% {
+//     transform: scale(1) translate3d(0px, 0px, 0px);
+//   }  
+//   100% {
+//     transform: scale(1.1) translate3d(50px, 50px, 0px);
+//   } 
+// }
+// @keyframes kenburns-4 {
+//   0% {
+//     transform: scale(1.1) translate3d(0px, 20px, 0px);
+//   }  
+//   100% {
+//     transform: scale(1) translate3d(0px, 0px, 0px);
+//   } 
+// }
+// @keyframes kenburns-1 {
+//   0% {
+//     opacity: 1;
+//     transform: scale(1) translate3d(0px, 0px, 0px);
+//   }
+//   1.5625% {
+//     opacity: 1;
+//   }
+//   23.4375% {
+//     opacity: 1;
+//   }
+//   26.5625% {
+//     opacity: 0;
+//     transform: scale(1.05) translate3d(20px, 0px, 0px);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: scale(1.2);
+//   }
+//   98.4375% {
+//     opacity: 0;
+//     transform: scale(1.21176);
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes kenburns-2 {
+//   23.4375% {
+//     opacity: 1;
+//     transform: scale(1.2);
+//   }
+//   26.5625% {
+//     opacity: 1;
+//   }
+//   48.4375% {
+//     opacity: 1;
+//   }
+//   51.5625% {
+//     opacity: 0;
+//     transform: scale(1);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: scale(1.2);
+//   }
+// }
+
+// @keyframes kenburns-3 {
+//   48.4375% {
+//     opacity: 1;
+//     transform: scale(1) translate3d(0px, 0px, 0px);
+//   }
+//   51.5625% {
+//     opacity: 1;
+//     transform: scale(1) translate3d(0px, 0px, 0px);
+//   }
+//   73.4375% {
+//     opacity: 1;
+//     transform: scale(1.5) translate3d(50px, 50px, 0px);
+//   }
+//   76.5625% {
+//     opacity: 0;
+//     transform: scale(1.5) translate3d(50px, 50px, 0px);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: scale(1) translate3d(0, 0, 0);
+//   }
+// }
+
+// @keyframes kenburns-4 {
+//   73.4375% {
+//     opacity: 1;
+//     transform: scale(1.2);
+//   }
+//   76.5625% {
+//     opacity: 1;
+//   }
+//   98.4375% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: scale(1);
+//   }
+// }
 
 //animation_css lights
 // @keyframes lights {

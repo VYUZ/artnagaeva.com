@@ -93,12 +93,13 @@ isWebp();
   scrollTo();
 })();
 //top-slider
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // инициализация слайдера
-  new ItcSimpleSlider('.itcss', {
+  new ItcSimpleSlider(".itcss", {
     loop: true,
     autoplay: true,
-    interval: 5000,
+    interval: 4000,
     swipe: true,
+    indicators: true,
   });
 });
