@@ -140,6 +140,115 @@ table {
   font-weight: 400;
   src: local(""), url("../fonts/poppins-v20-latin-regular.woff2") format("woff2"), url("../fonts/poppins-v20-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+@keyframes filter-animation {
+  0% {
+    filter: sepia(0) hue-rotate(360deg) saturate(1);
+  }
+  30% {
+    filter: sepia(1) hue-rotate(295deg) saturate(10);
+  }
+  40% {
+    filter: sepia(1) hue-rotate(305deg) saturate(20);
+  }
+  50% {
+    filter: sepia(2) hue-rotate(300deg) saturate(30);
+  }
+  60% {
+    filter: sepia(1) hue-rotate(305deg) saturate(20);
+  }
+  70% {
+    filter: sepia(1) hue-rotate(295deg) saturate(10);
+  }
+  100% {
+    filter: sepia(0) hue-rotate(360deg) saturate(1);
+  }
+}
+/* kenburns */
+@keyframes kenburns-1 {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate3d(0px, 0px, 0px);
+  }
+  1.5625% {
+    opacity: 1;
+  }
+  23.4375% {
+    opacity: 1;
+  }
+  26.5625% {
+    opacity: 0;
+    transform: scale(1.05) translate3d(20px, 0px, 0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  98.4375% {
+    opacity: 0;
+    transform: scale(1.21176);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes kenburns-2 {
+  23.4375% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  26.5625% {
+    opacity: 1;
+  }
+  48.4375% {
+    opacity: 1;
+  }
+  51.5625% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+@keyframes kenburns-3 {
+  48.4375% {
+    opacity: 1;
+    transform: scale(1) translate3d(0px, 0px, 0px);
+  }
+  51.5625% {
+    opacity: 1;
+    transform: scale(1) translate3d(0px, 0px, 0px);
+  }
+  73.4375% {
+    opacity: 1;
+    transform: scale(1.5) translate3d(50px, 50px, 0px);
+  }
+  76.5625% {
+    opacity: 0;
+    transform: scale(1.5) translate3d(50px, 50px, 0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+@keyframes kenburns-4 {
+  73.4375% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  76.5625% {
+    opacity: 1;
+  }
+  98.4375% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
 /* общие стили */
 body {
   font-family: "Poppins", sans-serif;
@@ -250,27 +359,13 @@ section {
 
 .header__logo-img {
   height: 100px;
-  color: hsl(230deg, 100%, 95%);
+  animation: filter-animation 7s infinite;
   transition: 0.5s;
-  -webkit-animation: filter-animation 0.5s infinite;
-  animation: filter-animation 5s infinite;
 }
 .header__logo-img:hover {
   transform: scale(1.09);
-  fill: #ff9800;
 }
 
-@keyframes filter-animation {
-  0% {
-    filter: sepia(0) saturate(2);
-  }
-  50% {
-    filter: sepia(4) saturate(8);
-  }
-  100% {
-    filter: sepia(0) saturate(2);
-  }
-}
 .header-js-active img.header__logo-pic {
   height: 60px;
 }
@@ -315,6 +410,25 @@ section {
   filter: brightness(40%);
   height: 100%;
   width: 100%;
+  animation: kenburns 8s 0ms linear infinite;
+  opacity: 1;
+  transform: scale(1.2);
+}
+.hero__item-img::nth-child(1) {
+  animation-name: kenburns-1;
+  z-index: 3;
+}
+.hero__item-img::nth-child(2) {
+  animation-name: kenburns-2;
+  z-index: 2;
+}
+.hero__item-img::nth-child(3) {
+  animation-name: kenburns-3;
+  z-index: 1;
+}
+.hero__item-img::nth-child(4) {
+  animation-name: kenburns-4;
+  z-index: 0;
 }
 
 .hero__item-text {
