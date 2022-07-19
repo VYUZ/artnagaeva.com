@@ -6,11 +6,11 @@
 
 /* стили для корневого элемента слайдера */
 .itcss {
-  /* position: relative;
+  position: relative;
   overflow: hidden;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin-left: auto;
-  margin-right: auto; */
+  margin-right: auto;
 }
 
 /* стили для wrapper */
