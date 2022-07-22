@@ -14,6 +14,11 @@
     padding-top: 0px;
     padding-bottom: 0px;
   }
+  &.header-js-active .header__logo-img {
+    height: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
 
 .header__wrapper {
@@ -74,7 +79,7 @@
 }
 
 .header__nav-item {
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .header__nav-link {

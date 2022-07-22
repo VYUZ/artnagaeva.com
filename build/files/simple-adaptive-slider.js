@@ -337,7 +337,7 @@ class ItcSimpleSlider {
     // }
 
     function onSwipeStart(e) {
-      this._autoplay("stop");
+      // this._autoplay("stop");
       if (e.target.closest(`.${ItcSimpleSlider.CLASS_NAME_CONTROL}`)) {
         return;
       }

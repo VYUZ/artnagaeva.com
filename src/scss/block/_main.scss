@@ -84,6 +84,50 @@
 }
 
 /* INTRO END */
+/* ABOUT START */
+
+#about {
+  position: relative;
+  background: url("../img/bg2.jpg") center center / cover no-repeat fixed #000;
+}
+
+.about__wrapper {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid maroon;
+}
+.about__img-wrapper {
+  flex: $col-6;
+  border: 1px solid cyan;
+}
+.about__img {
+  object-fit: cover;
+  border: 1px solid lime;
+}
+.about__text-wrapper {
+  flex: $col-6;
+  border: 5px dashed olive;
+}
+.about__title {
+  color: $mygrey-lt;
+  font-size: 50px;
+  & > span {
+    color: white;
+  }
+}
+.about__subtitle {
+  font-size: 75px;
+  & > span {
+    color: $myorange;
+  }
+}
+.about__desc {
+}
+
+/* ABOUT END */
 /* PORTFOLIO START */
 
 #portfolio {
