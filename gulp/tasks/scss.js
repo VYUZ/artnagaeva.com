@@ -5,6 +5,7 @@ import cleanCss from "gulp-clean-css"; //Сжатие CSS файла
 import webpcss from "gulp-webpcss"; //Вывод WEBP изображений
 import autoprefixer from "gulp-autoprefixer"; //Добавление вендорных префиксов
 import groupCssMediaQueries from "gulp-group-css-media-queries"; //Группировка медиазапросов
+import debug from "gulp-debug"; //Отслеживаем в консоли прохождение плагинов через .pipe
 
 const sass = gulpSass(dartSass);
 
@@ -19,7 +20,7 @@ export const scss = () => {
         })
       )
     )
-    .pipe(app.plugins.replace(/@img\//g, "../img/"))
+    .pipe(debug({ title: "@img complete" }))
     .pipe(
       sass({
         outputStyle: "expanded",
@@ -35,6 +36,7 @@ export const scss = () => {
         })
       )
     )
+    .pipe(app.plugins.replace(/@img\//g, "../img/"))
     .pipe(app.gulp.dest(app.path.build.css)) // Раскомментировать, если нужен не сжатый дубль файла стилей
     .pipe(app.plugins.if(app.isBuild, cleanCss()))
     .pipe(

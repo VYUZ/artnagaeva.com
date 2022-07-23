@@ -294,7 +294,7 @@ class ItcSimpleSlider {
     const $items = this._elItems;
     function onClick(e) {
       const $target = e.target;
-      this._autoplay("stop");
+      // this._autoplay("stop");
       if ($target.classList.contains(ItcSimpleSlider.CLASS_NAME_CONTROL)) {
         e.preventDefault();
         this._direction = $target.dataset.slide;
@@ -304,9 +304,9 @@ class ItcSimpleSlider {
         const index = parseInt($target.dataset.slideTo, 10);
         this._moveTo(index);
       }
-      if (this._config.loop) {
-        this._autoplay();
-      }
+      // if (this._config.loop) {
+      //   this._autoplay();
+      // }
     }
 
     function onTransitionStart() {
