@@ -171,9 +171,13 @@
 
 #portfolio {
   padding-top: 50px;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("@img/bg1-new.jpg") fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)),
+    url("@img/bg1-new.jpg") scroll;
   // background:  url('@img/bg1-new.jpg') no-repeat center /cover, #000;
   // background-blend-mode: hard-light; //или multiply
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   // &::after {
   //   content: "";
@@ -336,28 +340,81 @@
   margin: 50px auto;
 }
 
-.more {
+/* PORTFOLIO END */
+/* PARTNERS START */
+
+#partners {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("@img/bg-coop.jpg") center center / cover no-repeat fixed #000;
 }
 
-.portfolio__more-link {  
+.partners__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.more-link {
-  background: $myorange;
-  color: $mygrey;
-  font-size: 18px;
+.partners__subtitle {
+  font-size: 24px;
+  margin-bottom: 50px;
   text-transform: uppercase;
-  padding: 10px 20px;
-  border: 1px solid $myorange;
-  transition: all 300ms linear 0s;
+  color: $myorange;
+  justify-self: left;
+}
+.partners__title {
+  margin-bottom: 100px;
+}
+
+.partners__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.partners__item {
+  flex: $col-3;
+}
+
+.partners__card {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.partners__card-link {
   &:hover {
     color: $myorange;
-    background: rgba(0, 0, 0, 0);
-    border: 1px solid $myorange;
+  }
+  &:hover ~ .partners__card-svg {
+    animation: fadeInOut 0.5s;
+    // transform: scale(1.09);
+    // filter: blur(0.5px);
+    // fill: $myorange;
+    // filter: sepia(1) hue-rotate(320deg) saturate(20);
   }
 }
 
-/* PORTFOLIO END */
+.partners__card-svg {
+  fill: $myorange;
+  margin-bottom: 40px;
+  opacity: 1;
+  transform: scale(1);
+  // color: hsl(230, 100%, 95%);
+  // animation: lights 5s 750ms linear infinite;
+  // -webkit-animation: filter-animation 0.5s infinite;
+  transition: 0.5s;
+}
+
+.partners__card-title {
+  height: 50px;
+  text-transform: uppercase;
+  text-align: start;
+  margin-bottom: 25px;
+}
+.partners__card-desc {
+}
+/* PARTNERS END */
