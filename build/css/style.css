@@ -760,11 +760,23 @@ section {
 }
 
 /* PARTNERS END */
+/* GALLERY START */
+/* GALLERY END */
 :root {
   --card-width: 200px;
   --card-height: 300px;
   --card-transition-duration: 800ms;
   --card-transition-easing: ease;
+}
+
+#gallery {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
 }
 
 button {
@@ -815,6 +827,11 @@ button:focus {
   height: 180%;
   transition: transform 1000ms ease, opacity 1000ms ease;
   overflow: hidden;
+}
+.app__bg__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .app__bg__image.current--image {
   opacity: 1;
@@ -907,7 +924,7 @@ button:focus {
   --card-translateX-offset: 0;
   --card-rotation-offset: var(--current-card-rotation-offset);
   --card-scale-offset: 1.2;
-  --opacity: 0.8;
+  --opacity: 0.9;
 }
 .card.previous--card {
   --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
@@ -1040,24 +1057,6 @@ button:focus {
     --card-height: 400px;
   }
 }
-.support {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  padding: 10px;
-  display: flex;
-}
-.support a {
-  margin: 0 10px;
-  color: #fff;
-  font-size: 1.8rem;
-  backface-visibility: hidden;
-  transition: all 150ms ease;
-}
-.support a:hover {
-  transform: scale(1.1);
-}
-
 /* MAIN END */
 /* FOOTER START */
 /* FOOTER END */
