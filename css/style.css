@@ -207,6 +207,21 @@ table {
     transform: scale(1);
   }
 }
+@keyframes animate-squares {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+    border-radius: 0;
+  }
+  80% {
+    border-radius: 40%;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0.1;
+    border-radius: 50%;
+  }
+}
 /* общие стили */
 body {
   font-family: "Poppins", sans-serif;
@@ -561,8 +576,8 @@ section {
 
 .portfolio__items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  grid-auto-rows: 360px;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-auto-rows: 480px;
   grid-gap: 0;
 }
 
@@ -698,7 +713,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg-coop.jpg") center center/cover no-repeat fixed #000;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg-coop-bw.jpg") center center/cover no-repeat fixed #000;
 }
 
 .partners__container {
@@ -761,10 +776,9 @@ section {
 
 /* PARTNERS END */
 /* GALLERY START */
-/* GALLERY END */
 :root {
-  --card-width: 200px;
-  --card-height: 300px;
+  --card-width: 250px;
+  --card-height: 500px;
   --card-transition-duration: 800ms;
   --card-transition-easing: ease;
 }
@@ -862,10 +876,10 @@ button:focus {
   z-index: 100;
 }
 .cardList__btn.btn--left {
-  left: -5%;
+  left: -10%;
 }
 .cardList__btn.btn--right {
-  right: -5%;
+  right: -10%;
 }
 .cardList__btn .icon {
   width: 100%;
@@ -936,7 +950,7 @@ button:focus {
 }
 .card.previous--card, .card.next--card {
   --card-scale-offset: 0.9;
-  --opacity: 0.4;
+  --opacity: 0.7;
 }
 
 .infoList {
@@ -964,15 +978,19 @@ button:focus {
 }
 .info .text {
   position: relative;
-  font-family: "Montserrat";
+  font-weight: 400;
   font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
   white-space: nowrap;
   color: #fff;
   width: fit-content;
 }
+.info .text.name {
+  margin-bottom: 20px;
+}
 .info .name,
 .info .location {
   text-transform: uppercase;
+  color: #ff9800;
 }
 .info .location {
   font-weight: 800;
@@ -1053,12 +1071,121 @@ button:focus {
 
 @media only screen and (min-width: 800px) {
   :root {
-    --card-width: 250px;
-    --card-height: 400px;
+    --card-width: 400px;
+    --card-height: 600px;
   }
 }
+/* GALLERY END */
 /* MAIN END */
 /* FOOTER START */
+#contact {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../img/bg5.jpg") center center/cover no-repeat fixed #000;
+}
+
+.contact-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.contact-circle {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate-squares 25s linear infinite;
+  bottom: -150px;
+}
+.contact-circle:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+.contact-circle:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+.contact-circle:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+.contact-circle:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+.contact-circle:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+.contact-circle:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+.contact-circle:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+.contact-circle:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+.contact-circle:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+.contact-circle:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+.contact__container {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__footer span {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* FOOTER END */
 /* @media */
 /* @media */
