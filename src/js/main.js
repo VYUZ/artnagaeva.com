@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//gsap slider
+//gsap slider initialization
 console.clear();
 
 const { gsap, imagesLoaded } = window;
