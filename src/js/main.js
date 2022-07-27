@@ -341,7 +341,7 @@ const waitForImages = () => {
         gsap.to(loaderEl, {
           duration: 1,
           scaleX: loadProgress,
-          backgroundColor: `hsl(${loadProgress * 120}, 100%, 50%`,
+          // backgroundColor: `hsl(${loadProgress * 120}, 100%, 50%`,
         });
 
         if (totalImages == loadedImages) {

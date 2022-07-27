@@ -16,4 +16,5 @@ package-lock.json
 #templates
 *.psd
 screen.jpg
+tmp/
 

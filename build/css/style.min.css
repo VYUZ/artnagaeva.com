@@ -482,7 +482,7 @@ section {
 /* ABOUT START */
 #about {
   position: relative;
-  background: url("../img/bg2.jpg") center center/cover no-repeat fixed #000;
+  background: url("../img/bg/bg2.jpg") center center/cover no-repeat fixed #000;
 }
 
 .about__container {
@@ -564,7 +564,7 @@ section {
 /* PORTFOLIO START */
 #portfolio {
   padding-top: 50px;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("../img/bg1-new.jpg") scroll;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("../img/bg/bg1-new.jpg") scroll;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -713,7 +713,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg-coop-bw.jpg") center center/cover no-repeat fixed #000;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg/bg-coop-bw.jpg") center center/cover no-repeat fixed #000;
 }
 
 .partners__container {
@@ -1044,12 +1044,10 @@ button:focus {
   justify-content: center;
   align-items: center;
   background: #000;
-  z-index: 200;
+  z-index: 20;
 }
 .loading__wrapper .loader--text {
   color: #fff;
-  font-family: "Montserrat";
-  font-weight: 500;
   margin-bottom: 1.4rem;
 }
 .loading__wrapper .loader {
@@ -1064,7 +1062,7 @@ button:focus {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgb(255, 0, 0);
+  background: #ff9800;
   transform: scaleX(0);
   transform-origin: left;
 }
@@ -1080,7 +1078,7 @@ button:focus {
 /* FOOTER START */
 #contact {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../img/bg5.jpg") center center/cover no-repeat fixed #000;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg/bg11-bw.jpg") center center/cover no-repeat fixed #000;
 }
 
 .contact-circles {
@@ -1176,14 +1174,27 @@ button:focus {
   align-items: center;
 }
 
+.contact__social-wrapper {
+  width: 100%;
+  padding: 30px 0;
+  border-top: 1px solid #ff9800;
+  border-bottom: 1px solid #ff9800;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .contact__title {
-  padding-top: 10%;
   text-transform: uppercase;
   font-size: 40px;
+  margin: 20px;
 }
 
 .contact__social-links {
-  border: 1px solid maroon;
+  justify-content: center;
   z-index: 1;
 }
 .contact__social-links .social-link {
@@ -1196,6 +1207,9 @@ button:focus {
   align-items: center;
   margin-right: 100px;
   transition: all 300ms linear 0s;
+}
+.contact__social-links .social-link:last-child {
+  margin-right: 0;
 }
 .contact__social-links .social-link:hover {
   border-color: #ff9800;
@@ -1211,17 +1225,17 @@ button:focus {
 }
 
 .contact__main-wrapper {
-  border: 1px solid cyan;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
   z-index: 1;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .contact__logo-figure {
-  border: 1px solid lime;
   flex: 0 1 calc(100% / 12 * 3 - 40px);
+  padding: 0 10px;
 }
 
 .contact__logo-link:hover > .contact__logo-img {
@@ -1230,13 +1244,15 @@ button:focus {
 
 .contact__logo-img {
   height: 120px;
-  width: 150px;
+  width: 160px;
   transition: 0.5s;
+  margin-bottom: 20px;
 }
 
 .contact__works-wrapper {
+  color: rgba(255, 255, 255, 0.6);
   flex: 0 1 calc(100% / 12 * 6 - 40px);
-  border: 1px solid olive;
+  padding: 0 10px;
 }
 
 .contact__works-title {
@@ -1244,9 +1260,87 @@ button:focus {
   margin-bottom: 30px;
 }
 
+.contact__works-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-auto-rows: 160px;
+  grid-gap: 10px;
+}
+
+.contact__works-figure {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.contact__works-figure:hover > .contact__works-overlay {
+  opacity: 1;
+}
+.contact__works-figure:hover .contact__works-link {
+  transform: scale(1);
+}
+.contact__works-figure:hover .contact__works-img {
+  filter: blur(1px) brightness(90%);
+  transform: scale(1.1);
+}
+
+.contact__works-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0px) brightness(60%);
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+.contact__works-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  display: block;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.contact__works-link {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.6s ease;
+  transform: scale(1.5);
+  z-index: 2;
+}
+
+/* for touch screen devices */
+@media (hover: none) {
+  .contact__works-figure .contact__works-overlay::before {
+    opacity: 1;
+  }
+  .contact__works-figure .contact__works-overlay {
+    opacity: 1;
+  }
+  .contact__works-figure .contact__works-link {
+    transform: scale(1);
+  }
+  .contact__works-figure .contact__works-img {
+    filter: blur(1px) brightness(90%);
+    transform: scale(1.1);
+  }
+}
 .contact__links-wrapper {
   flex: 0 1 calc(100% / 12 * 3 - 40px);
-  border: 1px solid gold;
+  padding: 0 10px;
 }
 
 .contact__links-title {
@@ -1257,19 +1351,35 @@ button:focus {
 .contact__link-li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
 }
-.contact__link-li::before {
-  content: url("../img/svg/circle-small-sol.svg");
-  zoom: 25%;
+.contact__link-li:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+.contact__link-li:hover .contact__link-svg {
+  fill: white;
+}
+
+.contact__link-svg {
+  width: 18px;
+  height: 18px;
+  fill: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  transition: 0.3s;
 }
 
 .contact-link {
+  color: rgba(255, 255, 255, 0.6);
   text-transform: capitalize;
+  transition: 0.3s;
+  padding: 10px 0 10px 10px;
 }
 
 .contact__footer {
   width: 100%;
-  border: 1px solid red;
+  border: 1px solid #ff9800;
   padding: 1% 0;
   display: flex;
   justify-content: center;
