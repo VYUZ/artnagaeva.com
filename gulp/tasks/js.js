@@ -14,22 +14,21 @@ export const js = () => {
           })
         )
       )
-      // .pipe(
-      //   babel({
-      //     presets: [
-      //       [
-      //         "@babel/env",
-      //         {
-      //           targets: {
-      //             // The % refers to the global coverage of users from browserslist
-      //             browsers: ["last 2 versions", "> 0.25%, not dead"],
-      //           },
-      //         },
-      //       ],
-      //     ],
-      //   })
-      // )
-      .pipe(app.gulp.dest(app.path.build.js))
+      .pipe(
+        babel({
+          presets: [
+            [
+              "@babel/env",
+              {
+                targets: {
+                  // The % refers to the global coverage of users from browserslist
+                  browsers: ["last 2 versions", "> 0.25%, not dead"],
+                },
+              },
+            ],
+          ],
+        })
+      )
       .pipe(
         webpack({
           mode: app.isBuild ? "production" : "development",
