@@ -7,6 +7,7 @@ $gap: 40px;
 $borderline: 1px solid rgba(255, 255, 255, 0.2);
 $col: 12;
 $col-1: 0 1 calc(100% / #{$col} * 1 - #{$gap});
+$col-2: 0 1 calc(100% / #{$col} * 2 - #{$gap});
 $col-3: 0 1 calc(100% / #{$col} * 3 - #{$gap});
 $col-4: 0 1 calc(100% / #{$col} * 4 - #{$gap});
 $col-5: 0 1 calc(100% / #{$col} * 5 - #{$gap});

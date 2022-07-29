@@ -50,7 +50,7 @@ a {
 }
 
 section {
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   background: center center / cover no-repeat #000000;
   // margin-bottom: 50px;
@@ -126,7 +126,7 @@ section {
 
 /* MAIN END */
 
-@import "block/footer";
+// @import "block/footer";
 
 /* @media */
 /* @media */
