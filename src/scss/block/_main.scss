@@ -18,6 +18,7 @@
   transform: translate(-50%, -50%);
   width: 50%;
   margin: auto;
+  --animate-duration: 4s;
 
   color: $myorange;
   text-align: start;
@@ -53,7 +54,7 @@
 }
 
 .itcss__item_active .hero__item-text {
-  animation-name: fadeOut;
+  animation-name: myfadeOut;
   animation-duration: 4s;
 }
 
@@ -164,6 +165,7 @@
 .about__desc {
   z-index: 1;
   text-align: center;
+  --animate-duration: 2s;
 }
 
 /* ABOUT END */
@@ -392,6 +394,7 @@
 .partners__card {
   display: flex;
   flex-direction: column-reverse;
+
 }
 
 .partners__card-link {
