@@ -65,13 +65,10 @@ section {
   height: 100%;
 }
 
-.more {
+button.more {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.more-link {
   background: $myorange;
   color: $mygrey;
   font-size: 18px;
@@ -85,6 +82,21 @@ section {
     border: 1px solid $myorange;
   }
 }
+
+// .more-link {
+//   background: $myorange;
+//   color: $mygrey;
+//   font-size: 18px;
+//   text-transform: uppercase;
+//   padding: 10px 20px;
+//   border: 1px solid $myorange;
+//   transition: all 300ms linear 0s;
+//   &:hover {
+//     color: $myorange;
+//     background: rgba(0, 0, 0, 0);
+//     border: 1px solid $myorange;
+//   }
+// }
 
 .social-links {
   display: flex;
@@ -100,12 +112,11 @@ section {
   align-items: center;
   margin-right: 10px;
   transition: all 300ms linear 0s;
- 
+
   &:hover {
     border-color: $myorange;
-    animation: fadeIn; 
+    animation: fadeIn;
     animation-duration: 0.5s;
-
   }
   &:hover .social-svg {
     fill: $myorange;

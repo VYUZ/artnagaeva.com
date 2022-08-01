@@ -115,9 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //////////////////////////////
 // wow.js
-// import "animate.css";
-import { WOW } from 'wowjs'
-// import 'wowjs/css/libs/animate.css'
+import { WOW } from "wowjs";
 var wow = new WOW({
   boxClass: "wow", // класс, скрывающий элемент до момента отображения на экране (по умолчанию, wow)
   animateClass: "animated", // класс для анимации элемента (по умолчанию, animated)
@@ -132,3 +130,22 @@ var wow = new WOW({
 });
 wow.init();
 // new WOW().init();
+///////////////////////////////////
+///load more /////
+document.addEventListener("DOMContentLoaded", function () {
+  const limit = 5;
+  const nextOpen = (wrapper, button) => {
+    const boxs = wrapper.querySelectorAll(".portfolio__item"),
+      len = boxs.length - 2,
+      endBox = wrapper.querySelector(".nextstop"),
+      index = [...boxs].indexOf(endBox) + limit;
+    if (endBox) endBox.classList.remove("nextstop");
+    if (index < len) boxs[index].classList.add("nextstop");
+    else button.remove();
+  };
+  document.querySelectorAll(".portfolio__items").forEach((wrapper) => {
+    const button = wrapper.nextElementSibling;
+    button.addEventListener("click", nextOpen.bind(null, wrapper, button));
+    nextOpen(wrapper, button);
+  });
+});
