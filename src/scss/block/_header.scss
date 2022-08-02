@@ -7,7 +7,8 @@
   padding-top: 20px;
   padding-bottom: 20px;
   width: 100%;
-  transition: all 0.4s ease-in-out;  
+  transition: all 0.4s ease-in-out;
+  background: rgba(255, 255, 255, 0.5);
   z-index: 9;
   &.header-js-active {
     background-color: black;
@@ -18,6 +19,25 @@
     height: 60px;
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+  &.header-js-active .header__nav-link {
+    color: white;
+    &:hover {
+      color: $mycolor2;
+    }
+  }
+  &.header-js-active .social-link {
+    border: 2px solid black;
+
+    &:hover {
+      border-color: $mycolor2;
+    }
+    &:hover .social-svg {
+      fill: $mycolor2;
+    }
+  }
+  &.header-js-active .social-svg {
+    fill: white;
   }
 }
 
@@ -45,7 +65,7 @@
   // color: hsl(230, 100%, 95%);
   // animation: lights 5s 750ms linear infinite;
   // -webkit-animation: filter-animation 0.5s infinite;
-  animation: filter-animation 7s infinite;
+  // animation: filter-animation 7s infinite;
   transition: 0.5s;
 
   &:hover {
@@ -56,11 +76,9 @@
   }
 }
 
-
-
-.header-js-active img.header__logo-pic {
-  height: 60px;
-}
+// .header-js-active img.header__logo-pic {
+//   height: 60px;
+// }
 
 .header__nav {
   font-weight: 400;
@@ -78,11 +96,11 @@
 
 .header__nav-link {
   text-transform: uppercase;
-  color: hsl(230, 100%, 95%);
+  color: black;
   // animation: lights 5s 750ms linear infinite;
   transition: all 300ms linear 0s;
   &:hover {
-    color: $myorange;
+    color: $mycolor2;
   }
 }
 

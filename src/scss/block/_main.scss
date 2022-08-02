@@ -11,6 +11,30 @@
   position: relative;
 }
 
+// .hero__logo-img {
+//   position: absolute;
+//   top: -10%;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   width: 20%;
+//   height: 20%;
+//   margin: auto;
+//   z-index: 1;
+//   // color: hsl(230, 100%, 95%);
+//   // animation: lights 5s 750ms linear infinite;
+//   // -webkit-animation: filter-animation 0.5s infinite;
+//   // animation: filter-animation 7s infinite;
+//   animation: my-zoomIn-fadeIn 3s;
+//   transition: 0.5s;
+
+//   &:hover {
+//     transform: scale(1.09);
+//     // filter: blur(0.5px);
+//     // fill: $myorange;
+//     // filter: sepia(1) hue-rotate(320deg) saturate(20);
+//   }
+// }
 .hero__item-title {
   position: absolute;
   top: 50%;
@@ -43,14 +67,14 @@
 
 .hero__item-img {
   object-fit: cover;
-  filter: brightness(40%);
+  // filter: brightness(40%);
   position: absolute;
   height: 100%;
   width: 100%;
 }
 
 .itcss__item_active .hero__item-img {
-  animation: kenburns 4s 100ms linear infinite;
+  animation: kenburns 6s 100ms linear infinite;
 }
 
 .itcss__item_active .hero__item-text {
@@ -76,6 +100,7 @@
 .hero__item-subtitle {
   font-size: 40px;
   font-weight: inherit;
+  color: black;
 }
 
 .hero__item-desc {
@@ -91,10 +116,23 @@
 #about {
   position: relative;
   // margin-bottom: 100px;
-  background: url("@img/bg/bg2.jpg") center center / cover no-repeat fixed #000;
+  // background: url("@img/bg/bg2.jpg") center center / cover no-repeat fixed #000;
+  background: $mygrey;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .about__container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 30%;
+  margin: auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,8 +154,8 @@
     left: 0;
     width: 100%;
     height: 80%;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 5%;
+    background: rgba(0, 0, 0, 0.99);
+    border-radius: 0%;
   }
 }
 
@@ -155,7 +193,7 @@
   font-weight: 100;
   text-align: left;
   & > span {
-    color: $myorange;
+    color: $mycolor2;
     font-size: 75px;
     text-transform: uppercase;
     padding-left: 10%;
@@ -173,8 +211,8 @@
 
 #portfolio {
   padding-top: 50px;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)),
-    url("@img/bg/bg1-new.jpg") scroll;
+  // background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)),
+  background: black;
   // background:  url('@img/bg1-new.jpg') no-repeat center /cover, #000;
   // background-blend-mode: hard-light; //или multiply
   display: flex;
@@ -198,6 +236,7 @@
 
 .portfolio__caption {
   margin-bottom: 30px;
+  color: $mycolor2;
 }
 
 .portfolio__items {
@@ -205,8 +244,8 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(160px, 280px));
-  grid-gap: 2rem;
-  max-height: 300vh;
+  grid-gap: 4rem;
+  // max-height: 300vh;
   ////////////////////////
   // display: grid;
   // grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -316,36 +355,44 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(0px) brightness(60%);
+  // filter: blur(0px) brightness(60%);
   transition: all 0.5s ease-in-out;
   transform: scale(1);
 }
 .portfolio__overlay {
   background: rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
-  left: calc($gap * 0.5);
-  top: calc($gap * 0.5);
-  width: calc(100% - $gap);
-  height: calc(100% - $gap);
+  // left: calc($gap * 0.5);
+  // top: calc($gap * 0.5);
+  // width: calc(100% - $gap);
+  // height: calc(100% - $gap);
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 150px;
+  margin: auto;
+
   opacity: 0;
   display: block;
   overflow: hidden;
   transition: all 0.5s;
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    border: 10px solid rgba(255, 255, 255, 0.7);
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    transition: all 0.3s linear;
-    opacity: 0;
-    border-color: rgba(238, 193, 6, 0.7);
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   // border: 10px solid rgba(255, 255, 255, 0.7);
+  //   box-sizing: border-box;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 1;
+  //   transition: all 0.3s linear;
+  //   opacity: 0;
+  //   // border-color: rgba(238, 193, 6, 0.7);
+  // }
 }
 .portfolio__link {
   position: absolute;
