@@ -1,5 +1,5 @@
 // for header__logo
-@keyframes filter-animation {
+@keyframes my-filter-animation {
   0% {
     filter: sepia(0) hue-rotate(360deg) saturate(1);
   }
@@ -35,7 +35,6 @@
   }
 }
 
-/* my-zoomIn-fadeIn */
 @keyframes my-zoomIn-fadeIn {
   0% {
     opacity: 0;
