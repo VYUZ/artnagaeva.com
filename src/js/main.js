@@ -115,21 +115,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //////////////////////////////
 // wow.js
-import { WOW } from "wowjs";
-var wow = new WOW({
-  boxClass: "wow", // класс, скрывающий элемент до момента отображения на экране (по умолчанию, wow)
-  animateClass: "animated", // класс для анимации элемента (по умолчанию, animated)
-  offset: 0, // расстояние в пикселях от нижнего края браузера до верхней границы элемента, необходимое для начала анимации (по умолчанию, 0)
-  mobile: true, // включение/отключение WOW.js на мобильных устройствах (по умолчанию, включено)
-  live: true, // поддержка асинхронно загруженных элементов (по умолчанию, включена)
-  callback: function (box) {
-    // функция срабатывает каждый раз при старте анимации
-    // аргумент box — элемент, для которого была запущена анимация
-  },
-  scrollContainer: null, // селектор прокручивающегося контейнера (опционально, по умолчанию, window)
-});
-wow.init();
-// new WOW().init();
+// import { WOW } from "wowjs";
+// var wow = new WOW({
+//   boxClass: "wow", // класс, скрывающий элемент до момента отображения на экране (по умолчанию, wow)
+//   animateClass: "animated", // класс для анимации элемента (по умолчанию, animated)
+//   offset: 0, // расстояние в пикселях от нижнего края браузера до верхней границы элемента, необходимое для начала анимации (по умолчанию, 0)
+//   mobile: true, // включение/отключение WOW.js на мобильных устройствах (по умолчанию, включено)
+//   live: true, // поддержка асинхронно загруженных элементов (по умолчанию, включена)
+//   callback: function (box) {
+//     // функция срабатывает каждый раз при старте анимации
+//     // аргумент box — элемент, для которого была запущена анимация
+//   },
+//   scrollContainer: null, // селектор прокручивающегося контейнера (опционально, по умолчанию, window)
+// });
+// wow.init();
+new WOW().init();
 ///////////////////////////////////
 ///load more /////
 // document.addEventListener("DOMContentLoaded", function () {
@@ -149,3 +149,22 @@ wow.init();
 //     nextOpen(wrapper, button);
 //   });
 // });
+/////////////////////////
+// loadmore 2
+let loadMoreBtn = document.querySelector(".portfolio__more");
+let currentItem = 4;
+
+loadMoreBtn.onclick = () => {
+  let boxes = [...document.querySelectorAll(".portfolio__items .portfolio__item")];
+  for (var i = currentItem; i < currentItem + 4; i++) {
+    boxes[i].style.display = "inline-block";
+  }
+  console.log("currentItem = " + currentItem + "boxes.length = " + boxes.length);
+  currentItem += 4;
+
+  if (currentItem >= boxes.length) {
+    loadMoreBtn.style.display = "none";
+    console.log("currentItem = " + currentItem + "boxes.length = " + boxes.length);
+  }
+};
+/////////////////////////////////
