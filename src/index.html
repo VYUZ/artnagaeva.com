@@ -88,10 +88,19 @@
         <h2 class="portfolio__caption wow animate__animated animate__zoomIn" data-wow-duration="1s" data-wow-delay="0s">
           Portfolio
         </h2>
-        <ul class="portfolio__items wow animate__animated animate__slideInUp">
+        <ul
+          class="portfolio__items wow animate__animated animate__slideInUp"
+          data-wow-duration="1s"
+          data-wow-delay="0.5s"
+        >
           <li class="portfolio__item">
             <figure class="portfolio__figure">
-              <img class="portfolio__img" src="@img/catalog/red-mountain-mockup-1-res.jpg" alt="red-mountain-mockup" loading="lazy" />
+              <img
+                class="portfolio__img"
+                src="@img/catalog/red-mountain-mockup-1-res.jpg"
+                alt="red-mountain-mockup"
+                loading="lazy"
+              />
               <figcaption class="portfolio__overlay">
                 <a href="#!" class="portfolio__link">red mountain</a>
               </figcaption>
@@ -107,7 +116,12 @@
           </li>
           <li class="portfolio__item">
             <figure class="portfolio__figure">
-              <img class="portfolio__img" src="@img/catalog/mountains-mockup-3.jpg" alt="mountains-mockup" loading="lazy" />
+              <img
+                class="portfolio__img"
+                src="@img/catalog/mountains-mockup-3.jpg"
+                alt="mountains-mockup"
+                loading="lazy"
+              />
               <figcaption class="portfolio__overlay">
                 <a href="#!" class="portfolio__link">mountains</a>
               </figcaption>
@@ -121,47 +135,37 @@
               </figcaption>
             </figure>
           </li>
-          <li class="portfolio__item">
-            <figure class="portfolio__figure">
-              <img class="portfolio__img" src="@img/catalog/gilding-2.jpg" alt="san francisco" />
-              <figcaption class="portfolio__overlay">
-                <a href="#!" class="portfolio__link">gilding</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="portfolio__item">
-            <figure class="portfolio__figure">
-              <img class="portfolio__img" src="@img/catalog/mountains-mockup-3.jpg" alt="san francisco" />
-              <figcaption class="portfolio__overlay">
-                <a href="#!" class="portfolio__link">mountains</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="portfolio__item">
-            <figure class="portfolio__figure">
-              <img class="portfolio__img" src="@img/catalog/silver-lines-mockup-1.jpg" alt="san francisco" />
-              <figcaption class="portfolio__overlay">
-                <a href="#!" class="portfolio__link">silver lines</a>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="portfolio__item">
-            <figure class="portfolio__figure">
-              <img class="portfolio__img" src="@img/catalog/silver-lines-mockup-1.jpg" alt="san francisco" />
-              <figcaption class="portfolio__overlay">
-                <a href="#!" class="portfolio__link">silver lines</a>
-              </figcaption>
-            </figure>
-          </li>
         </ul>
-        <button
+        <!-- <button
           class="portfolio__more more wow animate__animated animate__zoomIn"
           data-wow-duration="1s"
           data-wow-delay="0s"
+        > -->
+        <!-- <a href="#!" class="portfolio__more-link more-link">load more</a> -->
+        <!-- load more
+        </button> -->
+        <nav
+          aria-label="pagination"
+          class="wow animate__animated animate__zoomIn"
+          data-wow-duration="1s"
+          data-wow-delay="0.5s"
         >
-          <!-- <a href="#!" class="portfolio__more-link more-link">load more</a> -->
-          load more
-        </button>
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Предыдущая">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Следующая">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </section>
       <!--PORTFOLIO SECTION END-->
       <!--PARTNERS SECTION START-->

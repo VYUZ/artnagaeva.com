@@ -151,20 +151,20 @@ new WOW().init();
 // });
 /////////////////////////
 // loadmore 2
-let loadMoreBtn = document.querySelector(".portfolio__more");
-let currentItem = 4;
+// let loadMoreBtn = document.querySelector(".portfolio__more");
+// let currentItem = 4;
 
-loadMoreBtn.onclick = () => {
-  let boxes = [...document.querySelectorAll(".portfolio__items .portfolio__item")];
-  for (var i = currentItem; i < currentItem + 4; i++) {
-    boxes[i].style.display = "inline-block";
-  }
-  console.log("currentItem = " + currentItem + "boxes.length = " + boxes.length);
-  currentItem += 4;
+// loadMoreBtn.onclick = () => {
+//   let boxes = [...document.querySelectorAll(".portfolio__items .portfolio__item")];
+//   for (var i = currentItem; i < currentItem + 4; i++) {
+//     boxes[i].style.display = "inline-block";
+//   }
+//   console.log("currentItem = " + currentItem + "boxes.length = " + boxes.length);
+//   currentItem += 4;
 
-  if (currentItem >= boxes.length) {
-    loadMoreBtn.style.display = "none";
-    console.log("currentItem = " + currentItem + "boxes.length = " + boxes.length);
-  }
-};
+//   if (currentItem >= boxes.length) {
+//     loadMoreBtn.style.display = "none";
+//     console.log("currentItem = " + currentItem + "boxes.length = " + boxes.length);
+//   }
+// };
 /////////////////////////////////

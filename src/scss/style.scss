@@ -98,6 +98,33 @@ button.more {
 //   }
 // }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-item {
+  margin-right: 0.5rem;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.page-link {
+  position: relative;
+  display: block;
+  color: $mygrey-lt;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid $mygrey;
+  padding: 6px 18px;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 300ms linear 0s;
+  &:hover {
+    background: $mycolor2;
+    color: #000;
+  }
+}
+
 .social-links {
   display: flex;
 }
