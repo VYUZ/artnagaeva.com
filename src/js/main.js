@@ -109,27 +109,107 @@ document.addEventListener("DOMContentLoaded", () => {
 //fulpage initialization
 // new fullpage("#fullpage", {
 //   //options here
+//   scrollBar: true,
 //   autoScrolling: true,
 //   scrollHorizontally: false,
 // });
 
+// $("#fullpage").fullpage({
+//   scrollBar: true,
+//   afterRender: function () {
+//     // new WOW().init();
+//   },
+//   afterLoad: function () {
+//     new WOW().init();
+//   },
+// });
+
+// new fullpage("#fullpage", {
+//   //options here
+//   scrollBar: true,
+//   autoScrolling: true,
+//   afterLoad: function () {
+//     new WOW().init();
+//   },
+
+// });
+////////////////////////JQUERY//////////////////////
+
+// $(function() {
+//   new WOW().init();
+//   $('#fullpage').fullpage({
+//     // WOWはスクロールイベントを感知しているので、scrollBar:trueにする必要がある
+//     scrollBar:true
+//   });
+// });
+////////////////////////////////////
+// $(document).ready(function () {
+//   $("#fullpage").fullpage({
+//     scrollBar: true,
+//     afterRender: function () {
+//       new WOW().init();
+//     },
+//   });
+//   //methods
+//   $.fn.fullpage.setAllowScrolling(true);
+// });
+//////////////////////////////////////////
+// WOW + Fullpage
+// new WOW().init();
+// $("#fullpage").fullpage({
+//   scrollBar: true,
+//   autoScrolling: true,
+// });
+
+// $(document).ready(function() {
+//   $('#fullpage').fullpage({
+//       scrollBar: true,
+//       autoScrolling: true,
+//       onLeave: function(){
+//           new WOW().init();
+//       }
+//   });
+// });
+// $("#fullpage").fullpage({
+//   verticalCentered: false,
+//   autoScrolling: false,
+//   easing: "linear",
+//   easingcss3: "ease",
+//   afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
+//     if (slideIndex != 0) {
+//       wow = new WOW({
+//         animateClass: "animated",
+//         live: true,
+//       });
+//       wow.init();
+//     }
+//   },
+//   onSlideLeave: function (anchorLink, index, slideIndex, direction) {
+//     $(".section")
+//       .not(".section-" + slideIndex)
+//       .find(".wow")
+//       .css("visibility", "hidden");
+//   },
+// });
 //////////////////////////////
 // wow.js
 // import { WOW } from "wowjs";
-// var wow = new WOW({
-//   boxClass: "wow", // класс, скрывающий элемент до момента отображения на экране (по умолчанию, wow)
-//   animateClass: "animated", // класс для анимации элемента (по умолчанию, animated)
-//   offset: 0, // расстояние в пикселях от нижнего края браузера до верхней границы элемента, необходимое для начала анимации (по умолчанию, 0)
-//   mobile: true, // включение/отключение WOW.js на мобильных устройствах (по умолчанию, включено)
-//   live: true, // поддержка асинхронно загруженных элементов (по умолчанию, включена)
-//   callback: function (box) {
-//     // функция срабатывает каждый раз при старте анимации
-//     // аргумент box — элемент, для которого была запущена анимация
-//   },
-//   scrollContainer: null, // селектор прокручивающегося контейнера (опционально, по умолчанию, window)
-// });
-// wow.init();
-new WOW().init();
+var wow = new WOW({
+  boxClass: "wow", // класс, скрывающий элемент до момента отображения на экране (по умолчанию, wow)
+  animateClass: "animated", // класс для анимации элемента (по умолчанию, animated)
+  offset: 0, // расстояние в пикселях от нижнего края браузера до верхней границы элемента, необходимое для начала анимации (по умолчанию, 0)
+  mobile: true, // включение/отключение WOW.js на мобильных устройствах (по умолчанию, включено)
+  live: true, // поддержка асинхронно загруженных элементов (по умолчанию, включена)
+  callback: function (box) {
+    // функция срабатывает каждый раз при старте анимации
+    // аргумент box — элемент, для которого была запущена анимация
+  },
+  scrollContainer: null, // селектор прокручивающегося контейнера (опционально, по умолчанию, window)
+});
+wow.init();
+// new WOW().init();
+//////////////////////
+
 ///////////////////////////////////
 ///load more /////
 // document.addEventListener("DOMContentLoaded", function () {

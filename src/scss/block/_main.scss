@@ -38,20 +38,27 @@
 .hero__item-title {
   position: absolute;
   top: 50%;
-  left: 65%;
+  // left: 65%;
+  // width: 50%;
+  // text-align: start;
+  text-align: center;
+  width: 100%;
+  left: 50%;
+  background: rgb(255, 255, 255, 0.5);
+  line-height: 150px;
+
   transform: translate(-50%, -50%);
-  width: 50%;
   margin: auto;
   --animate-duration: 4s;
 
-  color: $myorange;
-  text-align: start;
+  
+  font-family: "brokllyng", sans-serif;
+  font-size: 100px;
+  color: black;
+  padding-left: 50px;
   // margin-bottom: 50px;
   z-index: 1;
   & span {
-    font-size: 100px;
-    color: white;
-    padding-left: 50px;
   }
 }
 
@@ -116,8 +123,8 @@
 #about {
   position: relative;
   // margin-bottom: 100px;
-  // background: url("@img/bg/bg2.jpg") center center / cover no-repeat fixed #000;
-  background: $mygrey;
+  background: url("@img/bg/bg_new_silver.jpg") center center / cover no-repeat fixed $mygrey;
+  // background: $mygrey;
   // display: flex;
   // justify-content: center;
   // align-items: center;
@@ -154,7 +161,7 @@
     left: 0;
     width: 100%;
     height: 80%;
-    background: rgba(0, 0, 0, 0.99);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 0%;
   }
 }
@@ -495,7 +502,7 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("@img/bg/bg-coop-bw.jpg") center center / cover no-repeat fixed #000;
+    url("@img/bg/bg_new_minimal.jpg") center center / cover no-repeat fixed #000;
 }
 
 .partners__container {
@@ -807,7 +814,7 @@
 
 .contact__works-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-auto-rows: 160px;
   grid-gap: $gap * 0.25;
 }
