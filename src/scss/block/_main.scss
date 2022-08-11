@@ -46,10 +46,10 @@
   left: 50%;
   background: rgb(255, 255, 255, 0.5);
   line-height: 150px;
+  // animation: my-zoomIn-fadeIn 1s 100ms linear;
 
   transform: translate(-50%, -50%);
   margin: auto;
-  --animate-duration: 4s;
 
   font-family: "brokllyng", sans-serif;
   font-size: 100px;
@@ -118,6 +118,10 @@
 
 .itcss__indicators {
   bottom: 50px;
+}
+
+.itcss__control {
+  z-index: 1;
 }
 
 /* INTRO END */
@@ -194,7 +198,8 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.about__title {
+.about__pretitle,
+.about__subtitle {
   color: $mygrey-lt;
   font-size: 32px;
   @include adaptiv-value("font-size", 32, 24, 1);
@@ -203,7 +208,7 @@
   }
   z-index: 1;
 }
-.about__subtitle {
+.about__title {
   font-size: 50px;
   @include adaptiv-value("font-size", 50, 30, 1);
   font-weight: 100;
@@ -217,7 +222,9 @@
   }
   z-index: 1;
 }
+
 .about__desc {
+  color: $mygrey-lt;
   z-index: 1;
   text-align: center;
   --animate-duration: 2s;
@@ -623,9 +630,14 @@
 
 #contact {
   position: relative;
+<<<<<<< HEAD
   // background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
   //   url("@img/bg/bg11-bw.jpg") center center / cover no-repeat fixed #000;
   background: rgba(0, 0, 0, 0.5);
+=======
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("@img/bg/bg_new_silver.jpg") center center / cover no-repeat fixed #000;
+>>>>>>> refs/remotes/origin/master
 }
 
 // .contact-circles {
