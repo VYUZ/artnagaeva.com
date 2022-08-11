@@ -51,7 +51,6 @@
   margin: auto;
   --animate-duration: 4s;
 
-  
   font-family: "brokllyng", sans-serif;
   font-size: 100px;
   color: black;
@@ -113,6 +112,10 @@
 .hero__item-desc {
 }
 
+.itcss__control {
+  z-index: 1;
+}
+
 .itcss__indicators {
   bottom: 50px;
 }
@@ -123,7 +126,8 @@
 #about {
   position: relative;
   // margin-bottom: 100px;
-  background: url("@img/bg/bg_new_silver.jpg") center center / cover no-repeat fixed $mygrey;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("@img/bg/bg_new_silver.jpg") center center / cover no-repeat fixed $mygrey;
   // background: $mygrey;
   // display: flex;
   // justify-content: center;
@@ -137,13 +141,22 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 30%;
+  height: 100%;
   margin: auto;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0%;
+  }
+
   // border: 1px solid orange;
 }
 .about__wrapper {
@@ -154,15 +167,9 @@
   justify-content: space-between;
   align-items: center;
   // border: 1px solid lime;
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80%;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 0%;
+  @include m700 {
+    flex-direction: column;
+    height: 100%;
   }
 }
 
@@ -175,7 +182,7 @@
 .about__img {
   height: 100%;
   object-fit: cover;
-  // border: 1px solid goldenrod;
+  // border: 1px solid goldenrod; 
 }
 .about__text-wrapper {
   flex: $col-6;
@@ -190,6 +197,7 @@
 .about__title {
   color: $mygrey-lt;
   font-size: 32px;
+  @include adaptiv-value("font-size", 32, 24, 1);
   & > span {
     color: white;
   }
@@ -197,11 +205,13 @@
 }
 .about__subtitle {
   font-size: 50px;
+  @include adaptiv-value("font-size", 50, 30, 1);
   font-weight: 100;
   text-align: left;
   & > span {
     color: $mycolor2;
     font-size: 75px;
+    @include adaptiv-value("font-size", 75, 40, 1);
     text-transform: uppercase;
     padding-left: 10%;
   }
@@ -211,6 +221,9 @@
   z-index: 1;
   text-align: center;
   --animate-duration: 2s;
+  & span {
+    color: $mygrey-lt;
+  }
 }
 
 /* ABOUT END */
@@ -256,6 +269,17 @@
   // grid-template-rows: 450px 450px;
   grid-gap: $gap;
   // margin-bottom: $gap * 2;
+  @include m1440 {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+  @include m1100 {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+  }
+  @include m575 {
+    grid-template-columns: minmax(200px, 1fr);
+    // grid-template-rows: 1fr;
+  }
 
   // display: flex;
   // flex-wrap: wrap;
@@ -502,7 +526,7 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("@img/bg/bg_new_minimal.jpg") center center / cover no-repeat fixed #000;
+    url("@img/bg/bg_new_silver.jpg") center center / cover no-repeat fixed #000;
 }
 
 .partners__container {
@@ -532,6 +556,14 @@
 }
 .partners__item {
   flex: $col-3;
+  @include m1100 {
+    flex: $col-6;
+    margin-bottom: 2em;
+  }
+  @include m575 {
+    flex: $col-12;
+    margin-bottom: 4em;
+  }
 }
 
 .partners__card {
@@ -567,7 +599,10 @@
   height: 50px;
   text-transform: uppercase;
   text-align: start;
-  margin-bottom: 25px;
+  margin-bottom: 2em;
+  @include m1100 {
+    margin-bottom: 0;
+  }
 }
 
 /* PARTNERS END */
@@ -588,8 +623,9 @@
 
 #contact {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("@img/bg/bg11-bw.jpg") center center / cover no-repeat fixed #000;
+  // background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  //   url("@img/bg/bg11-bw.jpg") center center / cover no-repeat fixed #000;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 // .contact-circles {
@@ -716,7 +752,10 @@
 .contact__title {
   text-transform: uppercase;
   font-size: 40px;
-  margin: 40px auto;
+  @include adaptiv-value("font-size", 40, 24, 1);
+  margin: $gap;
+  line-height: 1.5em;
+  color: white;
 }
 
 .contact__social-links {
@@ -724,18 +763,21 @@
   justify-content: center;
   z-index: 1;
   // margin-bottom: 10px;
+
   & .social-link {
-    width: 80px;
-    height: 80px;
+    @include adaptiv-value("width", 80, 40, 0);
+    @include adaptiv-value("height", 80, 40, 0);
     border: 2px solid $mygrey-lt;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 100px;
+    @include adaptiv-value("margin-right", 100, 20, 0);
+    // flex: $col-2;
     transition: all 300ms linear 0s;
+    margin-bottom: 20px;
     &:last-child {
-      margin-right: 0;
+      margin-right: 30px;
     }
 
     &:hover {
@@ -743,13 +785,16 @@
     }
 
     & .social-svg {
-      width: 50px;
-      height: 50px;
+      @include adaptiv-value("width", 50, 20, 0);
+      @include adaptiv-value("height", 50, 20, 0);
       fill: $mygrey-lt;
       transition: 0.3s;
     }
     &:hover .social-svg {
       fill: $mycolor2;
+    }
+    @include m575 {
+      // flex: $col-4;
     }
   }
 }
@@ -770,6 +815,9 @@
   align-items: stretch;
   z-index: 1;
   color: $mygrey-lt;
+  @include m575 {
+    flex-direction: column;
+  }
 }
 
 .contact__logo-figure {
@@ -788,7 +836,8 @@
   height: 120px;
   width: 160px;
   transition: 0.5s;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  margin-bottom: 2em;
 }
 
 .contact__logo-desc {
@@ -796,6 +845,9 @@
   margin-bottom: 10px;
   &:last-child {
     margin-bottom: 0;
+    @include m575 {
+      margin-bottom: 2em;
+    }
   }
 }
 
@@ -815,8 +867,14 @@
 .contact__works-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  grid-auto-rows: 160px;
+  grid-template-rows: repeat(2, 160px);
+  grid-auto-rows: 0; /* set height to 0 for autogenerated grid rows */
+  overflow-y: hidden; /* hide grid items that overflow */
   grid-gap: $gap * 0.25;
+  // @include m1100 {
+  //   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  //   grid-template-rows: repeat(2, 100px);
+  // }
 }
 
 .contact__works-figure {
