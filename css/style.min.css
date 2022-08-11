@@ -243,11 +243,19 @@ table {
 /* общие стили */
 body {
   font-family: "poppins", sans-serif;
-  font-size: 16px;
   font-weight: 300;
-  line-height: 30px;
   color: white;
   background-color: #000;
+}
+@media (max-width: 1200px) {
+  body {
+    font-size: calc(10px + 6 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  body {
+    line-height: calc(20px + 10 * ((100vw - 320px) / 880));
+  }
 }
 
 h1,
@@ -264,14 +272,30 @@ h1 {
   font-size: 160px;
   line-height: 70px;
 }
+@media (max-width: 1200px) {
+  h1 {
+    font-size: calc(80px + 80 * ((100vw - 320px) / 880));
+  }
+}
 
 h2 {
   font-size: 75px;
 }
+@media (max-width: 1200px) {
+  h2 {
+    font-size: calc(40px + 35 * ((100vw - 320px) / 880));
+  }
+}
 
 h3 {
   font-size: 24px;
+  line-height: 1.5em;
   font-weight: normal;
+}
+@media (max-width: 1200px) {
+  h3 {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+  }
 }
 
 a {
@@ -284,9 +308,9 @@ a {
   padding: 0 20px;
   margin: 0 auto;
 }
-@media (max-width: 1300px) {
+@media (max-width: 1100px) {
   .container {
-    max-width: 1200px;
+    max-width: 1000px;
   }
 }
 
@@ -341,6 +365,7 @@ button.more:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2em !important;
 }
 
 .page-item {
@@ -361,6 +386,9 @@ button.more:hover {
   border-radius: 50%;
   transition: all 300ms linear 0s;
 }
+.page-link.page-link-active {
+  border-color: #5e9bce;
+}
 .page-link:hover {
   background: #5e9bce;
   color: #000;
@@ -368,6 +396,9 @@ button.more:hover {
 
 .social-links {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .social-link {
@@ -573,6 +604,10 @@ button.more:hover {
   color: black;
 }
 
+.itcss__control {
+  z-index: 1;
+}
+
 .itcss__indicators {
   bottom: 50px;
 }
@@ -581,7 +616,7 @@ button.more:hover {
 /* ABOUT START */
 #about {
   position: relative;
-  background: url("../img/bg/bg_new_silver.jpg") center center/cover no-repeat fixed rgb(51, 51, 51);
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg/bg_new_silver.jpg") center center/cover no-repeat fixed rgb(51, 51, 51);
 }
 
 .about__container {
@@ -591,12 +626,21 @@ button.more:hover {
   left: 0;
   right: 0;
   width: 100%;
-  height: 30%;
+  height: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+}
+.about__container::before {
+  content: "";
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0%;
 }
 
 .about__wrapper {
@@ -607,15 +651,11 @@ button.more:hover {
   justify-content: space-between;
   align-items: center;
 }
-.about__wrapper::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80%;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 0%;
+@media (max-width: 700px) {
+  .about__wrapper {
+    flex-direction: column;
+    height: 100%;
+  }
 }
 
 .about__img-wrapper {
@@ -645,6 +685,11 @@ button.more:hover {
   font-size: 32px;
   z-index: 1;
 }
+@media (max-width: 1200px) {
+  .about__title {
+    font-size: calc(24px + 8 * ((100vw - 320px) / 880));
+  }
+}
 .about__title > span {
   color: white;
 }
@@ -655,17 +700,30 @@ button.more:hover {
   text-align: left;
   z-index: 1;
 }
+@media (max-width: 1200px) {
+  .about__subtitle {
+    font-size: calc(30px + 20 * ((100vw - 320px) / 880));
+  }
+}
 .about__subtitle > span {
   color: #5e9bce;
   font-size: 75px;
   text-transform: uppercase;
   padding-left: 10%;
 }
+@media (max-width: 1200px) {
+  .about__subtitle > span {
+    font-size: calc(40px + 35 * ((100vw - 320px) / 880));
+  }
+}
 
 .about__desc {
   z-index: 1;
   text-align: center;
   --animate-duration: 2s;
+}
+.about__desc span {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* ABOUT END */
@@ -692,6 +750,22 @@ button.more:hover {
   display: grid;
   grid-template-columns: repeat(4, minmax(300px, 1fr));
   grid-gap: 40px;
+}
+@media (max-width: 1440px) {
+  .portfolio__items {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+}
+@media (max-width: 1100px) {
+  .portfolio__items {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .portfolio__items {
+    grid-template-columns: minmax(200px, 1fr);
+  }
 }
 
 .portfolio__item {
@@ -819,7 +893,7 @@ button.more:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg/bg_new_minimal.jpg") center center/cover no-repeat fixed #000;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg/bg_new_silver.jpg") center center/cover no-repeat fixed #000;
 }
 
 .partners__container {
@@ -852,6 +926,18 @@ button.more:hover {
 .partners__item {
   flex: 0 1 calc(100% / 12 * 3 - 40px);
 }
+@media (max-width: 1100px) {
+  .partners__item {
+    flex: 0 1 calc(100% / 12 * 6 - 40px);
+    margin-bottom: 2em;
+  }
+}
+@media (max-width: 575px) {
+  .partners__item {
+    flex: 0 1 calc(100% / 12 * 12 - 40px);
+    margin-bottom: 4em;
+  }
+}
 
 .partners__card {
   display: flex;
@@ -877,7 +963,12 @@ button.more:hover {
   height: 50px;
   text-transform: uppercase;
   text-align: start;
-  margin-bottom: 25px;
+  margin-bottom: 2em;
+}
+@media (max-width: 1100px) {
+  .partners__card-title {
+    margin-bottom: 0;
+  }
 }
 
 /* PARTNERS END */
@@ -893,7 +984,7 @@ button.more:hover {
 /* CONTACT START */
 #contact {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/bg/bg11-bw.jpg") center center/cover no-repeat fixed #000;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .contact__container {
@@ -919,7 +1010,14 @@ button.more:hover {
 .contact__title {
   text-transform: uppercase;
   font-size: 40px;
-  margin: 40px auto;
+  margin: 40px;
+  line-height: 1.5em;
+  color: white;
+}
+@media (max-width: 1200px) {
+  .contact__title {
+    font-size: calc(24px + 16 * ((100vw - 320px) / 880));
+  }
 }
 
 .contact__social-links {
@@ -927,32 +1025,32 @@ button.more:hover {
   z-index: 1;
 }
 .contact__social-links .social-link {
-  width: 80px;
-  height: 80px;
+  width: calc(40px + 40 * ((100vw - 320px) / 960));
+  height: calc(40px + 40 * ((100vw - 320px) / 960));
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 100px;
+  margin-right: calc(20px + 80 * ((100vw - 320px) / 960));
   transition: all 300ms linear 0s;
+  margin-bottom: 20px;
 }
 .contact__social-links .social-link:last-child {
-  margin-right: 0;
+  margin-right: 30px;
 }
 .contact__social-links .social-link:hover {
   border-color: #5e9bce;
 }
 .contact__social-links .social-link .social-svg {
-  width: 50px;
-  height: 50px;
+  width: calc(20px + 30 * ((100vw - 320px) / 960));
+  height: calc(20px + 30 * ((100vw - 320px) / 960));
   fill: rgba(255, 255, 255, 0.6);
   transition: 0.3s;
 }
 .contact__social-links .social-link:hover .social-svg {
   fill: #5e9bce;
 }
-
 .contact__main-wrapper {
   display: flex;
   justify-content: center;
@@ -969,6 +1067,11 @@ button.more:hover {
   z-index: 1;
   color: rgba(255, 255, 255, 0.6);
 }
+@media (max-width: 575px) {
+  .contact__main-container {
+    flex-direction: column;
+  }
+}
 
 .contact__logo-figure {
   flex: 0 1 calc(100% / 12 * 3 - 40px);
@@ -983,7 +1086,8 @@ button.more:hover {
   height: 120px;
   width: 160px;
   transition: 0.5s;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  margin-bottom: 2em;
 }
 
 .contact__logo-desc {
@@ -992,6 +1096,11 @@ button.more:hover {
 }
 .contact__logo-desc:last-child {
   margin-bottom: 0;
+}
+@media (max-width: 575px) {
+  .contact__logo-desc:last-child {
+    margin-bottom: 2em;
+  }
 }
 
 .contact__works-wrapper {
@@ -1009,7 +1118,9 @@ button.more:hover {
 .contact__works-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  grid-auto-rows: 160px;
+  grid-template-rows: repeat(2, 160px);
+  grid-auto-rows: 0; /* set height to 0 for autogenerated grid rows */
+  overflow-y: hidden; /* hide grid items that overflow */
   grid-gap: 10px;
 }
 
