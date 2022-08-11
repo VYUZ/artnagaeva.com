@@ -25,8 +25,8 @@ h3 {
   font-style: normal;
 }
 h1 {
-  font-size: 160px;
-  @include adaptiv-value("font-size", 160, 80, 1);
+  font-size: 100px;
+  @include adaptiv-value("font-size", 100, 50, 1);
   line-height: 70px;
 }
 h2 {
@@ -34,9 +34,9 @@ h2 {
   @include adaptiv-value("font-size", 75, 40, 1);
 }
 h3 {
-  font-size: 24px;
+  font-size: 32px;
   line-height: 1.5em;
-  @include adaptiv-value("font-size", 24, 16, 1);
+  @include adaptiv-value("font-size", 32, 16, 1);
   font-weight: normal;
 }
 
@@ -137,7 +137,7 @@ button.more {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  margin-right: 1em;
 }
 
 .social-link {
