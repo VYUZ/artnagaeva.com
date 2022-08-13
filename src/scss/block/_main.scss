@@ -137,6 +137,9 @@
   // display: flex;
   // justify-content: center;
   // align-items: center;
+  @include m700 {
+    min-height: 0;
+  }
 }
 
 .about__container {
@@ -151,6 +154,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include m700 {
+    position: static;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -184,6 +190,9 @@
 .about__img-wrapper {
   flex: $col-6;
   height: 100%;
+  // @include m700 {
+  //   @include adaptiv-value("padding-top", 400, 0, 0);
+  // }
   // border: 1px solid maroon;
   z-index: 1;
 }
@@ -191,7 +200,7 @@
   height: 100%;
   object-fit: cover;
   // border: 1px solid goldenrod;
-  @include m700{    
+  @include m700 {
     width: 90%;
   }
 }
@@ -239,6 +248,12 @@
   z-index: 1;
   @include m700 {
     margin-bottom: 1em;
+  }
+}
+
+.about__more-link {
+  @include m700 {
+    margin-bottom: 2em;
   }
 }
 
@@ -559,22 +574,26 @@
 }
 
 .partners__container {
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 4em 1em;
 }
 
 .partners__subtitle {
   font-size: 24px;
+  @include adaptiv-value("font-size", 24, 20, 1);
   margin-bottom: 50px;
+  @include adaptiv-value("margin-bottom", 50, 30, 1);
   text-transform: uppercase;
   color: $mycolor2;
   justify-self: left;
 }
 .partners__title {
   margin-bottom: 100px;
+  @include adaptiv-value("margin-bottom", 100, 50, 1);
 }
 
 .partners__items {
@@ -799,12 +818,12 @@
   & .social-link {
     @include adaptiv-value("width", 80, 40, 0);
     @include adaptiv-value("height", 80, 40, 0);
-    border: 2px solid $mygrey-lt;
+    // border: 2px solid $mygrey-lt;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include adaptiv-value("margin-right", 80, 20, 0);
+    margin-right: 3em;
     // flex: $col-2;
     transition: all 300ms linear 0s;
     margin-bottom: 20px;
@@ -870,13 +889,21 @@
   transition: 0.5s;
   margin: 0 auto;
   margin-bottom: 2em;
+  @include m700 {
+    width: 100%;
+    height: 100%;
+  }
+  @include m575 {
+    height: 120px;
+    width: 160px;
+  }
 }
 
 .contact__logo-desc {
-  text-indent: 20px;
+  // text-indent: 20px;
   margin-bottom: 10px;
-  &:last-child {
-    margin-bottom: 0;
+  &:last-of-type {
+    margin-bottom: 2em;
     @include m575 {
       margin-bottom: 2em;
     }
@@ -891,9 +918,10 @@
   padding: 0 calc($gap * 0.25);
 }
 
-.contact__works-title {
+.contact__subtitle {
   color: $mycolor2;
   margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
 .contact__works-items {
@@ -981,7 +1009,8 @@
   }
 }
 
-.contact__links-wrapper {
+.contact__links-wrapper,
+.contact__logo-wrapper {
   margin-top: 10px;
   flex: $col-3;
   // border: 1px solid gold;

@@ -31,12 +31,12 @@ h1 {
 }
 h2 {
   font-size: 75px;
-  @include adaptiv-value("font-size", 75, 40, 1);
+  @include adaptiv-value("font-size", 75, 20, 1);
 }
 h3 {
   font-size: 32px;
   line-height: 1.5em;
-  @include adaptiv-value("font-size", 32, 16, 1);
+  @include adaptiv-value("font-size", 32, 12, 1);
   font-weight: normal;
 }
 
@@ -109,20 +109,33 @@ button.more {
   margin-bottom: 2em !important;
 }
 .page-item {
-  margin-right: 0.5rem;
+  margin-right: 3rem;
   &:last-child {
     margin-right: 0;
   }
 }
 .page-link {
   position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   display: block;
   color: $mygrey-lt;
   background: rgba(0, 0, 0, 0);
   border: 1px solid $mygrey;
-  padding: 6px 18px;
   text-decoration: none;
   border-radius: 50%;
+  transition: all 300ms linear 0s;
+  padding: 0.5em 0.51em 0.5em 0.49em;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.5em;
+  width: 1.4em;
+  height: 1.4em;
+  display: inline-block;
+  margin-left: -3.4em;
+  margin-right: 1em;
+  margin-top: 1.2em;
   transition: all 300ms linear 0s;
   &.page-link-active {
     border-color: $mycolor2;
@@ -137,7 +150,7 @@ button.more {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 1em;
+  // margin-right: 1em;
 }
 
 .social-link {
