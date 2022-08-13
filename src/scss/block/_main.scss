@@ -579,7 +579,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+<<<<<<< HEAD
   padding: 4em 1em;
+=======
+  margin: 3em 0;
+  @include m575 {
+    height: auto;
+  }
+>>>>>>> ad72b918bbd0074fc0f331245f8c025c567bf1cb
 }
 
 .partners__subtitle {
@@ -783,7 +790,8 @@
 
 .contact__social-wrapper {
   width: 100%;
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   // border-top: 1px solid $myorange;
   border-bottom: 1px solid $mycolor2;
   // margin-top: 5%;
@@ -795,6 +803,12 @@
   align-items: center;
   // border: 1px solid maroon;
   background: rgba($color: #000, $alpha: 0.5);
+  @include m700 {
+    @include adaptiv-value("padding-top", 600, 1, 1);
+  }
+  @include m700 {
+    @include adaptiv-value("padding-bottom", 600, 1, 1);
+  }
 }
 
 .contact__title {
@@ -856,6 +870,9 @@
   align-items: center;
   z-index: 1;
   color: $mygrey-lt;
+  @include m700 {
+    margin-top: 4em;
+  }
 }
 
 .contact__main-container {
