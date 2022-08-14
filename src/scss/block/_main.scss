@@ -438,7 +438,8 @@
     }
   }
   &:hover .portfolio__img {
-    filter: blur(1px) brightness(90%);
+    // filter: blur(1px) brightness(90%);
+    filter: brightness(90%);
     transform: scale(1.1);
   }
 }
@@ -499,6 +500,8 @@
   height: 100%;
   text-align: center;
   vertical-align: middle;
+  font-size: 22px;
+  // @include adaptiv-value("font-size", 22, 20, 0);
   transition: all 0.6s ease;
   transform: scale(1.5);
   z-index: 2;
@@ -823,9 +826,9 @@
   }
 
   & .social-link {
-    @include adaptiv-value("width", 80, 40, 0);
-    @include adaptiv-value("height", 80, 40, 0);
-    // border: 2px solid $mygrey-lt;
+    @include adaptiv-value("width", 60, 40, 0);
+    @include adaptiv-value("height", 60, 40, 0);
+    border: 2px solid $mygrey-lt;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -843,8 +846,8 @@
     }
 
     & .social-svg {
-      @include adaptiv-value("width", 50, 20, 0);
-      @include adaptiv-value("height", 50, 20, 0);
+      @include adaptiv-value("width", 40, 30, 0);
+      @include adaptiv-value("height", 40, 30, 0);
       fill: $mygrey-lt;
       transition: 0.3s;
     }
@@ -874,6 +877,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
+  width: 100%;
   z-index: 1;
   color: $mygrey-lt;
   @include m575 {
@@ -881,10 +885,15 @@
   }
 }
 
-.contact__logo-figure {
+.contact__logo-items {
   // border: 1px solid lime;
+  // height: 100%;
   flex: $col-3;
-  padding: 0 10px;
+  padding: 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  // align-items: flex-start;
+  justify-content: space-between;
 }
 
 .contact__logo-link {
@@ -895,23 +904,43 @@
 
 .contact__logo-img {
   height: 120px;
+  @include adaptiv-value("height", 120, 30, 1);
   width: 160px;
+  @include adaptiv-value("width", 160, 40, 1);
+
   transition: 0.5s;
   margin: 0 auto;
-  margin-bottom: 2em;
-  @include m700 {
-    width: 100%;
-    height: 100%;
+  // margin-bottom: 2em;
+  margin-top: 2em;
+  @include m1100 {
+    margin-top: 0;
   }
+  // @include m700 {
+  //   width: 100%;
+  //   height: 100%;
+  // }
   @include m575 {
     height: 120px;
     width: 160px;
   }
 }
 
-.contact__logo-desc {
+.contact__logo-item {
   // text-indent: 20px;
   margin-bottom: 10px;
+  position: relative;
+  padding-left: 18px;
+  &::before {
+    position: absolute;
+    top: 6px;
+    left: -8px;
+    width: 10px;
+    height: 10px;
+    // fill: rgba(255, 255, 255, 0.6);
+    transition: 0.3s;
+    content: "";
+    background: url("@img/svg/circle.svg") center center / cover no-repeat;
+  }
   &:last-of-type {
     margin-bottom: 2em;
     @include m575 {
@@ -951,14 +980,15 @@
   position: relative;
   overflow: hidden;
   height: 100%;
-  &:hover > .contact__works-overlay {
-    opacity: 1;
-  }
-  &:hover .contact__works-link {
-    transform: scale(1);
-  }
+  transition: all 0.5s ease-in-out;
+  // &:hover > .contact__works-overlay {
+  //   opacity: 1;
+  // }
+  // &:hover .contact__works-link {
+  //   transform: scale(1);
+  // }
   &:hover .contact__works-img {
-    filter: blur(1px) brightness(90%);
+    filter: brightness(100%);
     transform: scale(1.1);
   }
 }
@@ -967,7 +997,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(0px) brightness(60%);
+  filter: brightness(60%);
   transition: all 0.5s ease-in-out;
   transform: scale(1);
 }

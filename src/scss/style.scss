@@ -34,9 +34,9 @@ h2 {
   @include adaptiv-value("font-size", 75, 20, 1);
 }
 h3 {
-  font-size: 32px;
+  font-size: 29px;
   line-height: 1.5em;
-  @include adaptiv-value("font-size", 32, 12, 1);
+  @include adaptiv-value("font-size", 29, 12, 1);
   font-weight: normal;
 }
 
@@ -45,7 +45,7 @@ a {
 }
 .container {
   max-width: 1280px;
-  width: 100%;
+  // width: 100%;
   padding: 0 $gap * 0.5;
   margin: 0 auto;
   @include m1100 {
