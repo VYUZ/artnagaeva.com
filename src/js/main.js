@@ -1,6 +1,6 @@
 import { sum } from "./modules/sum.js";
 console.log(sum(2, 10));
-///////////////////////////////
+///////////////////////////////////////////
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 function isWebp() {
@@ -21,7 +21,7 @@ function isWebp() {
   });
 }
 isWebp();
-///////////////////////////////
+////////////////////////////////////////
 // Header active
 (function () {
   const header = document.querySelector(".header");
@@ -33,94 +33,7 @@ isWebp();
     }
   };
 })();
-///////////////////////////////////
-// isMobile
-var isMobile = {
-  Android: function () {
-    return navigator.userAgent.match(/Android/i);
-  },
-  BlackBerry: function () {
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iOS: function () {
-    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-  },
-  Opera: function () {
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Windows: function () {
-    return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-  },
-  any: function () {
-    return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
-  },
-};
-if (isMobile.any()) {
-  document.body.classList.add("_touch");
-} else {
-  document.body.classList.add("_pc");
-}
-///////////////////////////////
-//Burger handler
-(function () {
-  const burgerItem = document.querySelector(".burger");
-  const menu = document.querySelector(".header__nav");
-  const menuCloseItem = document.querySelector(".header__nav-close");
-  const menuLinks = document.querySelectorAll(".header__nav-link");
-  burgerItem.addEventListener("click", () => {
-    menu.classList.add("header__nav_active");
-  });
-  menuCloseItem.addEventListener("click", () => {
-    menu.classList.remove("header__nav_active");
-  });
-
-  if (window.innerWidth < 700) {
-    for (let i = 0; i < menuLinks.length; i += 1) {
-      menuLinks[i].addEventListener("click", () => {
-        menu.classList.remove("header__nav_active");
-      });
-    }
-  }
-})();
-////////////////////////////////////////////////////
-// Scroll to anchors
-// (function () {
-//   const smoothScroll = function (targetEl, duration) {
-//     const headerElHeight = document.querySelector(".header").clientHeight;
-//     let target = document.querySelector(targetEl);
-//     let targetPosition = target.getBoundingClientRect().top - headerElHeight;
-//     let startPosition = window.pageYOffset;
-//     let startTime = null;
-
-//     const ease = function (t, b, c, d) {
-//       t /= d / 2;
-//       if (t < 1) return (c / 2) * t * t + b;
-//       t--;
-//       return (-c / 2) * (t * (t - 2) - 1) + b;
-//     };
-
-//     const animation = function (currentTime) {
-//       if (startTime === null) startTime = currentTime;
-//       const timeElapsed = currentTime - startTime;
-//       const run = ease(timeElapsed, startPosition, targetPosition, duration);
-//       window.scrollTo(0, run);
-//       if (timeElapsed < duration) requestAnimationFrame(animation);
-//     };
-//     requestAnimationFrame(animation);
-//   };
-
-//   const scrollTo = function () {
-//     const links = document.querySelectorAll(".js-scroll");
-//     links.forEach((each) => {
-//       each.addEventListener("click", function () {
-//         const currentTarget = this.getAttribute("href");
-//         smoothScroll(currentTarget, 100);
-//       });
-//     });
-//   };
-//   scrollTo();
-// })();
-//////////////////////////////
+////////////////////////////////////////
 // top-slider initialization
 document.addEventListener("DOMContentLoaded", () => {
   // инициализация слайдера
@@ -132,6 +45,49 @@ document.addEventListener("DOMContentLoaded", () => {
     indicators: true,
   });
 });
+////////////////////////////////////////
+// wow.js
+// import { WOW } from "wowjs";
+var wow = new WOW({
+  boxClass: "wow", // класс, скрывающий элемент до момента отображения на экране (по умолчанию, wow)
+  animateClass: "animated", // класс для анимации элемента (по умолчанию, animated)
+  offset: 0, // расстояние в пикселях от нижнего края браузера до верхней границы элемента, необходимое для начала анимации (по умолчанию, 0)
+  mobile: true, // включение/отключение WOW.js на мобильных устройствах (по умолчанию, включено)
+  live: true, // поддержка асинхронно загруженных элементов (по умолчанию, включена)
+  callback: function (box) {
+    // функция срабатывает каждый раз при старте анимации
+    // аргумент box — элемент, для которого была запущена анимация
+  },
+  scrollContainer: null, // селектор прокручивающегося контейнера (опционально, по умолчанию, window)
+});
+wow.init();
+// new WOW().init();
+//////////////////////
+
+////////////////////////////////////////////////////
+// Scroll to anchors v2
+const menuLinks = document.querySelector(".header__nav-link[data-goto]");
+if (menuLinks.length > 0) {
+  menuLinks.forEach((menuLink) => {
+    menuLink.addEventListener("click", onMenuLinkClick);
+  });
+  function onMenuLinkClick(e) {
+    const menuLink = e.target;
+    if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+      const gotoBlock = document.querySelector(menuLink.dataset.goto);
+      const gotoBlockValue =
+        gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector("header").offsetHeight;
+
+      window.scrollTo({
+        top: gotoBlockValue,
+        behavior: "smooth",
+      });
+      e.preventDefault();
+    }
+  }
+}
+///////////////////////////////////////////////////
+
 //////////////////////////////
 //fulpage initialization
 // new fullpage("#fullpage", {
@@ -218,24 +174,100 @@ document.addEventListener("DOMContentLoaded", () => {
 //       .css("visibility", "hidden");
 //   },
 // });
+
+///////////////////////////////////
+// isMobile
+// var isMobile = {
+//   Android: function () {
+//     return navigator.userAgent.match(/Android/i);
+//   },
+//   BlackBerry: function () {
+//     return navigator.userAgent.match(/BlackBerry/i);
+//   },
+//   iOS: function () {
+//     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+//   },
+//   Opera: function () {
+//     return navigator.userAgent.match(/Opera Mini/i);
+//   },
+//   Windows: function () {
+//     return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+//   },
+//   any: function () {
+//     return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+//   },
+// };
+// if (isMobile.any()) {
+//   document.body.classList.add("_touch");
+// } else {
+//   document.body.classList.add("_pc");
+// }
+
+///////////////////////////////
+//Burger handler version 1
+// (function () {
+//   const burgerItem = document.querySelector(".burger");
+//   const menu = document.querySelector(".header__nav");
+//   const menuCloseItem = document.querySelector(".header__nav-close");
+//   const menuLinks = document.querySelectorAll(".header__nav-link");
+//   burgerItem.addEventListener("click", () => {
+//     menu.classList.add("header__nav_active");
+//   });
+//   menuCloseItem.addEventListener("click", () => {
+//     menu.classList.remove("header__nav_active");
+//   });
+
+//   if (window.innerWidth < 700) {
+//     for (let i = 0; i < menuLinks.length; i += 1) {
+//       menuLinks[i].addEventListener("click", () => {
+//         menu.classList.remove("header__nav_active");
+//       });
+//     }
+//   }
+// })();
+///////////////////////////////
+//Burger handler version 2
+
+///////////////////////////////
+////////////////////////////////////////////////////
+// Scroll to anchors v1
+// (function () {
+//   const smoothScroll = function (targetEl, duration) {
+//     const headerElHeight = document.querySelector(".header").clientHeight;
+//     let target = document.querySelector(targetEl);
+//     let targetPosition = target.getBoundingClientRect().top - headerElHeight;
+//     let startPosition = window.pageYOffset;
+//     let startTime = null;
+
+//     const ease = function (t, b, c, d) {
+//       t /= d / 2;
+//       if (t < 1) return (c / 2) * t * t + b;
+//       t--;
+//       return (-c / 2) * (t * (t - 2) - 1) + b;
+//     };
+
+//     const animation = function (currentTime) {
+//       if (startTime === null) startTime = currentTime;
+//       const timeElapsed = currentTime - startTime;
+//       const run = ease(timeElapsed, startPosition, targetPosition, duration);
+//       window.scrollTo(0, run);
+//       if (timeElapsed < duration) requestAnimationFrame(animation);
+//     };
+//     requestAnimationFrame(animation);
+//   };
+
+//   const scrollTo = function () {
+//     const links = document.querySelectorAll(".js-scroll");
+//     links.forEach((each) => {
+//       each.addEventListener("click", function () {
+//         const currentTarget = this.getAttribute("href");
+//         smoothScroll(currentTarget, 100);
+//       });
+//     });
+//   };
+//   scrollTo();
+// })();
 //////////////////////////////
-// wow.js
-// import { WOW } from "wowjs";
-var wow = new WOW({
-  boxClass: "wow", // класс, скрывающий элемент до момента отображения на экране (по умолчанию, wow)
-  animateClass: "animated", // класс для анимации элемента (по умолчанию, animated)
-  offset: 0, // расстояние в пикселях от нижнего края браузера до верхней границы элемента, необходимое для начала анимации (по умолчанию, 0)
-  mobile: true, // включение/отключение WOW.js на мобильных устройствах (по умолчанию, включено)
-  live: true, // поддержка асинхронно загруженных элементов (по умолчанию, включена)
-  callback: function (box) {
-    // функция срабатывает каждый раз при старте анимации
-    // аргумент box — элемент, для которого была запущена анимация
-  },
-  scrollContainer: null, // селектор прокручивающегося контейнера (опционально, по умолчанию, window)
-});
-wow.init();
-// new WOW().init();
-//////////////////////
 
 ///////////////////////////////////
 ///load more /////

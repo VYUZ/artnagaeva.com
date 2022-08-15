@@ -53,8 +53,8 @@ dd {
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   padding: 0;
-  min-height: 100vh;
-  scroll-behavior: smooth;
+  // min-height: 100vh;
+  // scroll-behavior: smooth;
   transition: all 0.5s linear 0s;
   text-rendering: optimizeSpeed;
   line-height: 1.5;

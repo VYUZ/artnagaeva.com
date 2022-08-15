@@ -9,7 +9,7 @@
   width: 100%;
   transition: all 0.4s ease-in-out;
   background: rgba(255, 255, 255, 0.3);
-  z-index: 9;
+  z-index: 2;
   &.header-js-active {
     background-color: black;
     padding-top: 0px;
@@ -36,7 +36,7 @@
     }
   }
   &.header-js-active .social-link {
-    border: 2px solid black;
+    // border: 2px solid black;
 
     &:hover {
       border-color: $mycolor2;
@@ -47,10 +47,6 @@
   }
   &.header-js-active .social-svg {
     fill: white;
-  }
-  &.header-js-active .burger__line {
-    background-color: $mygrey-lt;
-    margin-bottom: $gap;
   }
 }
 
@@ -66,9 +62,6 @@
 .header__logo {
   @include m1100 {
     margin-bottom: 1em;
-  }
-  @include m700 {
-    display: none;
   }
 }
 
@@ -120,10 +113,6 @@
   // }
 }
 
-// .header-js-active img.header__logo-pic {
-//   height: 60px;
-// }
-
 .header__nav {
   font-weight: 400;
   font-size: 20px;
@@ -135,29 +124,23 @@
 
 .header__nav-list {
   display: flex;
-  flex-wrap: wrap;
+  transition: all 0.3s ease 0s;
   @include m1100 {
     // margin-bottom: 1em;
     justify-content: center;
     align-items: center;
   }
-  @include m575 {
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    flex-direction: column;
-  }
+  // @include m575 {
+  //   pointer-events: none;
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   flex-direction: column;
+  // }
 }
 
 .header__nav-item {
   margin-right: 30px;
   @include adaptiv-value("margin-right", 30, 10, 1);
-  @include m575 {
-    margin-bottom: 2em;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 }
 
 .header__nav-link {
@@ -168,10 +151,6 @@
   &:hover {
     color: $mycolor2;
   }
-  @include m575 {
-    color: white;
-    font-size: 30px;
-  }
 }
 
 .header__social-links {
@@ -180,126 +159,124 @@
   }
 }
 
-.header__burger {
-  width: 40px;
-  height: 28px;
-  position: relative;
+.burger {
   display: none;
 }
-.burger__line {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  position: absolute;
-  left: 0;
-}
-.header__burger .burger__line:nth-child(1) {
-  top: 0;
-}
-.header__burger .burger__line:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-.header__burger .burger__line:nth-child(3) {
-  bottom: 0;
-}
-
-@media only screen and (max-width: 700px) {
-  .header__burger {
-    display: block;
-    cursor: pointer;
+//////////////////////////////////////////////////////////////////
+@media (max-width: 700px) {
+  .header__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+
+  .header__social-links {
+    z-index: 2;
+    margin-bottom: 0;
+  }
+
+  .social-svg {
+    fill: $mycolor2;
+  }
+
+  .social-link {
+    border-color: $mycolor2;
+  }
+
+  .header.header-js-active {
+    .header__logo-img {
+      height: 30px;
+    }
+    // .header__social-links {
+    //   margin-bottom: 0;
+    //   z-index: 2;
+    // }
+    .header__nav {
+      &::before {
+        height: 46px;
+      }
+    }
+  }
+
+  .burger {
+    z-index: 3;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    order: 2;
+    &::before,
+    &::after,
+    & span {
+      left: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: all 0.3s ease 0s;
+      background: $mycolor2;
+    }
+    &::before,
+    &::after {
+      content: "";
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    & span {
+      top: 50%;
+      transform: scale(1) translate(0px, -50%);
+    }
+  }
+
+  .header__logo {
+    display: none;
+    order: 1;
+  }
+
   .header__nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0e1d28;
-    z-index: 10;
-    padding: 75px;
-    transform: translateX(100%);
-    transition: all 0.2s linear;
-  }
-  .header__nav_active {
-    transform: translateX(0);
-    & .header__nav-list {
-      pointer-events: all;
-      opacity: 1;
-      visibility: visible;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 4em 2em 2em;
+    transition: left 0.3s ease 0s;
+    overflow: auto;
+    &::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 108px;
+      // border: 4px solid maroon;
+      // background-color: grey;
     }
   }
+
   .header__nav-list {
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 2em !important;
   }
+
+  .header__nav-item {
+    margin-bottom: 3em;
+    flex-wrap: wrap;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .header__nav-link {
-    color: white;
-    @include adaptiv-value("font-size", 40, 30, 0);
-    line-height: 80px;
-  }
-  .header__nav-close {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 50px;
-    right: 160px;
-    z-index: 1;
-  }
-  .header__nav-close-line {
-    display: block;
-    height: 2px;
-    background-color: #fff;
-    top: 50%;
-    width: 100%;
-  }
-  .header__nav-close-line:first-child {
-    -webkit-transform: translateY(-50%) rotate(45deg);
-    -ms-transform: translateY(-50%) rotate(45deg);
-    transform: translateY(-50%) rotate(45deg);
-  }
-  .header__nav-close-line:last-child {
-    -webkit-transform: translateY(-50%) rotate(-45deg);
-    -ms-transform: translateY(-50%) rotate(-45deg);
-    transform: translateY(-50%) rotate(-45deg);
+    color: $mygrey-lt;
+    font-size: 30px;
   }
 }
-// .header__burger-container {
-//   display: none;
-//   @include m575 {
-//     position: relative;
-//     display: inline-block;
-//     height: 50px;
-//     width: 50px;
-//     cursor: pointer;
-//     transform: rotate(0deg);
-//     transition: all 0.3s;
-//     user-select: none;
-//     -webkit-tap-highlight-color: transparent;
-//   }
-// }
-// .burger {
-//   width: 40px;
-//   height: 8px;
-//   position: relative;
-//   display: block;
-//   margin: -4px auto 0;
-//   top: 50%;
-// }
-// .burger-bar {
-//   width: 100%;
-//   height: 2px;
-//   display: block;
-//   position: relative;
-//   background: #fff;
-//   transition: all 0.3s;
-//   transition-delay: 0s;
-//   &.topBar {
-//     transform: translateY(0px) rotate(0deg);
-//   }
-//   &.btmBar {
-//     transform: translateY(6px) rotate(0deg);
-//   }
-// }
 
 /* HEADER END */
