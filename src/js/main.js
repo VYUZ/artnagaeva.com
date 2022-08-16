@@ -64,9 +64,20 @@ wow.init();
 // new WOW().init();
 //////////////////////
 
-////////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//Burger handler version 2
+const iconMenu = document.querySelector(".burger");
+const menuNav = document.querySelector(".header__nav");
+if (iconMenu) {
+  iconMenu.addEventListener("click", function (e) {
+    document.body.classList.toggle("_lock");
+    iconMenu.classList.toggle("jsburger-active");
+    menuNav.classList.toggle("jsburger-active");
+  });
+}
+
 // Scroll to anchors v2
-const menuLinks = document.querySelector(".header__nav-link[data-goto]");
+const menuLinks = document.querySelectorAll(".header__nav-link[data-goto]");
 if (menuLinks.length > 0) {
   menuLinks.forEach((menuLink) => {
     menuLink.addEventListener("click", onMenuLinkClick);
@@ -76,7 +87,13 @@ if (menuLinks.length > 0) {
     if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
       const gotoBlock = document.querySelector(menuLink.dataset.goto);
       const gotoBlockValue =
-        gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector("header").offsetHeight;
+        gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector("header").offsetHeight;
+
+      if (iconMenu.classList.contains("jsburger-active")) {
+        document.body.classList.remove("_lock");
+        iconMenu.classList.remove("jsburger-active");
+        menuNav.classList.remove("jsburger-active");
+      }
 
       window.scrollTo({
         top: gotoBlockValue,
@@ -225,10 +242,7 @@ if (menuLinks.length > 0) {
 //     }
 //   }
 // })();
-///////////////////////////////
-//Burger handler version 2
 
-///////////////////////////////
 ////////////////////////////////////////////////////
 // Scroll to anchors v1
 // (function () {
