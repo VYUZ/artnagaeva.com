@@ -211,7 +211,7 @@ body._lock {
   flex: $col-6;
   height: 80%;
   padding-top: 10%;
-  padding-right: 3%;
+  padding-right: 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -544,6 +544,7 @@ body._lock {
     }
     & .portfolio__overlay {
       opacity: 1;
+      background: rgba(0, 0, 0, 0.2);
     }
     & .portfolio__link {
       transform: scale(1);
@@ -555,7 +556,7 @@ body._lock {
       }
     }
     & .portfolio__img {
-      filter: blur(1px) brightness(90%);
+      // filter: blur(1px) brightness(90%);
       transform: scale(1.1);
     }
   }
@@ -808,6 +809,10 @@ body._lock {
   @include m700 {
     @include adaptiv-value("padding-bottom", 600, 1, 1);
   }
+  @include m700 {
+    padding-top: $gap;
+    padding-bottom: $gap;
+  }
 }
 
 .contact__title {
@@ -858,7 +863,7 @@ body._lock {
       fill: $mycolor2;
     }
     @include m575 {
-      margin-right: 80px;
+      margin-right: 1em;
     }
   }
 }
@@ -1046,7 +1051,7 @@ body._lock {
       transform: scale(1);
     }
     & .contact__works-img {
-      filter: blur(1px) brightness(90%);
+      // filter: blur(1px) brightness(90%);
       transform: scale(1.1);
     }
   }

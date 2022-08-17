@@ -34,9 +34,9 @@ h2 {
   @include adaptiv-value("font-size", 75, 20, 1);
 }
 h3 {
-  font-size: 29px;
+  font-size: 22px;
   line-height: 1.5em;
-  @include adaptiv-value("font-size", 29, 12, 1);
+  @include adaptiv-value("font-size", 22, 12, 1);
   font-weight: normal;
 }
 
