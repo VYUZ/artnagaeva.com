@@ -7,6 +7,9 @@ assets/
 core/
 pusti/
 index.php
+.htaccess
+adminka.txt
+index.php
 
 # Игнорирование файлов специфичных для IDE 
 .vscode/ 
