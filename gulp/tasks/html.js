@@ -3,6 +3,7 @@ import webpHtmlNosvg from "gulp-webp-html-nosvg";
 import versionNumber from "gulp-version-number";
 import htmlmin from "gulp-htmlmin";
 import size from "gulp-size";
+import rename from "gulp-rename";
 
 export const html = () => {
   return app.gulp
@@ -34,6 +35,9 @@ export const html = () => {
         })
       )
     )
+    .pipe(app.plugins.if(app.isBuild, rename("unresize.htm")))
+    .pipe(app.plugins.if(app.isBuild, app.gulp.dest(app.path.build.html)))
+    .pipe(app.plugins.if(app.isBuild, rename({ basename: "index", extname: ".html" })))
     .pipe(app.plugins.if(app.isBuild, size({ title: "До сжатия" })))
     .pipe(app.plugins.if(app.isBuild, htmlmin({ collapseWhitespace: true, removeComments: true })))
     .pipe(app.plugins.if(app.isBuild, size({ title: "После сжатия" })))

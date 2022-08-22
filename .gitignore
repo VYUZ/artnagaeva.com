@@ -5,6 +5,15 @@ logs
 # Игнорирование файлов специфичных для IDE 
 .vscode/ 
 
+#modx files
+assets/
+core/
+pusti/
+index.php
+.htaccess
+adminka.txt
+index.php
+
 # Папка с оригинальными картинками
 #/img/img_orig/
 _img_src/
@@ -17,4 +26,8 @@ package-lock.json
 *.psd
 screen.jpg
 tmp/
+
+#Архивы
+*.rar
+*.zip
 
