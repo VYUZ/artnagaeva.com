@@ -9,11 +9,9 @@
   width: 100%;
   transition: all 0.4s ease-in-out;
   background: rgba(255, 255, 255, 0.3);
-<<<<<<< HEAD
-  z-index: 9;
-=======
+
   z-index: 2;
->>>>>>> parent of 8ffede4 (posadka to adminka modx start)
+
   &.header-js-active {
     background-color: black;
     padding-top: 0px;
@@ -40,11 +38,7 @@
     }
   }
   &.header-js-active .social-link {
-<<<<<<< HEAD
-    border: 2px solid black;
-=======
     // border: 2px solid black;
->>>>>>> parent of 8ffede4 (posadka to adminka modx start)
 
     &:hover {
       border-color: $mycolor2;
@@ -53,6 +47,7 @@
       fill: $mycolor2;
     }
   }
+  
   &.header-js-active .social-svg {
     fill: white;
   }
@@ -140,8 +135,6 @@
   }
 }
 
-<<<<<<< HEAD
-=======
 .header__social-links {
   @include m1100 {
     margin-bottom: 2em;
@@ -287,5 +280,4 @@
   }
 }
 
->>>>>>> parent of 8ffede4 (posadka to adminka modx start)
 /* HEADER END */
