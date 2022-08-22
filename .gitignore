@@ -18,3 +18,13 @@ package-lock.json
 screen.jpg
 tmp/
 
+#modx files
+assets/
+connectors/
+core/
+pusti/
+index.php
+config.core.php
+
+*.zip
+.htaccess

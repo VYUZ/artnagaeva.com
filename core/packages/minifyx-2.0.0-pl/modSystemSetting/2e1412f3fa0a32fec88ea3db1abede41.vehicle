@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'minifyx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '181da8c1b36c62d9ee7079dfc0aefa25',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '2e1412f3fa0a32fec88ea3db1abede41',
+  'native_key' => 'minifyx.cacheFolder',
+  'object' => '{"key":"minifyx.cacheFolder","value":"assets\\/minifyx\\/","xtype":"textfield","namespace":"minifyx","area":"system","editedon":null}',
+);

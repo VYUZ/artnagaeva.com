@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'backupmodx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '1ebef636bed64fedc741b4504882f7bc',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '9e4bbe93e814e22b2e0946e65ebe2124',
+  'native_key' => 'backupmodx.debug',
+  'object' => '{"key":"backupmodx.debug","value":"0","xtype":"combo-boolean","namespace":"backupmodx","area":"system","editedon":null}',
+);
