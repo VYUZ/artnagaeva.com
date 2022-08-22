@@ -1,0 +1,7 @@
+https://artnagaeva.com/
+
+BD:
+mysql n:tsgladamai_art l:tsgladamai_art p:rir...678 prefix:modxart_ (phpmyadmin for localhost - https://127.0.0.1/openserver/phpmyadmin/index.php?route=/ l:root p:root)
+
+админка:
+admeen p:rir...678 или nagaeva.a.e@mail.ru p: utf8mb4/utf8mb4_general_ci

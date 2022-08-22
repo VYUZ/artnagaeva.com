@@ -2,6 +2,11 @@
 logs 
 *.log 
 
+#modx files
+assets/
+core/
+pusti/
+
 # Игнорирование файлов специфичных для IDE 
 .vscode/ 
 
