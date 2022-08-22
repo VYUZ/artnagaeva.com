@@ -25,6 +25,7 @@ core/
 pusti/
 index.php
 config.core.php
+.htaccess
 
 *.zip
-.htaccess
+
