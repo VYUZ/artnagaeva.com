@@ -759,6 +759,15 @@
   align-items: center;
   // border: 1px solid maroon;
   background: rgba($color: #000, $alpha: 0.5);
+<<<<<<< HEAD
+=======
+  @include m700 {
+    @include adaptiv-value("padding-top", 600, 1, 1);
+  }
+  @include m700 {
+    @include adaptiv-value("padding-bottom", 600, 1, 1);
+  }
+>>>>>>> parent of 99b3762 (final maket v.1.2)
 }
 
 .contact__title {
@@ -806,7 +815,11 @@
       fill: $mycolor2;
     }
     @include m575 {
+<<<<<<< HEAD
       // flex: $col-4;
+=======
+      margin-right: 80px;
+>>>>>>> parent of 99b3762 (final maket v.1.2)
     }
   }
 }
