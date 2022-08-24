@@ -747,7 +747,6 @@ button.more:hover {
 .about__pretitle,
 .about__subtitle {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 30px;
   z-index: 1;
 }
 
@@ -756,7 +755,12 @@ button.more:hover {
   color: white;
 }
 
+.about__pretitle {
+  font-size: 35px;
+}
+
 .about__title {
+  font-size: 50px;
   font-weight: 100;
   text-align: left;
   z-index: 1;
@@ -764,7 +768,7 @@ button.more:hover {
 
 .about__title > span {
   color: #5e9bce;
-  font-size: 40px;
+  font-size: 75px;
   text-transform: uppercase;
   padding-left: 10%;
 }
@@ -1046,20 +1050,20 @@ button.more:hover {
 }
 
 .contact__social-links .social-link {
-  width: calc(40px + 40 * ((100vw - 320px) / 960));
-  height: calc(40px + 40 * ((100vw - 320px) / 960));
+  width: calc(40px + 20 * ((100vw - 320px) / 960));
+  height: calc(40px + 20 * ((100vw - 320px) / 960));
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: calc(20px + 80 * ((100vw - 320px) / 960));
+  margin-right: 3em;
   transition: all 300ms linear 0s;
   margin-bottom: 20px;
 }
 
 .contact__social-links .social-link:last-child {
-  margin-right: 30px;
+  margin-right: 0;
 }
 
 .contact__social-links .social-link:hover {
@@ -1067,8 +1071,8 @@ button.more:hover {
 }
 
 .contact__social-links .social-link .social-svg {
-  width: calc(20px + 30 * ((100vw - 320px) / 960));
-  height: calc(20px + 30 * ((100vw - 320px) / 960));
+  width: calc(30px + 10 * ((100vw - 320px) / 960));
+  height: calc(30px + 10 * ((100vw - 320px) / 960));
   fill: rgba(255, 255, 255, 0.6);
   transition: 0.3s;
 }
@@ -1094,9 +1098,41 @@ button.more:hover {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.contact__logo-figure {
+.contact__links-wrapper,
+.contact__logo-wrapper {
+  margin-top: 10px;
   flex: 0 1 calc(100% / 12 * 3 - 40px);
   padding: 0 10px;
+}
+
+.contact__subtitle {
+  color: #5e9bce;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+}
+
+.contact__logo-items {
+  padding: 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact__logo-item {
+  margin-bottom: 1em;
+  position: relative;
+  padding-left: 1em;
+}
+
+.contact__logo-item::before {
+  position: absolute;
+  top: 6px;
+  left: -8px;
+  width: 10px;
+  height: 10px;
+  transition: 0.3s;
+  content: "";
+  background: url(../img/svg/circle1.svg) center center/cover no-repeat;
 }
 
 .contact__logo-link:hover > .contact__logo-img {
@@ -1109,15 +1145,6 @@ button.more:hover {
   transition: 0.5s;
   margin: 0 auto;
   margin-bottom: 2em;
-}
-
-.contact__logo-desc {
-  text-indent: 20px;
-  margin-bottom: 10px;
-}
-
-.contact__logo-desc:last-child {
-  margin-bottom: 0;
 }
 
 .contact__works-wrapper {
@@ -1202,12 +1229,6 @@ button.more:hover {
 }
 
 /* for touch screen devices */
-
-.contact__links-wrapper {
-  margin-top: 10px;
-  flex: 0 1 calc(100% / 12 * 3 - 40px);
-  padding: 0 10px;
-}
 
 .contact__links-title {
   margin-bottom: 30px;
@@ -1322,13 +1343,16 @@ button.more:hover {
     line-height: calc(100px + 50 * ((100vw - 320px) / 880));
   }
 
-  .about__pretitle,
-  .about__subtitle {
-    font-size: calc(8px + 22 * ((100vw - 320px) / 880));
+  .about__pretitle {
+    font-size: calc(8px + 27 * ((100vw - 320px) / 880));
+  }
+
+  .about__title {
+    font-size: calc(30px + 20 * ((100vw - 320px) / 880));
   }
 
   .about__title > span {
-    font-size: calc(35px + 5 * ((100vw - 320px) / 880));
+    font-size: calc(50px + 25 * ((100vw - 320px) / 880));
   }
 
   .contact__title {
@@ -1372,10 +1396,6 @@ button.more:hover {
   }
 
   .about__title {
-    font-size: 30px;
-  }
-
-  .about__title {
     margin-bottom: 1em;
   }
 
@@ -1391,12 +1411,6 @@ button.more:hover {
 
   .partners__card-title {
     margin-bottom: 0;
-  }
-}
-
-@media (max-width: 1100px) and (max-width: 1200px) {
-  .about__title {
-    font-size: calc(20px + 10 * ((100vw - 320px) / 880));
   }
 }
 
@@ -1589,10 +1603,6 @@ button.more:hover {
 
   .contact__main-container {
     flex-direction: column;
-  }
-
-  .contact__logo-desc:last-child {
-    margin-bottom: 2em;
   }
 }
 

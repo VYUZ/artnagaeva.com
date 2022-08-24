@@ -210,8 +210,6 @@
 .about__pretitle,
 .about__subtitle {
   color: $mygrey-lt;
-  font-size: 30px;
-  @include adaptiv-value("font-size", 30, 8, 1);
   & > span {
     color: white;
   }
@@ -220,18 +218,21 @@
     margin-bottom: 2em;
   }
 }
+
+.about__pretitle {
+  font-size: 35px;
+  @include adaptiv-value("font-size", 35, 8, 1);
+}
+
 .about__title {
-  // font-size: 50px;
-  @include m1100 {
-    font-size: 30px;
-    @include adaptiv-value("font-size", 30, 20, 1);
-  }
+  font-size: 50px;
+  @include adaptiv-value("font-size", 50, 30, 1);
   font-weight: 100;
   text-align: left;
   & > span {
     color: $mycolor2;
-    font-size: 40px;
-    @include adaptiv-value("font-size", 40, 35, 1);
+    font-size: 75px;
+    @include adaptiv-value("font-size", 75, 50, 1);
     text-transform: uppercase;
     padding-left: 10%;
   }
@@ -810,19 +811,18 @@
   // margin-bottom: 10px;
 
   & .social-link {
-    @include adaptiv-value("width", 80, 40, 0);
-    @include adaptiv-value("height", 80, 40, 0);
+    @include adaptiv-value("width", 60, 40, 0);
+    @include adaptiv-value("height", 60, 40, 0);
     border: 2px solid $mygrey-lt;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include adaptiv-value("margin-right", 100, 20, 0);
-    // flex: $col-2;
+    margin-right: 3em;
     transition: all 300ms linear 0s;
     margin-bottom: 20px;
     &:last-child {
-      margin-right: 30px;
+      margin-right: 0;
     }
 
     &:hover {
@@ -830,8 +830,8 @@
     }
 
     & .social-svg {
-      @include adaptiv-value("width", 50, 20, 0);
-      @include adaptiv-value("height", 50, 20, 0);
+      @include adaptiv-value("width", 40, 30, 0);
+      @include adaptiv-value("height", 40, 30, 0);
       fill: $mygrey-lt;
       transition: 0.3s;
     }
@@ -867,10 +867,41 @@
   }
 }
 
-.contact__logo-figure {
-  // border: 1px solid lime;
+.contact__links-wrapper,
+.contact__logo-wrapper {
+  margin-top: 10px;
   flex: $col-3;
   padding: 0 10px;
+}
+
+.contact__subtitle {
+  color: $mycolor2;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+}
+
+.contact__logo-items {
+  // flex: $col-3;
+  padding: 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact__logo-item {
+  margin-bottom: 1em;
+  position: relative;
+  padding-left: 1em;
+  &::before {
+    position: absolute;
+    top: 6px;
+    left: -8px;
+    width: 10px;
+    height: 10px;
+    transition: 0.3s;
+    content: "";
+    background: url(@img/svg/circle1.svg) center center/cover no-repeat;
+  }
 }
 
 .contact__logo-link {
@@ -885,17 +916,6 @@
   transition: 0.5s;
   margin: 0 auto;
   margin-bottom: 2em;
-}
-
-.contact__logo-desc {
-  text-indent: 20px;
-  margin-bottom: 10px;
-  &:last-child {
-    margin-bottom: 0;
-    @include m575 {
-      margin-bottom: 2em;
-    }
-  }
 }
 
 .contact__works-wrapper {
@@ -996,12 +1016,6 @@
   }
 }
 
-.contact__links-wrapper {
-  margin-top: 10px;
-  flex: $col-3;
-  // border: 1px solid gold;
-  padding: 0 calc($gap * 0.25);
-}
 .contact__links-title {
   margin-bottom: 30px;
   color: $mycolor2;

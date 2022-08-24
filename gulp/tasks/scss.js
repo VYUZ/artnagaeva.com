@@ -50,9 +50,9 @@ export const scss = () => {
           })
         )
       )
-      .pipe(rename({ extname: ".min.css" }))
+      .pipe(app.plugins.if(app.isBuild, rename({ extname: ".min.css" })))
       .pipe(app.gulp.dest(app.path.build.css))
-      // .pipe(browserSync.reload({ stream: true }))
       .pipe(app.plugins.browsersync.stream())
+    // .pipe(browserSync.reload({ stream: true }))
   );
 };
