@@ -90,6 +90,7 @@ if (menuLinks.length > 0) {
         gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector("header").offsetHeight;
 
       if (iconMenu.classList.contains("jsburger-active")) {
+        console.log("burger click");
         document.body.classList.remove("_lock");
         iconMenu.classList.remove("jsburger-active");
         menuNav.classList.remove("jsburger-active");

@@ -1,38 +1,30 @@
 <header class="header">
   <div class="header__wrapper container">
     <div class="header__logo">
-      <a href="./" class="header__logo-link"
-        ><picture
-          ><source srcset="@img/logo/logo.webp" type="image/webp" />
-          <img src="@img/logo/logo.png" alt="" class="header__logo-img" loading="lazy" /></picture
-        ><picture
-          ><source srcset="@img/logo/logo-invers.webp" type="image/webp" />
-          <img
-            src="@img/logo/logo-invers.png"
-            alt=""
-            class="header__logo-img header__logo-img-invers"
-            loading="lazy" /></picture
-      ></a>
+      <a href="./" class="header__logo-link">
+        <img src="@img/logo/logo.png" alt="" class="header__logo-img" loading="lazy" />
+        <img src="@img/logo/logo-invers.png" alt="" class="header__logo-img header__logo-img-invers" loading="lazy"
+      /></a>
     </div>
     <nav class="header__nav container">
       <ul class="header__nav-list">
         <li class="header__nav-item">
-          <a class="header__nav-link js-scroll" href="/">home</a>
+          <a data-goto="/" class="header__nav-link js-scroll" href="/">home</a>
         </li>
         <li class="header__nav-item">
-          <a class="header__nav-link js-scroll" href="#about">about</a>
+          <a data-goto="#about" class="header__nav-link js-scroll" href="#about">about</a>
         </li>
         <li class="header__nav-item">
-          <a class="header__nav-link js-scroll" href="#portfolio">portfolio</a>
+          <a data-goto="#portfolio" class="header__nav-link js-scroll" href="#portfolio">portfolio</a>
         </li>
         <li class="header__nav-item">
-          <a class="header__nav-link js-scroll" href="#partners">for partners</a>
+          <a data-goto="#partners" class="header__nav-link js-scroll" href="#partners">for partners</a>
         </li>
         <!-- <li class="header__nav-item">
           <a class="header__nav-link js-scroll" href="#gallery">gallery</a>
         </li> -->
         <li class="header__nav-item">
-          <a class="header__nav-link js-scroll" href="#contact">contact</a>
+          <a data-goto="#contact" class="header__nav-link js-scroll" href="#contact">contact</a>
         </li>
       </ul>
     </nav>

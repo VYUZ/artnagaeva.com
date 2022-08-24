@@ -14,6 +14,9 @@ body {
   @include adaptiv-value("line-height", 30, 20, 1);
   color: white;
   background-color: #000;
+  &._lock {
+    overflow: hidden;
+  }
 }
 h1,
 h2,
@@ -153,7 +156,6 @@ button.more {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .social-link {
@@ -165,6 +167,7 @@ button.more {
   justify-content: center;
   align-items: center;
   margin-right: 10px;
+  @include adaptiv-value("margin-right", 9, 1, 1);
   transition: all 300ms linear 0s;
   @include m575 {
     width: 36px;
@@ -212,17 +215,17 @@ button.more {
 /* @media */
 
 /* Laptops */
-@media only screen and (max-width: 1200px) {
-}
-/* Tablets, Medium Devices, Desktops */
-@media only screen and (max-width: 992px) {
-}
-/* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-}
-/* Phones */
-@media only screen and (max-width: 575px) {
-}
-/* Extra Small Devices, old Phones */
-@media only screen and (max-width: 480px) {
-}
+// @media only screen and (max-width: 1200px) {
+// }
+// /* Tablets, Medium Devices, Desktops */
+// @media only screen and (max-width: 992px) {
+// }
+// /* Small Devices, Tablets */
+// @media only screen and (max-width: 768px) {
+// }
+// /* Phones */
+// @media only screen and (max-width: 575px) {
+// }
+// /* Extra Small Devices, old Phones */
+// @media only screen and (max-width: 480px) {
+// }
