@@ -50,11 +50,10 @@
 
   transform: translate(-50%, -50%);
   margin: auto;
-
   font-family: "brokllyng", sans-serif;
-  font-size: 100px;
+  // font-size: 100px;
   color: black;
-  padding-left: 50px;
+  // padding-left: 50px;
   // margin-bottom: 50px;
   z-index: 1;
   & span {
@@ -319,7 +318,10 @@
   //   display: inline-block;
   //   transition: 0.2s ease;
   // }
-  &:nth-child(1), &:nth-child(12), &:nth-child(16), &:nth-child(23) {
+  &:nth-child(1),
+  &:nth-child(12),
+  &:nth-child(16),
+  &:nth-child(23) {
     grid-column: span 2;
   }
   // flex: $col-3;
