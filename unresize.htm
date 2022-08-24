@@ -9,18 +9,18 @@
   <meta name="description" content=" " />
   <meta name="keywords" content=" " />
   <title>Main</title>
-  <!-- <link rel="stylesheet" href="css/fullpage.min.css?_v=20220824180326" as="style" /> -->
+  <!-- <link rel="stylesheet" href="css/fullpage.min.css?_v=20220825000448" as="style" /> -->
   <!-- <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.css?_v=20220824180326"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.css?_v=20220825000448"
     integrity="sha512-t+t6zJIt91gRlTfGo/bOo34WpqUOYwGuPmMtOb7XHPCjGJXMtkCzenfNh5t+dBVChlvjMEa26jZsq85zcXVcRQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   /> -->
   <link rel="preload" href="fonts/Brokllyng.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/simple-adaptive-slider.min.css?_v=20220824180326" as="style" />
-  <link rel="stylesheet" href="css/animate.min.css?_v=20220824180326" as="style" />
-  <link rel="stylesheet" rel="preload" href="css/style.css?_v=20220824180326" as="style" />
+  <link rel="stylesheet" href="css/simple-adaptive-slider.min.css?_v=20220825000448" as="style" />
+  <link rel="stylesheet" href="css/animate.min.css?_v=20220825000448" as="style" />
+  <link rel="stylesheet" rel="preload" href="css/style.css?_v=20220825000448" as="style" />
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
@@ -188,23 +188,12 @@
               <picture><source srcset="img/nastya-res.webp" type="image/webp"><img src="img/nastya-res.png" alt="" class="about__img" loading="lazy" /></picture>
             </div>
             <div class="about__text-wrapper">
-              <p
-                class="about__pretitle wow animate__ animate__slideInLeft animated"
-                style="visibility: visible; animation-name: slideInLeft"
-              >
-                hi, my <span>name</span> is
-              </p>
-              <h2
-                class="about__title wow animate__ animate__slideInRight animated"
-                style="visibility: visible; animation-name: slideInRight"
-              >
+              <p class="about__pretitle wow animate__animated animate__slideInLeft">hi, my <span>name</span> is</p>
+              <h2 class="about__title wow animate__animated animate__slideInRight">
                 Anastasiya <br />
                 <span>Nagaeva</span>
               </h2>
-              <h3
-                class="about__subtitle wow animate__ animate__slideInUp animated"
-                style="visibility: visible; animation-name: slideInUp"
-              >
+              <h3 class="about__subtitle wow animate__animated animate__slideInUp">
                 I am an <span> architect - designer - artist</span><br />By education and vocation.
               </h3>
               <a href="#!" class="about__more-link more-link">more</a>
@@ -603,18 +592,7 @@
       <!--CONTACT SECTION START-->
 
       <footer class="section" id="contact">
-        <!-- <ul class="contact-circles">
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-          <li class="contact-circle"></li>
-        </ul> -->
+
         <section class="contact__container">
           <article class="contact__social-wrapper wow animate__animated animate__slideInLeft">
             <h2 class="contact__title">Contact me in any convenient way</h2>
@@ -672,18 +650,18 @@
           </article>
           <div class="contact__main-wrapper">
             <div class="contact__main-container container wow animate__animated animate__slideInRight">
-              <figure class="contact__logo-figure">
-                <a href="#" class="contact__logo-link">
-                  <picture><source srcset="img/logo/logo-invers.webp" type="image/webp"><img src="img/logo/logo-invers.png" width="150" alt="" class="contact__logo-img" loading="lazy" /></picture>
-                </a>
-                <p class="contact__logo-desc">
-                  Phasellus et nisl tellus. Etiam facilisiemper suscipit magna, nec imperdiet lacus semper vitae. Sed
-                  hendrerit enim non jus mauris.
-                </p>
-                <p class="contact__logo-desc">
-                  Etiam facilisis eu nisi scelerisque faucibus. Proin semper suscipit magna, nec imperdiet lacus semper.
-                </p>
-              </figure>
+              <div class="contact__logo-wrapper">
+                <h3 class="contact__subtitle">info</h3>
+                <figure class="contact__logo-items">
+                  <p class="contact__logo-item">Artworks from Siberia, Russia</p>
+                  <p class="contact__logo-item">Worldwide shipping</p>
+                  <p class="contact__logo-item">High-quality packing</p>
+                  <p class="contact__logo-item">Сertificate of authenticity</p>
+                  <a href="#" class="contact__logo-link">
+                    <picture><source srcset="img/logo/logo-invers.webp" type="image/webp"><img src="img/logo/logo-invers.png" width="150" alt="" class="contact__logo-img" loading="lazy"></picture>
+                  </a>
+                </figure>
+              </div>
 
               <div class="contact__works-wrapper">
                 <h3 class="contact__works-title">RECENT WORKS</h3>
@@ -817,32 +795,32 @@
     <!--FOOTER SECTION END-->
 
     <!--подключение скриптов-->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js?_v=20220824180326"></script> -->
-<!-- <script src="../js/swiper-bundle.min.js?_v=20220824180326"></script> -->
-<!-- <script src="js/fontawesome.min.js?_v=20220824180326"></script> -->
-<script src="files/simple-adaptive-slider.js?_v=20220824180326"></script>
-<script src="files/wow.min.js?_v=20220824180326"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js?_v=20220824180326"></script> -->
-<!-- <script src="files/fullpage.min.js?_v=20220824180326"></script> -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js?_v=20220825000448"></script> -->
+<!-- <script src="../js/swiper-bundle.min.js?_v=20220825000448"></script> -->
+<!-- <script src="js/fontawesome.min.js?_v=20220825000448"></script> -->
+<script src="files/simple-adaptive-slider.js?_v=20220825000448"></script>
+<script src="files/wow.min.js?_v=20220825000448"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js?_v=20220825000448"></script> -->
+<!-- <script src="files/fullpage.min.js?_v=20220825000448"></script> -->
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js?_v=20220824180326"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js?_v=20220824180326"></script>
-<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js?_v=20220824180326"></script>
-<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.easings.min.js?_v=20220824180326"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js?_v=20220825000448"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js?_v=20220825000448"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js?_v=20220825000448"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.easings.min.js?_v=20220825000448"></script> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.min.js?_v=20220824180326" integrity="sha512-Xaje5GN/tSuxnQNdbOMppDPWWpPMN0WGfay1St6ckxBqnm3hB66iVqBbLXmujadwsH9KOUVHJZ3GR9QpAEF1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.min.js?_v=20220825000448" integrity="sha512-Xaje5GN/tSuxnQNdbOMppDPWWpPMN0WGfay1St6ckxBqnm3hB66iVqBbLXmujadwsH9KOUVHJZ3GR9QpAEF1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- <script src="files/imagesloaded.pkgd.min.js?_v=20220824180326"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js?_v=20220824180326"></script>-->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js?_v=20220824180326"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js?_v=20220824180326"></script> -->
+<!-- <script src="files/imagesloaded.pkgd.min.js?_v=20220825000448"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js?_v=20220825000448"></script>-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js?_v=20220825000448"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js?_v=20220825000448"></script> -->
 
-<!-- <script src="../files/gsap.min.js?_v=20220824180326"></script> -->
-<!-- <script src="../files/ScrollTrigger.min.js?_v=20220824180326"></script>
-<script src="../files/Draggable.min.js?_v=20220824180326"></script> -->
+<!-- <script src="../files/gsap.min.js?_v=20220825000448"></script> -->
+<!-- <script src="../files/ScrollTrigger.min.js?_v=20220825000448"></script>
+<script src="../files/Draggable.min.js?_v=20220825000448"></script> -->
 
-<script src="js/scripts.min.js?_v=20220824180326"></script>
-<!-- <script src="js/main.js?_v=20220824180326" defer></script> -->
+<script src="js/scripts.min.js?_v=20220825000448"></script>
+<!-- <script src="js/main.js?_v=20220825000448" defer></script> -->
 
   </body>
 </html>
