@@ -736,7 +736,6 @@ button.more:hover {
   flex: 0 1 calc(100% / 12 * 6 - 40px);
   height: 80%;
   padding-top: 10%;
-  padding-bottom: 10%;
   padding-right: 1em;
   display: flex;
   flex-direction: column;
@@ -809,6 +808,7 @@ button.more:hover {
 .portfolio__items {
   width: 90vw;
   display: grid;
+  grid-auto-flow: dense;
   grid-template-columns: repeat(4, minmax(300px, 1fr));
   grid-gap: 40px;
 }
@@ -851,7 +851,7 @@ button.more:hover {
 }
 
 .portfolio__figure:hover .portfolio__img {
-  filter: blur(1px) brightness(90%);
+  filter: brightness(90%);
   transform: scale(1.1);
 }
 
@@ -941,6 +941,7 @@ button.more:hover {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 4em 1em;
 }
 
 .partners__subtitle {
@@ -997,13 +998,6 @@ button.more:hover {
 /* PARTNERS END */
 
 /* GALLERY START */
-
-#gallery {
-  display: grid;
-  place-items: center;
-  padding: 0;
-  margin: 0;
-}
 
 /* GALLERY END */
 
@@ -1174,18 +1168,11 @@ button.more:hover {
   position: relative;
   overflow: hidden;
   height: 100%;
-}
-
-.contact__works-figure:hover > .contact__works-overlay {
-  opacity: 1;
-}
-
-.contact__works-figure:hover .contact__works-link {
-  transform: scale(1);
+  transition: all 0.5s ease-in-out;
 }
 
 .contact__works-figure:hover .contact__works-img {
-  filter: blur(1px) brightness(90%);
+  filter: brightness(100%);
   transform: scale(1.1);
 }
 
@@ -1193,39 +1180,9 @@ button.more:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(0px) brightness(60%);
+  filter: brightness(60%);
   transition: all 0.5s ease-in-out;
   transform: scale(1);
-}
-
-.contact__works-overlay {
-  background: rgba(0, 0, 0, 0.6);
-  box-sizing: border-box;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: 0;
-  display: block;
-  overflow: hidden;
-  transition: all 0.5s;
-}
-
-.contact__works-link {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  vertical-align: middle;
-  transition: all 0.6s ease;
-  transform: scale(1.5);
-  z-index: 2;
 }
 
 /* for touch screen devices */
@@ -1399,6 +1356,10 @@ button.more:hover {
     margin-bottom: 1em;
   }
 
+  .about__more-link {
+    margin-bottom: 2em;
+  }
+
   .portfolio__items {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     grid-template-rows: repeat(2, 1fr);
@@ -1549,6 +1510,10 @@ button.more:hover {
     font-size: 30px;
   }
 
+  .about__container {
+    position: static;
+  }
+
   .about__container::before {
     display: none;
   }
@@ -1566,8 +1531,8 @@ button.more:hover {
     margin-bottom: 20vh;
   }
 
-  .about__more-link {
-    margin-bottom: 2em;
+  .contact__main-wrapper {
+    margin-top: 4em;
   }
 }
 
