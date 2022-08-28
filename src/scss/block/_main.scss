@@ -845,8 +845,7 @@
     }
     @include m575 {
       // flex: $col-4;
-
-      margin-right: 80px;
+      margin-right: 1em;
     }
   }
 }
@@ -1020,7 +1019,7 @@
       transform: scale(1);
     }
     & .contact__works-img {
-      filter: blur(1px) brightness(90%);
+      filter: brightness(90%);
       transform: scale(1.1);
     }
   }
@@ -1085,3 +1084,17 @@
 }
 
 /* CONTACT END */
+/* PICTURE_PAGE START */
+footer > .contact__footer {
+  border-top: none;
+}
+
+footer > .contact__social-wrapper {
+  border-top: 1px solid $mycolor2;
+}
+
+.picture-page__wrapper {
+  min-height: auto;
+  padding-top: 70px;
+}
+/* PICTURE_PAGE END */

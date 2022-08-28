@@ -11,17 +11,19 @@
   background: rgba(255, 255, 255, 0.3);
   z-index: 2;
 
-  &.header-js-active {
+  &.header-js-active, &.header-picture-active {
     background-color: black;
     padding-top: 0px;
     padding-bottom: 0px;
   }
 
-  &.header-js-active .header__logo {
+  &.header-js-active .header__logo, 
+  &.header-picture-active .header__logo {
     margin-bottom: 0;
   }
 
-  &.header-js-active .header__logo-img {
+  &.header-js-active .header__logo-img, 
+  &.header-picture-active .header__logo-img {
     height: 60px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -32,7 +34,8 @@
     }
   }
 
-  &.header-js-active .header__logo-img-invers {
+  &.header-js-active .header__logo-img-invers,
+  &.header-picture-active .header__logo-img-invers {
     opacity: 1;
     position: absolute;
     top: 0;
@@ -40,13 +43,15 @@
     transition: all 0.5s;
   }
 
-  &.header-js-active .header__nav-link {
+  &.header-js-active .header__nav-link,
+  &.header-picture-active .header__nav-link {
     color: white;
     &:hover {
       color: $mycolor2;
     }
 
-    &.header-js-active .social-links {
+    &.header-js-active .social-links,
+    &.header-picture-active .social-links {
       margin-bottom: 1em;
     }
 
@@ -57,7 +62,8 @@
       fill: $mycolor2;
     }
   }
-  &.header-js-active .social-svg {
+  &.header-js-active .social-svg,
+  &.header-picture-active .social-svg {
     fill: white;
     &:hover {
       fill: $mycolor2;
