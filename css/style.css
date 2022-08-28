@@ -819,8 +819,9 @@ button.more:hover {
 
 .portfolio__item:nth-child(1),
 .portfolio__item:nth-child(12),
-.portfolio__item:nth-child(16),
-.portfolio__item:nth-child(23) {
+.portfolio__item:nth-child(13),
+.portfolio__item:nth-child(14),
+.portfolio__item:nth-child(21) {
   grid-column: span 2;
 }
 
