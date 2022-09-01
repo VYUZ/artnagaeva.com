@@ -1103,7 +1103,10 @@ button.more:hover {
   align-items: stretch;
   z-index: 1;
   color: rgba(255, 255, 255, 0.6);
+<<<<<<< HEAD
   width: 100%;
+=======
+>>>>>>> 9a43901b053afb5c1c10099c52cc94e682ba9bfe
 }
 
 .contact__links-wrapper,
@@ -1434,6 +1437,7 @@ footer > .contact__social-wrapper {
   .contact__title {
     font-size: calc(24px + 16 * ((100vw - 320px) / 880));
   }
+<<<<<<< HEAD
 
   .picture-page__title {
     font-size: calc(24px + 26 * ((100vw - 320px) / 880));
@@ -1446,6 +1450,8 @@ footer > .contact__social-wrapper {
   .picture-page__subtitle {
     font-size: calc(28px + 20 * ((100vw - 320px) / 880));
   }
+=======
+>>>>>>> 9a43901b053afb5c1c10099c52cc94e682ba9bfe
 }
 
 @media (max-width: 1100px) {
@@ -1505,10 +1511,13 @@ footer > .contact__social-wrapper {
   .partners__card-title {
     margin-bottom: 0;
   }
+<<<<<<< HEAD
 
   .picture-page__title {
     margin-top: 3em;
   }
+=======
+>>>>>>> 9a43901b053afb5c1c10099c52cc94e682ba9bfe
 }
 
 @media (max-width: 700px) {
@@ -1670,6 +1679,7 @@ footer > .contact__social-wrapper {
   .contact__main-wrapper {
     margin-top: 4em;
   }
+<<<<<<< HEAD
 
   .picture-page__title {
     margin-top: 1em;
@@ -1678,6 +1688,8 @@ footer > .contact__social-wrapper {
   .gallery-items {
     grid-template-columns: repeat(2, 1fr);
   }
+=======
+>>>>>>> 9a43901b053afb5c1c10099c52cc94e682ba9bfe
 }
 
 @media (max-width: 700px) and (max-width: 1200px) {
@@ -1713,10 +1725,13 @@ footer > .contact__social-wrapper {
   .contact__main-container {
     flex-direction: column;
   }
+<<<<<<< HEAD
 
   .gallery-items {
     grid-template-columns: 1fr;
   }
+=======
+>>>>>>> 9a43901b053afb5c1c10099c52cc94e682ba9bfe
 }
 
 @media (prefers-reduced-motion: reduce) {
