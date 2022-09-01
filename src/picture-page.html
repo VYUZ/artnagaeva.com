@@ -9,24 +9,99 @@
     <!--MAIN START-->
     <main id="fullpage">
       <section class="picture-page__wrapper container">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam corrupti tenetur accusamus laboriosam
-          mollitia modi, fugit tempora beatae cupiditate iusto assumenda numquam odio, earum officiis ipsum molestias ex
-          cumque consectetur ab ipsam impedit quisquam! Veritatis numquam quam quo dolores nihil. Doloribus illo officia
-          eaque quaerat modi nemo maxime laudantium quidem quasi? Consectetur ratione reiciendis rerum harum saepe
-          accusantium laborum voluptate perspiciatis nisi nobis in veniam quidem quos possimus, minima suscipit
-          voluptatem ullam? Commodi iste ut quibusdam temporibus eos perferendis recusandae inventore hic repudiandae
-          saepe animi, molestiae illo dicta similique est laborum magni laboriosam voluptates rem. Esse, aliquid.
-          Reiciendis error a tenetur eius suscipit, nisi atque exercitationem fugiat ab itaque voluptate numquam neque
-          incidunt recusandae hic omnis ipsum animi perferendis vitae. Labore rem omnis fuga amet minus adipisci laborum
-          animi officiis eaque fugit id eum, tenetur quos eius veritatis soluta error quas quod deleniti? At
-          necessitatibus eius sequi dolorum eaque? Expedita?
-        </p>
+        <!--<h1 class="">[[*longtitle:isnot=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>-->
+        <!--<h2 class="">[[*description:isnot=``:then=`[[*description]]`:else=``]]</h2>-->
+        <!--<h3>[[*introtext:isnot=``:then=`[[*introtext]]`:else=``]]</h3>-->
+        <!-- <h1 class="">[[*pagetitle:isnot=``:then=`[[*pagetitle]]`:else=``]]</h1>
+        <p class="">[[*longtitle:isnot=``:then=`[[*longtitle]]`:else=``]]</p>
+        <h2 class="">[[*description:isnot=``:then=`[[*description]]`:else=``]]</h2>
+        <h3 class="">[[*introtext:isnot=``:then=`[[*introtext]]`:else=``]]</h3> -->
+        <h1 class="picture-page__title">pagetitle</h1>
+        <p class="picture-page__desc">longtitle</p>
+        <h2 class="picture-page__subtitle">description</h2>
+        <h3 class="picture-page__text">introtext</h3>
+        <br />
+        <!-- Разметка слайдера -->
+        <div class="picture-page__slider">
+          <ul id="lightgallery" class="picture-page__gallery gallery-items" lg-uid="lg0">
+            <!-- [[!Gallery? &linkToImage=`1` &album=`[[*galery_name]]` &toPlaceholder=`Gallery` &thumbTpl=`galItemThumbTPL` &tpl=`galItemTPL` &thumbWidth=`140` &thumbHeight=`140` &imageWidth=`800` &imageHeight=`800`]]
+                [[+Gallery]] -->
+
+            <li
+              class="gallery-item"
+              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
+              data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
+            >
+              <a
+                class="gallery-link"
+                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-1.jpg"
+                data-lg-size="1600-2400"
+              >
+                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-1.jpg" />
+                <div class="gallery-poster">
+                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
+                </div>
+              </a>
+            </li>
+            <li
+              class="gallery-item"
+              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
+              data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
+            >
+              <a
+                class="gallery-link"
+                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-2.jpg"
+                data-lg-size="1600-2400"
+              >
+                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-2.jpg" />
+                <div class="gallery-poster">
+                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
+                </div>
+              </a>
+            </li>
+            <li
+              class="gallery-item"
+              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
+              data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
+            >
+              <a
+                class="gallery-link"
+                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-3.jpg"
+                data-lg-size="1600-2400"
+              >
+                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-3.jpg" />
+                <div class="gallery-poster">
+                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
+                </div>
+              </a>
+            </li>
+            <li
+              class="gallery-item"
+              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
+              data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>"
+            >
+              <a
+                class="gallery-link"
+                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-4.jpg"
+                data-lg-size="1600-2400"
+              >
+                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-4.jpg" />
+                <div class="gallery-poster">
+                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+<p class="picture-page__bottom-text">[[*content]]</p>
+        
+        
+        
       </section>
     </main>
     <!--MAIN SECTION END-->
     <footer class="footer" id="footer">
-      <article class="contact__social-wrapper wow animate__animated animate__slideInLeft">
+      <article class="contact__social-wrapper contact__picture-page wow animate__animated animate__slideInLeft">
         <h2 class="contact__title">Contact me in any convenient way</h2>
         <span class="contact__social-links social-links container">
           <a href="https://wa.me/79133763353?text=Hellow%2C+I+have+a+question" class="social-link">
