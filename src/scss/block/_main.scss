@@ -427,7 +427,7 @@
   &:hover > .portfolio__overlay {
     opacity: 1;
   }
-  &:hover .portfolio__link {
+  &:hover .portfolio__text {
     transform: scale(1);
     &::before {
       top: 20%;
