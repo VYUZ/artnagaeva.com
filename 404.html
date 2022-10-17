@@ -133,111 +133,12 @@
     <!--MAIN START-->
     <main id="fullpage">
       <section class="picture-page__wrapper container">
-        <!--<h1 class="">[[*longtitle:isnot=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>-->
-        <!--<h2 class="">[[*description:isnot=``:then=`[[*description]]`:else=``]]</h2>-->
-        <!--<h3>[[*introtext:isnot=``:then=`[[*introtext]]`:else=``]]</h3>-->
-        <!-- <h1 class="">[[*pagetitle:isnot=``:then=`[[*pagetitle]]`:else=``]]</h1>
-        <p class="">[[*longtitle:isnot=``:then=`[[*longtitle]]`:else=``]]</p>
-        <h2 class="">[[*description:isnot=``:then=`[[*description]]`:else=``]]</h2>
-        <h3 class="">[[*introtext:isnot=``:then=`[[*introtext]]`:else=``]]</h3> -->
-        <h1 class="picture-page__title">pagetitle</h1>
-        <p class="picture-page__desc">longtitle</p>
-        <h2 class="picture-page__subtitle">description</h2>
-        <h3 class="picture-page__text">introtext</h3>
-        <br />
-        <!-- Разметка слайдера -->
-        <div class="picture-page__slider">
-          <ul id="lightgallery" class="picture-page__gallery gallery-items" lg-uid="lg0">
-            <li
-              class="gallery-item"
-              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
-              data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
-            >
-              <a
-                class="gallery-link"
-                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-1.jpg"
-                data-lg-size="1600-2400"
-              >
-                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-1.jpg" />
-                <div class="gallery-poster">
-                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
-                </div>
-              </a>
-            </li>
-            <li
-              class="gallery-item"
-              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
-              data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
-            >
-              <a
-                class="gallery-link"
-                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-2.jpg"
-                data-lg-size="1600-2400"
-              >
-                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-2.jpg" />
-                <div class="gallery-poster">
-                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
-                </div>
-              </a>
-            </li>
-            <li
-              class="gallery-item"
-              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
-              data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
-            >
-              <a
-                class="gallery-link"
-                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-3.jpg"
-                data-lg-size="1600-2400"
-              >
-                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-3.jpg" />
-                <div class="gallery-poster">
-                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
-                </div>
-              </a>
-            </li>
-            <li
-              class="gallery-item"
-              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
-              data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>"
-            >
-              <a
-                class="gallery-link"
-                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-4.jpg"
-                data-lg-size="1600-2400"
-              >
-                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-4.jpg" />
-                <div class="gallery-poster">
-                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
-                </div>
-              </a>
-            </li>
-          </ul>
+        <div class="error__wrapper wow animate__animated animate__slideInRight">
+          <h1 class="error__title">404<span class="oops">Ooops!</span></h1>
+          <h2 class="error__subtitle">Sorry We Can`t Find That Page!</h2>
+          <p class="error__desc">The page you are looking for was moved, removed, renamed or never existed.</p>
+          <a href="/" class="more-link error__link">Back to HomePage</a>
         </div>
-        <article class="picture-page__bottom-text container">
-          [[*content]]
-          <ul class="picture-page-text-wrapper">
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Materials: <span>[[*picture-materials]]</span>
-            </li>
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Size: <span>[[*picture-size]]</span>
-            </li>
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Series: <span>[[*picture-series]]</span>
-            </li>
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Colors: <span>[[*picture-colors]]</span>
-            </li>
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Style: <span>[[*picture-style]]</span>
-            </li>
-          </ul>
-
-          <h3 class="picture-page__text wow animate__animated animate__slideInRight" data-wow-delay="0.25s">
-            [[*description:isnot=``:then=`[[*description:nl2br]]`:else=``]]
-          </h3>
-        </article>
       </section>
     </main>
     <!--MAIN SECTION END-->
@@ -296,7 +197,6 @@
           </a>
         </span>
       </article>
-
       <div class="contact__footer">
         <div class="overlay"></div>
         <span>Copyright © 2022 artnagaeva.com</span>
