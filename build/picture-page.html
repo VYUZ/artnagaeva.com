@@ -214,10 +214,30 @@
             </li>
           </ul>
         </div>
-<p class="picture-page__bottom-text">[[*content]]</p>
-        
-        
-        
+        <article class="picture-page__bottom-text container">
+          [[*content]]
+          <ul class="picture-page-text-wrapper">
+            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
+              Materials: <span>[[*picture-materials]]</span>
+            </li>
+            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
+              Size: <span>[[*picture-size]]</span>
+            </li>
+            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
+              Series: <span>[[*picture-series]]</span>
+            </li>
+            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
+              Colors: <span>[[*picture-colors]]</span>
+            </li>
+            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
+              Style: <span>[[*picture-style]]</span>
+            </li>
+          </ul>
+
+          <h3 class="picture-page__text wow animate__animated animate__slideInRight" data-wow-delay="0.25s">
+            [[*description:isnot=``:then=`[[*description:nl2br]]`:else=``]]
+          </h3>
+        </article>
       </section>
     </main>
     <!--MAIN SECTION END-->
