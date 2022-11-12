@@ -8,19 +8,19 @@
   <meta name="author" content="" />
   <meta name="description" content=" " />
   <meta name="keywords" content=" " />
-  <title>picture-page</title>
-  <!-- <link rel="stylesheet" href="css/fullpage.min.css" as="style" /> -->
+  <title>about-me</title>
+  <!-- <link rel="stylesheet" href="css/fullpage.min.css?_v=20221112190012" as="style" /> -->
   <!-- <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.css?_v=20221112190012"
     integrity="sha512-t+t6zJIt91gRlTfGo/bOo34WpqUOYwGuPmMtOb7XHPCjGJXMtkCzenfNh5t+dBVChlvjMEa26jZsq85zcXVcRQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   /> -->
   <link rel="preload" href="fonts/Brokllyng.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/simple-adaptive-slider.min.css" as="style" />
-  <link rel="stylesheet" href="css/animate.min.css" as="style" />
-  <link rel="stylesheet" rel="preload" href="css/style.css" as="style" />
+  <link rel="stylesheet" href="css/simple-adaptive-slider.min.css?_v=20221112190012" as="style" />
+  <link rel="stylesheet" href="css/animate.min.css?_v=20221112190012" as="style" />
+  <link rel="stylesheet" rel="preload" href="css/style.css?_v=20221112190012" as="style" />
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
@@ -47,7 +47,7 @@
   <div class="header__wrapper container">
     <div class="header__logo">
       <a href="./" class="header__logo-link">
-        <img src="img/logo/logo.png" alt="" class="header__logo-img" loading="lazy" />
+        <picture><source srcset="img/logo/logo.webp" type="image/webp"><img src="img/logo/logo.png" alt="" class="header__logo-img" loading="lazy" /></picture>
         <img src="img/logo/logo-invers.png" alt="" class="header__logo-img header__logo-img-invers" loading="lazy"
       /></a>
     </div>
@@ -132,13 +132,101 @@
 
     <!--MAIN START-->
     <main id="fullpage">
-      <section class="picture-page__wrapper container">
-        <div class="error__wrapper wow animate__animated animate__slideInRight">
-          <h1 class="error__title">404<span class="oops">Ooops!</span></h1>
-          <h2 class="error__subtitle">Sorry We Can`t Find That Page!</h2>
-          <p class="error__desc">The page you are looking for was moved, removed, renamed or never existed.</p>
-          <a href="/" class="more-link error__link">Back to HomePage</a>
-        </div>
+      <section class="about-page__wrapper container">
+        <!--<h1 class="">[[*longtitle:isnot=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>-->
+        <!--<h2 class="">[[*description:isnot=``:then=`[[*description]]`:else=``]]</h2>-->
+        <!--<h3>[[*introtext:isnot=``:then=`[[*introtext]]`:else=``]]</h3>-->
+        <!-- <h1 class="">[[*pagetitle:isnot=``:then=`[[*pagetitle]]`:else=``]]</h1>
+        <p class="">[[*longtitle:isnot=``:then=`[[*longtitle]]`:else=``]]</p>
+        <h2 class="">[[*description:isnot=``:then=`[[*description]]`:else=``]]</h2>
+        <h3 class="">[[*introtext:isnot=``:then=`[[*introtext]]`:else=``]]</h3> -->
+        <h1 class="about-page__title wow animate__animated animate__zoomIn">About me</h1>
+        <article class="about-page__top-wrapper wow animate__animated animate__slideInLeft">
+          <div class="about-page__top-avatar-wrap">
+            <picture><source srcset="img/about-avatar.webp" type="image/webp"><img src="img/about-avatar.png" alt="" class="about-page__top-avatar-img" /></picture>
+          </div>
+          <div class="about-page__top-desc">
+            <p class="about-page__top-text">
+              My name is Anastasia Nagaeva. I am an architect - designer - artist By education and vocation. I found
+              harmony at the intersection of creative and technical for myself.
+            </p>
+            <p class="about-page__top-text">
+              I always adhere to the principle "from the general to the particular", from architecture to decor.
+              Therefore, I think that art is an accurate, precise detail that is necessary for a certain interior, like
+              air, like a final chord.
+            </p>
+            <p class="about-page__top-text">
+              The force of nature - this is the sense of my artworks: the might of the wind, the power of the mountains
+              or the infinity of the desert. And the strength of the spirit of a person who is ready to conquer peaks,
+              sail in a boat on the high seas or light a campfire for the night in the forest. The desire to be one with
+              the nature elements is familiar to me, inspires and is the core of my artworks.
+            </p>
+            <p class="about-page__top-text">
+              Years spent on rafting, in the mountains, winter free ride, hiking and professional artist's education is
+              the perfect combination to be able to resonate in your heart.
+            </p>
+          </div>
+        </article>
+        <article class="about-page__bottom-text container wow animate__animated animate__slideInRight">
+          <ul class="about-page__nav-tabs" role="tablist">
+            <li class="nav-tab">
+              <input type="radio" name="tabs" id="tab1" checked />
+              <label for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0">about me</label>
+
+              <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="aboutme" aria-hidden="false">
+                <p class="about-page__top-text">
+                  My name is Anastasia Nagaeva. I am an architect - designer - artist By education and vocation. I found
+                  harmony at the intersection of creative and technical for myself.
+                </p>
+                <p class="about-page__top-text">
+                  I always adhere to the principle "from the general to the particular", from architecture to decor.
+                  Therefore, I think that art is an accurate, precise detail that is necessary for a certain interior,
+                  like air, like a final chord.
+                </p>
+                <p class="about-page__top-text">
+                  The force of nature - this is the sense of my artworks: the might of the wind, the power of the
+                  mountains or the infinity of the desert. And the strength of the spirit of a person who is ready to
+                  conquer peaks, sail in a boat on the high seas or light a campfire for the night in the forest. The
+                  desire to be one with the nature elements is familiar to me, inspires and is the core of my artworks.
+                </p>
+                <p class="about-page__top-text">
+                  Years spent on rafting, in the mountains, winter free ride, hiking and professional artist's education
+                  is the perfect combination to be able to resonate in your heart.
+                </p>
+              </div>
+            </li>
+            <li class="nav-tab">
+              <input type="radio" name="tabs" id="tab2" />
+              <label for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="0">exhibitions</label>
+
+              <div
+                id="tab-content2"
+                class="tab-content"
+                role="tabpanel"
+                aria-labelledby="exhibitions"
+                aria-hidden="true"
+              >
+                <p class="nav-pane">
+                  Dolor sit amet consectetur adipisicing elit. Debitis mollitia labore itaque quaerat perspiciatis.
+                  Fugiat a debitis amet, praesentium doloribus sequi nisi, impedit iure sapiente minima possimus,
+                  suscipit libero animi!
+                </p>
+              </div>
+            </li>
+            <li class="nav-tab">
+              <input type="radio" name="tabs" id="tab3" />
+              <label for="tab3" role="tab" aria-selected="true" aria-controls="panel3" tabindex="0">at work</label>
+
+              <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="atwork" aria-hidden="true">
+                <p class="nav-pane">
+                  Amet consectetur adipisicing elit. Debitis mollitia labore itaque quaerat perspiciatis. Fugiat a
+                  debitis amet, praesentium doloribus sequi nisi, impedit iure sapiente minima possimus, suscipit libero
+                  animi!
+                </p>
+              </div>
+            </li>
+          </ul>
+        </article>
       </section>
     </main>
     <!--MAIN SECTION END-->
@@ -197,38 +285,39 @@
           </a>
         </span>
       </article>
+
       <div class="contact__footer">
         <div class="overlay"></div>
         <span>Copyright © 2022 artnagaeva.com</span>
       </div>
     </footer>
     <!--подключение скриптов-->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script> -->
-<!-- <script src="../js/swiper-bundle.min.js"></script> -->
-<!-- <script src="js/fontawesome.min.js"></script> -->
-<script src="files/simple-adaptive-slider.js"></script>
-<script src="files/wow.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> -->
-<!-- <script src="files/fullpage.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js?_v=20221112190012"></script> -->
+<!-- <script src="../js/swiper-bundle.min.js?_v=20221112190012"></script> -->
+<!-- <script src="js/fontawesome.min.js?_v=20221112190012"></script> -->
+<script src="files/simple-adaptive-slider.js?_v=20221112190012"></script>
+<script src="files/wow.min.js?_v=20221112190012"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js?_v=20221112190012"></script> -->
+<!-- <script src="files/fullpage.min.js?_v=20221112190012"></script> -->
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.easings.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js?_v=20221112190012"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js?_v=20221112190012"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js?_v=20221112190012"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.easings.min.js?_v=20221112190012"></script> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.min.js" integrity="sha512-Xaje5GN/tSuxnQNdbOMppDPWWpPMN0WGfay1St6ckxBqnm3hB66iVqBbLXmujadwsH9KOUVHJZ3GR9QpAEF1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.min.js?_v=20221112190012" integrity="sha512-Xaje5GN/tSuxnQNdbOMppDPWWpPMN0WGfay1St6ckxBqnm3hB66iVqBbLXmujadwsH9KOUVHJZ3GR9QpAEF1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- <script src="files/imagesloaded.pkgd.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>-->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script> -->
+<!-- <script src="files/imagesloaded.pkgd.min.js?_v=20221112190012"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js?_v=20221112190012"></script>-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js?_v=20221112190012"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js?_v=20221112190012"></script> -->
 
-<!-- <script src="../files/gsap.min.js"></script> -->
-<!-- <script src="../files/ScrollTrigger.min.js"></script>
-<script src="../files/Draggable.min.js"></script> -->
+<!-- <script src="../files/gsap.min.js?_v=20221112190012"></script> -->
+<!-- <script src="../files/ScrollTrigger.min.js?_v=20221112190012"></script>
+<script src="../files/Draggable.min.js?_v=20221112190012"></script> -->
 
-<script src="js/scripts.min.js"></script>
-<!-- <script src="js/main.js" defer></script> -->
+<script src="js/scripts.min.js?_v=20221112190012"></script>
+<!-- <script src="js/main.js?_v=20221112190012" defer></script> -->
 
   </body>
 </html>

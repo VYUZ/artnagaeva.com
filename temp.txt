@@ -25,6 +25,8 @@ git commit -m "qweqwe"
 git push
 git subtree push --prefix build origin gh-pages
 
+если что, команда git push -f origin master удалит все изменения в облачной ветке, точнее перепишет их из локальной
+
 
 Сделать страницу about
 Добавить на страницу товара - prev и next

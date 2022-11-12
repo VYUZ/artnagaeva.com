@@ -1,9 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  @@include('html/head.html',{ "title":"Main" })
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="application-name" content=" " />
+  <meta name="author" content="" />
+  <meta name="description" content=" " />
+  <meta name="keywords" content=" " />
+  <title>Main</title>
+  <!-- <link rel="stylesheet" href="css/fullpage.min.css?_v=20221112190012" as="style" /> -->
+  <!-- <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.css?_v=20221112190012"
+    integrity="sha512-t+t6zJIt91gRlTfGo/bOo34WpqUOYwGuPmMtOb7XHPCjGJXMtkCzenfNh5t+dBVChlvjMEa26jZsq85zcXVcRQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  /> -->
+  <link rel="preload" href="fonts/Brokllyng.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/simple-adaptive-slider.min.css?_v=20221112190012" as="style" />
+  <link rel="stylesheet" href="css/animate.min.css?_v=20221112190012" as="style" />
+  <link rel="stylesheet" rel="preload" href="css/style.css?_v=20221112190012" as="style" />
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" /> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/img/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+  <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="msapplication-config" content="/img/favicon/browserconfig.xml" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+
   <body>
     <!--HEADER START-->
-    @@include("html/header.html")
+    <header class="header">
+  <div class="header__wrapper container">
+    <div class="header__logo">
+      <a href="./" class="header__logo-link">
+        <picture><source srcset="img/logo/logo.webp" type="image/webp"><img src="img/logo/logo.png" alt="" class="header__logo-img" loading="lazy" /></picture>
+        <img src="img/logo/logo-invers.png" alt="" class="header__logo-img header__logo-img-invers" loading="lazy"
+      /></a>
+    </div>
+    <nav class="header__nav container">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a data-goto="/" class="header__nav-link js-scroll" href="/">home</a>
+        </li>
+        <li class="header__nav-item">
+          <a data-goto="#about" class="header__nav-link js-scroll" href="#about">about</a>
+        </li>
+        <li class="header__nav-item">
+          <a data-goto="#portfolio" class="header__nav-link js-scroll" href="#portfolio">portfolio</a>
+        </li>
+        <li class="header__nav-item">
+          <a data-goto="#partners" class="header__nav-link js-scroll" href="#partners">for partners</a>
+        </li>
+        <!-- <li class="header__nav-item">
+          <a class="header__nav-link js-scroll" href="#gallery">gallery</a>
+        </li> -->
+        <li class="header__nav-item">
+          <a data-goto="#contact" class="header__nav-link js-scroll" href="#contact">contact</a>
+        </li>
+      </ul>
+    </nav>
+    <span class="header__social-links social-links">
+      <a href="https://wa.me/79133763353?text=Hellow%2C+I+have+a+question" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="social-svg" viewBox="0 0 448 512">
+          <path
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+          />
+        </svg>
+      </a>
+      <a href="nagaevaart@gmail.com" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="social-svg" viewBox="0 0 512 512">
+          <path
+            d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"
+          />
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/nagaeva.design/" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="social-svg" viewBox="0 0 448 512">
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+          />
+        </svg>
+      </a>
+      <!-- <a href="https://twitter.com/#" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="social-svg" viewBox="0 0 512 512">
+          <path
+            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+          />
+        </svg>
+      </a> -->
+      <a href="https://www.youtube.com/channel/UCvPXtubjeuX8Qg_P2uxsMSA/featured" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="social-svg" viewBox="0 0 576 512">
+          <path
+            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+          />
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/nagaeva.design" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="social-svg" viewBox="0 0 320 512">
+          <path
+            d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+          />
+        </svg>
+      </a>
+      <a href="https://ru.pinterest.com/nagaevaart/" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" class="social-svg" viewBox="0 0 384 512">
+          <path
+            d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"
+          />
+        </svg>
+      </a>
+    </span>
+    <div class="burger"><span></span></div>
+  </div>
+</header>
+
     <!--HEADER END-->
 
     <!--MAIN START-->
@@ -12,7 +136,7 @@
       <section class="itcss section" id="hero">
         <div class="hero__wrapper itcss__wrapper">
           <!-- <img
-            src="@img/logo/logo-transp_orange-white-1024.png"
+            src="img/logo/logo-transp_orange-white-1024.png"
             alt=""
             class="hero__logo-img my-zoomIn-fadeIn"
             loading="lazy"
@@ -24,19 +148,19 @@
           </h1>
           <ul class="hero__items itcss__items">
             <li class="hero__item itcss__item">
-              <img class="hero__item-img" src="@img/slider/slider-1.jpg" height="100vh" alt="" />
+              <picture><source srcset="img/slider/slider-1.webp" type="image/webp"><img class="hero__item-img" src="img/slider/slider-1.jpg" height="100vh" alt="" /></picture>
               <!-- <span class="hero__item-text container">
                 <h3 class="hero__item-subtitle">author's works for interior design</h3>
               </span> -->
             </li>
             <li class="hero__item itcss__item">
-              <img class="hero__item-img" src="@img/slider/slider-2-2.jpg" height="100vh" alt="" />
+              <picture><source srcset="img/slider/slider-2-2.webp" type="image/webp"><img class="hero__item-img" src="img/slider/slider-2-2.jpg" height="100vh" alt="" /></picture>
               <!-- <span class="hero__item-text container">
                 <h3 class="hero__item-subtitle">es blanditiis adipisci, amet quas consequatur est at impedit!</h3>
               </span> -->
             </li>
             <li class="hero__item itcss__item">
-              <img class="hero__item-img" src="@img/slider/slider-3.jpg" alt="" />
+              <picture><source srcset="img/slider/slider-3.webp" type="image/webp"><img class="hero__item-img" src="img/slider/slider-3.jpg" alt="" /></picture>
               <!-- <span class="hero__item-text container">
                 <h3 class="hero__item-subtitle">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, praesentium?
@@ -44,7 +168,7 @@
               </span> -->
             </li>
             <li class="hero__item itcss__item">
-              <img class="hero__item-img" src="@img/slider/slider-4.jpg" alt="" />
+              <picture><source srcset="img/slider/slider-4.webp" type="image/webp"><img class="hero__item-img" src="img/slider/slider-4.jpg" alt="" /></picture>
               <!-- <span class="hero__item-text container">
                 <h3 class="hero__item-subtitle">author's works for interior design</h3>
               </span> -->
@@ -61,7 +185,7 @@
         <div class="about__container">
           <div class="about__wrapper container">
             <div class="about__img-wrapper">
-              <img src="@img/nastya-res.png" alt="" class="about__img" loading="lazy" />
+              <picture><source srcset="img/nastya-res.webp" type="image/webp"><img src="img/nastya-res.png" alt="" class="about__img" loading="lazy" /></picture>
             </div>
             <div class="about__text-wrapper">
               <p class="about__pretitle wow animate__animated animate__slideInLeft">hi, my <span>name</span> is</p>
@@ -91,7 +215,7 @@
       >        
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/1-1-northern-explosion.jpg" alt="northern-explosion"  />
+            <picture><source srcset="img/catalog/1-1-northern-explosion.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/1-1-northern-explosion.jpg" alt="northern-explosion"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Northern explosion"</a>
             </figcaption>
@@ -99,7 +223,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/1-2-ice-fault.jpg" alt="ice-fault"  />
+            <picture><source srcset="img/catalog/1-2-ice-fault.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/1-2-ice-fault.jpg" alt="ice-fault"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Ice fault"</a>
             </figcaption>
@@ -107,7 +231,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/1-3-arctic-ocean.jpg" alt="arctic-ocean" />
+            <picture><source srcset="img/catalog/1-3-arctic-ocean.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/1-3-arctic-ocean.jpg" alt="arctic-ocean" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Arctic ocean"</a>
             </figcaption>
@@ -115,7 +239,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/2-1-textile.jpg" alt="textile" />
+            <picture><source srcset="img/catalog/2-1-textile.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/2-1-textile.jpg" alt="textile" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Textile"</a>
             </figcaption>
@@ -123,7 +247,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/2-2-expression-on-white.jpg" alt="expression-on-white"  />
+            <picture><source srcset="img/catalog/2-2-expression-on-white.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/2-2-expression-on-white.jpg" alt="expression-on-white"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Expression-on-white"</a>
             </figcaption>
@@ -131,7 +255,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/2-3-arctic-ocean-2-mockup.jpg" alt="arctic-ocean-2-mockup"  />
+            <picture><source srcset="img/catalog/2-3-arctic-ocean-2-mockup.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/2-3-arctic-ocean-2-mockup.jpg" alt="arctic-ocean-2-mockup"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Arctic-ocean-2-mockup"</a>
             </figcaption>
@@ -139,7 +263,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/2-4-northern-explosion-2.jpg" alt="northern-explosion-2"  />
+            <picture><source srcset="img/catalog/2-4-northern-explosion-2.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/2-4-northern-explosion-2.jpg" alt="northern-explosion-2"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Northern-explosion-2"</a>
             </figcaption>
@@ -147,7 +271,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/3-1-arctic-ocean-2.jpg" alt="arctic-ocean-2"  />
+            <picture><source srcset="img/catalog/3-1-arctic-ocean-2.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/3-1-arctic-ocean-2.jpg" alt="arctic-ocean-2"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Arctic-ocean-2"</a>
             </figcaption>
@@ -155,7 +279,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-           <img class="portfolio__img" src="@img/catalog/3-2-northern-explosion-2.jpg" alt="northern-explosion-2"  />
+           <picture><source srcset="img/catalog/3-2-northern-explosion-2.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/3-2-northern-explosion-2.jpg" alt="northern-explosion-2"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Northern-explosion-2"</a>
             </figcaption>
@@ -163,7 +287,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/3-3-sea-on-white.jpg" alt="sea-on-white" />
+            <picture><source srcset="img/catalog/3-3-sea-on-white.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/3-3-sea-on-white.jpg" alt="sea-on-white" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Sea-on-white"</a>
             </figcaption>
@@ -171,7 +295,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/3-4-birth-2.jpg" alt="birth-2"  />
+            <picture><source srcset="img/catalog/3-4-birth-2.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/3-4-birth-2.jpg" alt="birth-2"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Birth-2"</a>
             </figcaption>
@@ -179,7 +303,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/4-1-sea-in-a-circle.jpg" alt="sea-in-a-circle" />
+            <picture><source srcset="img/catalog/4-1-sea-in-a-circle.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/4-1-sea-in-a-circle.jpg" alt="sea-in-a-circle" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Sea-in-a-circle"</a>
             </figcaption>
@@ -187,7 +311,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/4-2-splatter-gradient-mockup.jpg" alt="Splatter gradient"  />
+            <picture><source srcset="img/catalog/4-2-splatter-gradient-mockup.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/4-2-splatter-gradient-mockup.jpg" alt="Splatter gradient"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Splatter gradient"</a>
             </figcaption>
@@ -195,7 +319,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/5-1-red-mountain-mockup.jpg" alt="Red-mountain-mockup"  />
+            <picture><source srcset="img/catalog/5-1-red-mountain-mockup.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/5-1-red-mountain-mockup.jpg" alt="Red-mountain-mockup"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Red-mountain-mockup"</a>
             </figcaption>
@@ -203,7 +327,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/5-2-swirl.jpg" alt="Swirl" />
+            <picture><source srcset="img/catalog/5-2-swirl.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/5-2-swirl.jpg" alt="Swirl" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Swirl"</a>
             </figcaption>
@@ -211,7 +335,7 @@
         </li>
                             <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/5-3-oil-mockup.jpg" alt="Oil-mockup"  />
+            <picture><source srcset="img/catalog/5-3-oil-mockup.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/5-3-oil-mockup.jpg" alt="Oil-mockup"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Oil-mockup"</a>
             </figcaption>
@@ -219,7 +343,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/6-1-oil-5.jpg" alt="Oil-5" />
+            <picture><source srcset="img/catalog/6-1-oil-5.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/6-1-oil-5.jpg" alt="Oil-5" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Oil"</a>
             </figcaption>
@@ -227,7 +351,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/6-2-mountains.jpg" alt="Mountains" />
+            <picture><source srcset="img/catalog/6-2-mountains.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/6-2-mountains.jpg" alt="Mountains" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Mountains"</a>
             </figcaption>
@@ -235,7 +359,7 @@
         </li>
                   <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/6-3-abstraction-with-green.jpg" alt="Abstraction-with-green"  />
+            <picture><source srcset="img/catalog/6-3-abstraction-with-green.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/6-3-abstraction-with-green.jpg" alt="Abstraction-with-green"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Abstraction-with-green"</a>
             </figcaption>
@@ -243,7 +367,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/6-4-abstraction-with-green-mockup.jpg" alt="Abstraction-with-green-mockup"  />
+            <picture><source srcset="img/catalog/6-4-abstraction-with-green-mockup.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/6-4-abstraction-with-green-mockup.jpg" alt="Abstraction-with-green-mockup"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Abstraction-with-green-mockup"</a>
             </figcaption>
@@ -251,7 +375,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/7-1-minimalism.jpg" alt="Minimalism"  />
+            <picture><source srcset="img/catalog/7-1-minimalism.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/7-1-minimalism.jpg" alt="Minimalism"  /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Minimalism"</a>
             </figcaption>
@@ -259,7 +383,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/7-2-red-mountain.jpg" alt="Red-mountain" />
+            <picture><source srcset="img/catalog/7-2-red-mountain.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/7-2-red-mountain.jpg" alt="Red-mountain" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Red-mountain"</a>
             </figcaption>
@@ -267,7 +391,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/7-3-black-stones.jpg" alt="Black-stones" />
+            <picture><source srcset="img/catalog/7-3-black-stones.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/7-3-black-stones.jpg" alt="Black-stones" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Black-stones"</a>
             </figcaption>
@@ -275,7 +399,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/8-1-golden-mockup.jpg" alt="Golden-mockup" />
+            <picture><source srcset="img/catalog/8-1-golden-mockup.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/8-1-golden-mockup.jpg" alt="Golden-mockup" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Golden-mockup"</a>
             </figcaption>
@@ -283,7 +407,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/8-2-golden-mesh.jpg" alt="Golden-mesh" />
+            <picture><source srcset="img/catalog/8-2-golden-mesh.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/8-2-golden-mesh.jpg" alt="Golden-mesh" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Golden-mesh"</a>
             </figcaption>
@@ -291,7 +415,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/8-3-gold-delete-mockup.jpg" alt="Gold-delete-mockup" />
+            <picture><source srcset="img/catalog/8-3-gold-delete-mockup.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/8-3-gold-delete-mockup.jpg" alt="Gold-delete-mockup" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Gold-delete-mockup"</a>
             </figcaption>
@@ -299,7 +423,7 @@
         </li>
         <li class="portfolio__item">
           <figure class="portfolio__figure">
-            <img class="portfolio__img" src="@img/catalog/8-4-golden-flower-mockup.jpg" alt="Golden-flower-mockup" />
+            <picture><source srcset="img/catalog/8-4-golden-flower-mockup.webp" type="image/webp"><img class="portfolio__img" src="img/catalog/8-4-golden-flower-mockup.jpg" alt="Golden-flower-mockup" /></picture>
             <figcaption class="portfolio__overlay">
               <a href="#!" class="portfolio__link">"Golden-flower-mockup"</a>
             </figcaption>
@@ -610,7 +734,7 @@
                   <p class="contact__logo-item">High-quality packing</p>
                   <p class="contact__logo-item">Сertificate of authenticity</p>
                   <a href="#" class="contact__logo-link">
-                    <img src="@img/logo/logo-invers.png" width="150" alt="" class="contact__logo-img" loading="lazy">
+                    <picture><source srcset="img/logo/logo-invers.webp" type="image/webp"><img src="img/logo/logo-invers.png" width="150" alt="" class="contact__logo-img" loading="lazy"></picture>
                   </a>
                 </figure>
               </div>
@@ -620,7 +744,7 @@
                 <ul class="contact__works-items">
                   <li class="contact__works-item">
                     <figure class="contact__works-figure">
-                      <img class="contact__works-img" src="@img/catalog/cat-1-1.jpg" alt="san francisco" />
+                      <picture><source srcset="img/catalog/1-1-northern-explosion.webp" type="image/webp"><img class="contact__works-img" src="img/catalog/1-1-northern-explosion.jpg" alt="san francisco" /></picture>
                       <!-- <div class="contact__works-overlay">
                         <a href="#!" class="contact__works-link">qweqweqwe</a>
                       </div> -->
@@ -628,7 +752,7 @@
                   </li>
                   <li class="contact__works-item">
                     <figure class="contact__works-figure">
-                      <img class="contact__works-img" src="@img/catalog/cat-1-2.jpg" alt="san francisco" />
+                      <picture><source srcset="img/catalog/1-2-ice-fault.webp" type="image/webp"><img class="contact__works-img" src="img/catalog/1-2-ice-fault.jpg" alt="san francisco" /></picture>
                       <!-- <div class="contact__works-overlay">
                         <a href="#!" class="contact__works-link">qweqweqwe</a>
                       </div> -->
@@ -636,7 +760,7 @@
                   </li>
                   <li class="contact__works-item">
                     <figure class="contact__works-figure">
-                      <img class="contact__works-img" src="@img/catalog/cat-1-3.jpg" alt="san francisco" />
+                      <picture><source srcset="img/catalog/1-3-arctic-ocean.webp" type="image/webp"><img class="contact__works-img" src="img/catalog/1-3-arctic-ocean.jpg" alt="san francisco" /></picture>
                       <!-- <div class="contact__works-overlay">
                         <a href="#!" class="contact__works-link">qweqweqwe</a>
                       </div> -->
@@ -644,7 +768,7 @@
                   </li>
                   <li class="contact__works-item">
                     <figure class="contact__works-figure">
-                      <img class="contact__works-img" src="@img/catalog/cat-1-4.jpg" alt="san francisco" />
+                      <picture><source srcset="img/catalog/2-1-textile.webp" type="image/webp"><img class="contact__works-img" src="img/catalog/2-1-textile.jpg" alt="san francisco" /></picture>
                       <!-- <div class="contact__works-overlay">
                         <a href="#!" class="contact__works-link">qweqweqwe</a>
                       </div> -->
@@ -652,7 +776,7 @@
                   </li>
                   <li class="contact__works-item">
                     <figure class="contact__works-figure">
-                      <img class="contact__works-img" src="@img/catalog/cat-2-1.jpg" alt="san francisco" />
+                      <picture><source srcset="img/catalog/2-2-expression-on-white.webp" type="image/webp"><img class="contact__works-img" src="img/catalog/2-2-expression-on-white.jpg" alt="san francisco" /></picture>
                       <!-- <div class="contact__works-overlay">
                         <a href="#!" class="contact__works-link">qweqweqwe</a>
                       </div> -->
@@ -660,7 +784,7 @@
                   </li>
                   <li class="contact__works-item">
                     <figure class="contact__works-figure">
-                      <img class="contact__works-img" src="@img/catalog/cat-2-2.jpg" alt="san francisco" />
+                      <picture><source srcset="img/catalog/2-3-arctic-ocean-2-mockup.webp" type="image/webp"><img class="contact__works-img" src="img/catalog/2-3-arctic-ocean-2-mockup.jpg" alt="san francisco" /></picture>
                       <!-- <div class="contact__works-overlay">
                         <a href="#!" class="contact__works-link">qweqweqwe</a>
                       </div> -->
@@ -668,7 +792,7 @@
                   </li>
                   <li class="contact__works-item">
                     <figure class="contact__works-figure">
-                      <img class="contact__works-img" src="@img/catalog/cat-2-3.jpg" alt="san francisco" />
+                      <picture><source srcset="img/catalog/2-4-northern-explosion-2.webp" type="image/webp"><img class="contact__works-img" src="img/catalog/2-4-northern-explosion-2.jpg" alt="san francisco" /></picture>
                       <!-- <div class="contact__works-overlay">
                         <a href="#!" class="contact__works-link">qweqweqwe</a>
                       </div> -->
@@ -676,7 +800,7 @@
                   </li>
                   <li class="contact__works-item">
                     <figure class="contact__works-figure">
-                      <img class="contact__works-img" src="@img/catalog/cat-2-4.jpg" alt="san francisco" />
+                      <picture><source srcset="img/catalog/3-1-arctic-ocean-2.webp" type="image/webp"><img class="contact__works-img" src="img/catalog/3-1-arctic-ocean-2.jpg" alt="san francisco" /></picture>
                       <!-- <div class="contact__works-overlay">
                         <a href="#!" class="contact__works-link">qweqweqwe</a>
                       </div> -->
@@ -743,10 +867,36 @@
     <!--MAIN SECTION END-->
 
     <!--FOOTER SECTION START-->
-    <!-- @@include("html/footer.html",{}) -->
+    
     <!--FOOTER SECTION END-->
 
     <!--подключение скриптов-->
-    @@include("html/scripts.html",{})
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js?_v=20221112190012"></script> -->
+<!-- <script src="../js/swiper-bundle.min.js?_v=20221112190012"></script> -->
+<!-- <script src="js/fontawesome.min.js?_v=20221112190012"></script> -->
+<script src="files/simple-adaptive-slider.js?_v=20221112190012"></script>
+<script src="files/wow.min.js?_v=20221112190012"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js?_v=20221112190012"></script> -->
+<!-- <script src="files/fullpage.min.js?_v=20221112190012"></script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js?_v=20221112190012"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js?_v=20221112190012"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js?_v=20221112190012"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.easings.min.js?_v=20221112190012"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.min.js?_v=20221112190012" integrity="sha512-Xaje5GN/tSuxnQNdbOMppDPWWpPMN0WGfay1St6ckxBqnm3hB66iVqBbLXmujadwsH9KOUVHJZ3GR9QpAEF1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- <script src="files/imagesloaded.pkgd.min.js?_v=20221112190012"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js?_v=20221112190012"></script>-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js?_v=20221112190012"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js?_v=20221112190012"></script> -->
+
+<!-- <script src="../files/gsap.min.js?_v=20221112190012"></script> -->
+<!-- <script src="../files/ScrollTrigger.min.js?_v=20221112190012"></script>
+<script src="../files/Draggable.min.js?_v=20221112190012"></script> -->
+
+<script src="js/scripts.min.js?_v=20221112190012"></script>
+<!-- <script src="js/main.js?_v=20221112190012" defer></script> -->
+
   </body>
 </html>

@@ -9,18 +9,18 @@
   <meta name="description" content=" " />
   <meta name="keywords" content=" " />
   <title>picture-page</title>
-  <!-- <link rel="stylesheet" href="css/fullpage.min.css" as="style" /> -->
+  <!-- <link rel="stylesheet" href="css/fullpage.min.css?_v=20221112190012" as="style" /> -->
   <!-- <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.css?_v=20221112190012"
     integrity="sha512-t+t6zJIt91gRlTfGo/bOo34WpqUOYwGuPmMtOb7XHPCjGJXMtkCzenfNh5t+dBVChlvjMEa26jZsq85zcXVcRQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   /> -->
   <link rel="preload" href="fonts/Brokllyng.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/simple-adaptive-slider.min.css" as="style" />
-  <link rel="stylesheet" href="css/animate.min.css" as="style" />
-  <link rel="stylesheet" rel="preload" href="css/style.css" as="style" />
+  <link rel="stylesheet" href="css/simple-adaptive-slider.min.css?_v=20221112190012" as="style" />
+  <link rel="stylesheet" href="css/animate.min.css?_v=20221112190012" as="style" />
+  <link rel="stylesheet" rel="preload" href="css/style.css?_v=20221112190012" as="style" />
   <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
@@ -47,7 +47,7 @@
   <div class="header__wrapper container">
     <div class="header__logo">
       <a href="./" class="header__logo-link">
-        <img src="img/logo/logo.png" alt="" class="header__logo-img" loading="lazy" />
+        <picture><source srcset="img/logo/logo.webp" type="image/webp"><img src="img/logo/logo.png" alt="" class="header__logo-img" loading="lazy" /></picture>
         <img src="img/logo/logo-invers.png" alt="" class="header__logo-img header__logo-img-invers" loading="lazy"
       /></a>
     </div>
@@ -133,111 +133,12 @@
     <!--MAIN START-->
     <main id="fullpage">
       <section class="picture-page__wrapper container">
-        <!--<h1 class="">[[*longtitle:isnot=``:then=`[[*longtitle]]`:else=`[[*pagetitle]]`]]</h1>-->
-        <!--<h2 class="">[[*description:isnot=``:then=`[[*description]]`:else=``]]</h2>-->
-        <!--<h3>[[*introtext:isnot=``:then=`[[*introtext]]`:else=``]]</h3>-->
-        <!-- <h1 class="">[[*pagetitle:isnot=``:then=`[[*pagetitle]]`:else=``]]</h1>
-        <p class="">[[*longtitle:isnot=``:then=`[[*longtitle]]`:else=``]]</p>
-        <h2 class="">[[*description:isnot=``:then=`[[*description]]`:else=``]]</h2>
-        <h3 class="">[[*introtext:isnot=``:then=`[[*introtext]]`:else=``]]</h3> -->
-        <h1 class="picture-page__title">pagetitle</h1>
-        <p class="picture-page__desc">longtitle</p>
-        <h2 class="picture-page__subtitle">description</h2>
-        <h3 class="picture-page__text">introtext</h3>
-        <br />
-        <!-- Разметка слайдера -->
-        <div class="picture-page__slider">
-          <ul id="lightgallery" class="picture-page__gallery gallery-items" lg-uid="lg0">
-            <li
-              class="gallery-item"
-              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
-              data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
-            >
-              <a
-                class="gallery-link"
-                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-1.jpg"
-                data-lg-size="1600-2400"
-              >
-                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-1.jpg" />
-                <div class="gallery-poster">
-                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
-                </div>
-              </a>
-            </li>
-            <li
-              class="gallery-item"
-              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
-              data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
-            >
-              <a
-                class="gallery-link"
-                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-2.jpg"
-                data-lg-size="1600-2400"
-              >
-                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-2.jpg" />
-                <div class="gallery-poster">
-                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
-                </div>
-              </a>
-            </li>
-            <li
-              class="gallery-item"
-              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
-              data-sub-html="<h4>Sunset Serenity</h4><p>A gorgeous Sunset tonight captured at Coniston Water....</p>"
-            >
-              <a
-                class="gallery-link"
-                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-3.jpg"
-                data-lg-size="1600-2400"
-              >
-                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-3.jpg" />
-                <div class="gallery-poster">
-                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
-                </div>
-              </a>
-            </li>
-            <li
-              class="gallery-item"
-              data-src="[[++assets_url]]img/catalog/1-1-northern-explosion/Diptych-Northern-Explosion-mockup1.jpg"
-              data-sub-html="<h4>Coniston Calmness</h4><p>Beautiful morning</p>"
-            >
-              <a
-                class="gallery-link"
-                href="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-4.jpg"
-                data-lg-size="1600-2400"
-              >
-                <img class="gallery-img" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-4.jpg" />
-                <div class="gallery-poster">
-                  <img class="gallery-poster-img" src="[[++assets_url]]img/zoom.png" />
-                </div>
-              </a>
-            </li>
-          </ul>
+        <div class="error__wrapper wow animate__animated animate__slideInRight">
+          <h1 class="error__title">404<span class="oops">Ooops!</span></h1>
+          <h2 class="error__subtitle">Sorry We Can`t Find That Page!</h2>
+          <p class="error__desc">The page you are looking for was moved, removed, renamed or never existed.</p>
+          <a href="/" class="more-link error__link">Back to HomePage</a>
         </div>
-        <article class="picture-page__bottom-text container">
-          [[*content]]
-          <ul class="picture-page-text-wrapper">
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Materials: <span>[[*picture-materials]]</span>
-            </li>
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Size: <span>[[*picture-size]]</span>
-            </li>
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Series: <span>[[*picture-series]]</span>
-            </li>
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Colors: <span>[[*picture-colors]]</span>
-            </li>
-            <li class="picture-page__desc wow animate__animated animate__slideInRight" data-wow-delay="0.05s">
-              Style: <span>[[*picture-style]]</span>
-            </li>
-          </ul>
-
-          <h3 class="picture-page__text wow animate__animated animate__slideInRight" data-wow-delay="0.25s">
-            [[*description:isnot=``:then=`[[*description:nl2br]]`:else=``]]
-          </h3>
-        </article>
       </section>
     </main>
     <!--MAIN SECTION END-->
@@ -296,39 +197,38 @@
           </a>
         </span>
       </article>
-
       <div class="contact__footer">
         <div class="overlay"></div>
         <span>Copyright © 2022 artnagaeva.com</span>
       </div>
     </footer>
     <!--подключение скриптов-->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script> -->
-<!-- <script src="../js/swiper-bundle.min.js"></script> -->
-<!-- <script src="js/fontawesome.min.js"></script> -->
-<script src="files/simple-adaptive-slider.js"></script>
-<script src="files/wow.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> -->
-<!-- <script src="files/fullpage.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js?_v=20221112190012"></script> -->
+<!-- <script src="../js/swiper-bundle.min.js?_v=20221112190012"></script> -->
+<!-- <script src="js/fontawesome.min.js?_v=20221112190012"></script> -->
+<script src="files/simple-adaptive-slider.js?_v=20221112190012"></script>
+<script src="files/wow.min.js?_v=20221112190012"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js?_v=20221112190012"></script> -->
+<!-- <script src="files/fullpage.min.js?_v=20221112190012"></script> -->
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.easings.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js?_v=20221112190012"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js?_v=20221112190012"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js?_v=20221112190012"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.easings.min.js?_v=20221112190012"></script> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.min.js" integrity="sha512-Xaje5GN/tSuxnQNdbOMppDPWWpPMN0WGfay1St6ckxBqnm3hB66iVqBbLXmujadwsH9KOUVHJZ3GR9QpAEF1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.10/fullpage.min.js?_v=20221112190012" integrity="sha512-Xaje5GN/tSuxnQNdbOMppDPWWpPMN0WGfay1St6ckxBqnm3hB66iVqBbLXmujadwsH9KOUVHJZ3GR9QpAEF1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- <script src="files/imagesloaded.pkgd.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>-->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script> -->
+<!-- <script src="files/imagesloaded.pkgd.min.js?_v=20221112190012"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js?_v=20221112190012"></script>-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js?_v=20221112190012"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js?_v=20221112190012"></script> -->
 
-<!-- <script src="../files/gsap.min.js"></script> -->
-<!-- <script src="../files/ScrollTrigger.min.js"></script>
-<script src="../files/Draggable.min.js"></script> -->
+<!-- <script src="../files/gsap.min.js?_v=20221112190012"></script> -->
+<!-- <script src="../files/ScrollTrigger.min.js?_v=20221112190012"></script>
+<script src="../files/Draggable.min.js?_v=20221112190012"></script> -->
 
-<script src="js/scripts.min.js"></script>
-<!-- <script src="js/main.js" defer></script> -->
+<script src="js/scripts.min.js?_v=20221112190012"></script>
+<!-- <script src="js/main.js?_v=20221112190012" defer></script> -->
 
   </body>
 </html>
